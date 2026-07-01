@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Expanded:wght@600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; height:100%; background:#c9c2b5; overflow:hidden; }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  .noscroll::-webkit-scrollbar { display:none; }
+  .noscroll { scrollbar-width:none; }
+  @keyframes sheetup { from { transform:translateY(100%); } to { transform:translateY(0); } }
+  @keyframes fadein { from { opacity:0; } to { opacity:1; } }
+  @keyframes slidedown { from { transform:translateY(-22px); opacity:0; } to { transform:translateY(0); opacity:1; } }
+  @keyframes riseup { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:#c9c2b5; font-family:'Archivo',system-ui,sans-serif;">
+ <!-- phone frame -->
+ <div style="position:relative; width:min(440px,100vw); height:min(100vh,952px); background:#efeae1; display:flex; flex-direction:column; overflow:hidden; box-shadow:0 20px 60px rgba(40,34,24,0.35); --bg:#efeae1; --panel:#f6f2ea; --surface:#ece6da; --border:#e3ddd1; --border2:#e8e2d6; --text:#3b372e; --text2:#6b6455; --text3:#a89f8f; --faint:#bcb3a3; --accent:#d68f54; --accent2:#c87f47;">
+
+   <!-- ==================== BOOT SPLASH ==================== -->
+   <sc-if value="{{ isBoot }}" hint-placeholder-val="{{ true }}">
+   <div style="position:absolute; inset:0; z-index:50; background:#16130e; display:flex; flex-direction:column; justify-content:center; padding:0 34px; color:#efe9dd;">
+     <div style="display:flex; height:4px; width:56px; border-radius:2px; overflow:hidden; margin-bottom:30px; opacity:0.9;">
+       <div style="flex:1; background:#d8ab90;"></div>
+       <div style="flex:1; background:#c9b6d6;"></div>
+       <div style="flex:1; background:#a8cec4;"></div>
+       <div style="flex:1; background:#dcc488;"></div>
+     </div>
+     <div style="display:flex; flex-direction:column; line-height:1.16;">
+       <span style="font-family:'Archivo Expanded',sans-serif; font-weight:700; font-size:26px; letter-spacing:0.12em; text-transform:uppercase; color:#f1ece2;">Eric</span>
+       <span style="font-family:'Archivo Expanded',sans-serif; font-weight:700; font-size:26px; letter-spacing:0.04em; text-transform:uppercase; color:#f1ece2;">Greenburg</span>
+     </div>
+     <div style="margin-top:15px; display:flex; align-items:baseline; gap:9px;">
+       <span style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#c9a17c;">Cutroom</span>
+       <span style="font-family:'Geist Mono',monospace; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:#7f7666;">Non-Linear Editor</span>
+     </div>
+     <span style="font-family:'Geist Mono',monospace; font-size:8px; letter-spacing:0.18em; text-transform:uppercase; color:#5f584c; margin-top:5px;">Portfolio Build v2.6 — 2026</span>
+
+     <!-- boot log -->
+     <div style="margin-top:34px; height:78px; display:flex; flex-direction:column; gap:5px;">
+       <sc-for list="{{ bootLog }}" as="l" hint-placeholder-count="0">
+         <div style="display:flex; align-items:center; gap:8px; animation:fadein .25s ease;">
+           <span style="font-family:'Geist Mono',monospace; font-size:8.5px; color:{{ l.done }};">{{ l.mark }}</span>
+           <span style="font-family:'Geist Mono',monospace; font-size:9.5px; letter-spacing:0.04em; color:#a89e8b;">{{ l.t }}</span>
+         </div>
+       </sc-for>
+     </div>
+
+     <div style="margin-top:14px; display:flex; flex-direction:column; gap:9px;">
+       <div style="display:flex; align-items:baseline; gap:8px;">
+         <span style="font-family:'Geist Mono',monospace; font-size:9px; letter-spacing:0.06em; color:#7f7666;">Launching…</span>
+         <span style="font-family:'Geist Mono',monospace; font-size:9px; color:#9c917d;">{{ bootPct }}</span>
+       </div>
+       <div style="height:1.5px; width:100%; background:rgba(255,255,255,0.08); border-radius:2px; overflow:hidden;">
+         <div style="height:100%; width:{{ bootBar }}; background:#bb9d84; transition:width .18s linear;"></div>
+       </div>
+     </div>
+
+     <span style="position:absolute; left:34px; bottom:30px; font-family:'Geist Mono',monospace; font-size:8px; letter-spacing:0.18em; text-transform:uppercase; color:#4e483d;">Instrument · Los Angeles</span>
+   </div>
+   </sc-if>
+
+   <!-- ==================== MAIN (persistent: bar + player + bin) ==================== -->
+   <div style="position:absolute; inset:0; z-index:10; display:flex; flex-direction:column; background:var(--bg); animation:{{ mainAnim }};">
+     <!-- persistent identity bar -->
+     <div style="flex-shrink:0; display:flex; align-items:center; height:56px; padding:0 18px; border-bottom:1px solid var(--border); background:var(--panel); z-index:3;">
+       <div style="display:flex; flex-direction:column; line-height:1;">
+         <span style="font-family:'Archivo Expanded',sans-serif; font-weight:700; font-size:14px; letter-spacing:0.16em; text-transform:uppercase; color:var(--text);">Eric Greenburg</span>
+         <span style="font-family:'Geist Mono',monospace; font-size:7.5px; letter-spacing:0.2em; text-transform:uppercase; color:var(--text3); margin-top:3px;">Editor / Post Lead</span>
+       </div>
+       <span onClick="{{ openContact }}" style="margin-left:auto; font-family:'Geist Mono',monospace; font-size:8.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--text3); cursor:pointer; padding:6px 4px;">Contact</span>
+     </div>
+
+     <!-- ===== PLAYER PANEL (slides down, pushes bin down) ===== -->
+     <sc-if value="{{ playerOpen }}" hint-placeholder-val="{{ false }}">
+     <div style="flex-shrink:0; overflow:hidden; background:var(--bg); border-bottom:1px solid var(--border); box-shadow:0 8px 18px rgba(40,34,24,0.07); animation:slidedown .5s cubic-bezier(.22,.61,.36,1) both;">
+       <!-- grab handle: swipe up (or tap) to dismiss -->
+       <div onPointerDown="{{ onGrabStart }}" onTouchStart="{{ onGrabStart }}" onClick="{{ dismissPlayer }}" style="height:22px; display:flex; align-items:center; justify-content:center; gap:6px; cursor:grab; touch-action:none; background:var(--panel);">
+         <span style="width:34px; height:4px; border-radius:3px; background:var(--border);"></span>
+       </div>
+       <!-- program monitor -->
+       <div style="position:relative; width:100%; aspect-ratio:16/9; background:#17130e; overflow:hidden;" onClick="{{ togglePlay }}" onPointerDown="{{ onMonitorPress }}" onTouchStart="{{ onMonitorPress }}">
+         <video ref="{{ videoRef }}" playsInline muted loop style="width:100%; height:100%; object-fit:cover; display:block; background:#17130e;"></video>
+         <sc-if value="{{ paused }}" hint-placeholder-val="{{ true }}">
+           <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(15,12,8,0.28);">
+             <div style="width:52px; height:52px; border-radius:50%; border:1.5px solid rgba(255,255,255,0.6); background:rgba(20,16,10,0.4); display:flex; align-items:center; justify-content:center;">
+               <svg width="19" height="19" viewBox="0 0 24 24" fill="#fff" style="margin-left:3px;"><path d="M7 5v14l12-7z"/></svg>
+             </div>
+           </div>
+         </sc-if>
+         <div style="position:absolute; left:12px; bottom:28px; font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:0.04em; color:rgba(255,255,255,0.92); text-shadow:0 1px 3px rgba(0,0,0,0.6);">{{ activeName }}</div>
+         <div style="position:absolute; right:12px; bottom:28px; font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:0.04em; color:rgba(255,255,255,0.72); text-shadow:0 1px 3px rgba(0,0,0,0.6);">{{ tcBig }}</div>
+         <!-- ===== program mini-scrubber (ported from desktop, always-on for touch) ===== -->
+         <div ref="{{ monStripRef }}" onPointerDown="{{ onMonScrubStart }}" onTouchStart="{{ onMonScrubStart }}" onClick="{{ swallow }}" style="position:absolute; left:0; right:0; bottom:0; height:22px; z-index:6; cursor:pointer; touch-action:none; opacity:{{ scrubOpacity }}; transition:opacity .22s ease; background:linear-gradient(to top, rgba(15,12,8,0.66), rgba(15,12,8,0));">
+           <div style="position:absolute; left:0; right:0; bottom:6px; height:9px; pointer-events:none;">
+             <sc-for list="{{ monTicks }}" as="tk" hint-placeholder-count="30">
+               <div style="position:absolute; bottom:0; left:{{ tk.x }}; width:1px; height:{{ tk.h }}; background:rgba(255,255,255,{{ tk.op }});"></div>
+             </sc-for>
+           </div>
+           <sc-for list="{{ monMarkers }}" as="mk" hint-placeholder-count="0">
+             <div style="position:absolute; top:2px; left:{{ mk.x }}; width:6px; height:6px; margin-left:-3px; background:#7fae6a; clip-path:polygon(50% 100%,0 0,100% 0); pointer-events:none;"></div>
+           </sc-for>
+           <div style="position:absolute; left:0; right:0; bottom:0; height:3px; background:rgba(255,255,255,0.16); pointer-events:none;"></div>
+           <div style="position:absolute; left:0; bottom:0; height:3px; width:{{ monProgress }}; background:var(--accent); pointer-events:none;"></div>
+           <div style="position:absolute; top:0; bottom:0; left:{{ monProgress }}; width:0; pointer-events:none;">
+             <div style="position:absolute; top:1px; bottom:0; width:1.5px; background:#fff; transform:translateX(-0.75px); box-shadow:0 0 3px rgba(0,0,0,0.5);"></div>
+             <div style="position:absolute; top:0; left:-4px; width:9px; height:7px; background:#fff; clip-path:polygon(0 0,100% 0,50% 100%); box-shadow:0 0 3px rgba(0,0,0,0.5);"></div>
+           </div>
+         </div>
+       </div>
+       <!-- map toolbar -->
+       <div style="display:flex; align-items:center; gap:10px; padding:9px 16px 7px; background:var(--bg);">
+         <span style="font-family:'Geist Mono',monospace; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--text3);">Timeline</span>
+         <span style="font-family:'Geist Mono',monospace; font-size:9px; color:var(--faint);">{{ trackSummary }}</span>
+         <div style="margin-left:auto; display:flex; border:1px solid var(--border); border-radius:8px; overflow:hidden;">
+           <span onClick="{{ setOverview }}" style="padding:5px 11px; font-family:'Geist Mono',monospace; font-size:9px; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; background:{{ ovBg }}; color:{{ ovFg }};">Overview</span>
+           <span onClick="{{ setDetail }}" style="padding:5px 11px; font-family:'Geist Mono',monospace; font-size:9px; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; background:{{ dtBg }}; color:{{ dtFg }};">Detail</span>
+         </div>
+       </div>
+       <!-- edit map: sticky-header track rows (mirrors desktop), fills space, swipe to scrub -->
+       <div style="position:relative; height:{{ mapHeight }}; background:var(--bg); overflow:hidden;">
+         <div ref="{{ mapRef }}" onScroll="{{ onMapScroll }}" onPointerDown="{{ onMapDown }}" onTouchStart="{{ onMapDown }}" class="noscroll" style="position:absolute; inset:0; overflow:auto; touch-action:none; -webkit-overflow-scrolling:touch;">
+           <div style="position:relative; width:{{ contentW }};">
+             <sc-for list="{{ trackRows }}" as="trk" hint-placeholder-count="6">
+               <div style="display:flex; height:{{ trk.h }}; border-bottom:1px solid var(--border2);">
+                 <div style="position:sticky; left:0; z-index:6; width:52px; flex-shrink:0; background:var(--surface); border-right:1px solid var(--border); display:flex; align-items:center; padding:0 9px;">
+                   <span style="font-family:'Geist Mono',monospace; font-size:9px; font-weight:600; letter-spacing:0.04em; color:{{ trk.color }};">{{ trk.id }}</span>
+                 </div>
+                 <div style="position:relative; flex:1;">
+                   <sc-for list="{{ trk.clips }}" as="c" hint-placeholder-count="4">
+                     <div onClick="{{ c.tap }}" style="position:absolute; top:2px; bottom:2px; left:{{ c.left }}; width:{{ c.width }}; background:{{ c.bg }}; border:1px solid {{ c.border }}; border-radius:3px; overflow:hidden; cursor:pointer;">
+                       <sc-if value="{{ c.showLabel }}" hint-placeholder-val="{{ false }}">
+                         <span style="position:absolute; left:5px; top:50%; transform:translateY(-50%); font-family:'Geist Mono',monospace; font-size:8px; letter-spacing:0.02em; color:{{ c.fg }}; white-space:nowrap; overflow:hidden;">{{ c.short }}</span>
+                       </sc-if>
+                       <sc-if value="{{ c.hasRamp }}" hint-placeholder-val="{{ false }}">
+                         <svg viewBox="0 0 100 12" preserveAspectRatio="none" style="position:absolute; left:2px; right:2px; bottom:1px; width:calc(100% - 4px); height:11px; opacity:0.75;"><polyline points="{{ c.rampPoints }}" fill="none" stroke="{{ c.fg }}" stroke-width="1.4" vector-effect="non-scaling-stroke"></polyline></svg>
+                       </sc-if>
+                     </div>
+                   </sc-for>
+                 </div>
+               </div>
+             </sc-for>
+             <!-- fx badge row (playhead does not extend into it) -->
+             <sc-if value="{{ hasFx }}" hint-placeholder-val="{{ false }}">
+             <div style="display:flex; height:30px;">
+               <div style="position:sticky; left:0; z-index:6; width:52px; flex-shrink:0; background:var(--surface); border-right:1px solid var(--border); display:flex; align-items:center; padding:0 9px;">
+                 <span style="font-family:'Geist Mono',monospace; font-size:8px; letter-spacing:0.06em; color:var(--faint);">FX</span>
+               </div>
+               <div style="position:relative; flex:1;">
+                 <sc-for list="{{ fxBadges }}" as="b" hint-placeholder-count="4">
+                   <div onClick="{{ b.tap }}" style="position:absolute; top:6px; left:{{ b.left }}; transform:translateX(-50%); display:flex; align-items:center; gap:3px; padding:2px 6px; border-radius:20px; background:var(--surface); border:1px solid {{ b.border }}; cursor:pointer; white-space:nowrap;">
+                     <span style="width:5px; height:5px; border-radius:50%; background:{{ b.dot }};"></span>
+                     <span style="font-family:'Geist Mono',monospace; font-size:8px; letter-spacing:0.04em; color:var(--text2);">{{ b.label }}</span>
+                   </div>
+                 </sc-for>
+               </div>
+             </div>
+             </sc-if>
+           </div>
+         </div>
+         <!-- playhead: lives in the non-scrolling layer so it stays perfectly static during scrubs -->
+         <div style="position:absolute; top:0; left:{{ playheadLeft }}; height:{{ playheadHeight }}; width:0; z-index:9; pointer-events:none;">
+           <div style="position:absolute; top:0; bottom:0; left:-1px; width:2px; background:var(--accent);"></div>
+           <div style="position:absolute; top:0; left:-5px; width:12px; height:8px; background:var(--accent); clip-path:polygon(0 0,100% 0,50% 100%);"></div>
+         </div>
+       </div>
+     </div>
+     </sc-if>
+
+     <div ref="{{ binScrollRef }}" class="noscroll" style="flex:1; min-height:0; overflow-y:auto; padding:16px 18px 26px;">
+       <sc-for list="{{ binSections }}" as="sec" hint-placeholder-count="2">
+         <div style="margin-bottom:10px;">
+           <div onClick="{{ sec.toggle }}" ref="{{ sec.headerRef }}" style="display:flex; align-items:center; gap:9px; padding:8px 4px; cursor:pointer; user-select:none;">
+             <svg width="9" height="9" viewBox="0 0 24 24" fill="var(--text3)" style="flex-shrink:0; transform:{{ sec.caret }}; transition:transform .15s ease;"><path d="M8 5l11 7-11 7z"/></svg>
+             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="{{ sec.iconColor }}" stroke-width="1.6" stroke-linejoin="round" style="flex-shrink:0;"><path d="M3 7a1 1 0 0 1 1-1h5l2 2h9a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+             <span style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:var(--text2);">{{ sec.name }}</span>
+             <span style="flex:1;"></span>
+             <span style="font-family:'Geist Mono',monospace; font-size:9px; color:var(--faint);">{{ sec.count }}</span>
+           </div>
+           <sc-if value="{{ sec.open }}" hint-placeholder-val="{{ true }}">
+           <div style="display:flex; flex-direction:column; gap:9px; padding:4px 0 8px 22px;">
+             <sc-for list="{{ sec.rows }}" as="w" hint-placeholder-count="2">
+               <div onClick="{{ w.open }}" style="position:relative; display:flex; align-items:center; gap:13px; padding:11px 12px; border-radius:12px; cursor:{{ w.cursor }}; background:{{ w.rowBg }}; border:1px solid {{ w.rowBorder }}; opacity:{{ w.opacity }}; overflow:hidden; transition:background .18s ease, border-color .18s ease;" style-hover="border-color:var(--accent);">
+                 <span style="position:relative; width:60px; height:40px; border-radius:6px; flex-shrink:0; overflow:hidden; background:#17130e; background-image:{{ w.thumbBg }}; background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center;">
+                   <sc-if value="{{ w.playPreview }}" hint-placeholder-val="{{ false }}">
+                     <video ref="{{ previewRef }}" src="{{ w.previewUrl }}" autoplay muted loop playsInline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"></video>
+                   </sc-if>
+                   <sc-if value="{{ w.showPoster }}" hint-placeholder-val="{{ true }}">
+                     <span style="position:absolute; top:0; left:0; right:0; display:flex; height:8px;"><span style="flex:1; background:#cdc4b4;"></span><span style="flex:1; background:#dcc488;"></span><span style="flex:1; background:#a8cec4;"></span><span style="flex:1; background:#c9b6d6;"></span><span style="flex:1; background:#d8ab90;"></span></span>
+                     <svg width="13" height="13" viewBox="0 0 24 24" fill="rgba(255,255,255,0.85)" style="margin-top:4px;"><path d="{{ w.icon }}"></path></svg>
+                   </sc-if>
+                 </span>
+                 <div style="flex:1; min-width:0;">
+                   <div style="font-size:14px; font-weight:600; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ w.title }}</div>
+                   <div style="font-family:'Geist Mono',monospace; font-size:8px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text3); margin-top:3px;">{{ w.meta }}</div>
+                 </div>
+                 <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
+                   <span style="display:{{ w.nowTag }}; align-items:center; gap:4px; font-family:'Geist Mono',monospace; font-size:7px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent2);"><span style="width:5px; height:5px; border-radius:50%; background:var(--accent);"></span>Now</span>
+                   <span style="display:{{ w.openTag }}; align-items:center; gap:4px; font-family:'Geist Mono',monospace; font-size:7px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent2);">Tap to open ▸</span>
+                   <span style="font-family:'Geist Mono',monospace; font-size:10.5px; color:var(--text2);">{{ w.trt }}</span>
+                   <span style="font-family:'Geist Mono',monospace; font-size:7.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--faint);">{{ w.tracks }}</span>
+                 </div>
+               </div>
+             </sc-for>
+           </div>
+           </sc-if>
+         </div>
+       </sc-for>
+
+       <div onClick="{{ openContact }}" style="display:flex; align-items:center; gap:9px; margin-top:8px; padding:13px 12px; border-radius:12px; cursor:pointer; background:var(--surface); border:1px solid var(--border);" style-hover="border-color:var(--accent);">
+         <span style="font-family:'Geist Mono',monospace; font-size:8px; letter-spacing:0.16em; text-transform:uppercase; color:var(--faint);">Prod Co</span>
+         <span style="font-family:'Geist Mono',monospace; font-size:9px; letter-spacing:0.06em; color:var(--text2);">Instrument · Los Angeles</span>
+         <span style="margin-left:auto; font-family:'Geist Mono',monospace; font-size:8.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent2);">Contact →</span>
+       </div>
+     </div>
+   </div>
+
+   <!-- ==================== CONTACT SHEET ==================== -->
+   <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+   <div style="position:absolute; inset:0; z-index:11; display:flex; flex-direction:column; background:var(--bg); animation:fadein .3s ease;">
+     <div style="flex-shrink:0; display:flex; align-items:center; height:52px; padding:0 12px 0 8px; border-bottom:1px solid var(--border); background:var(--panel);">
+       <div onClick="{{ backToBin }}" style="display:flex; align-items:center; gap:6px; padding:7px 11px; border-radius:8px; cursor:pointer; color:var(--text2);" style-hover="background:var(--surface);">
+         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+         <span style="font-family:'Geist Mono',monospace; font-size:9px; letter-spacing:0.16em; text-transform:uppercase;">Bin</span>
+       </div>
+       <span style="margin-left:auto; font-family:'Geist Mono',monospace; font-size:8.5px; letter-spacing:0.18em; text-transform:uppercase; color:var(--faint); padding-right:10px;">Contact</span>
+     </div>
+     <div class="noscroll" style="flex:1; min-height:0; overflow-y:auto; padding:26px 22px;">
+       <div style="display:flex; height:4px; width:56px; border-radius:2px; overflow:hidden; margin-bottom:24px;">
+         <div style="flex:1; background:#d8ab90;"></div><div style="flex:1; background:#c9b6d6;"></div><div style="flex:1; background:#a8cec4;"></div><div style="flex:1; background:#dcc488;"></div>
+       </div>
+       <div style="display:flex; flex-direction:column; line-height:1.1;">
+         <span style="font-family:'Archivo Expanded',sans-serif; font-weight:700; font-size:23px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text);">Eric</span>
+         <span style="font-family:'Archivo Expanded',sans-serif; font-weight:700; font-size:23px; letter-spacing:0.02em; text-transform:uppercase; color:var(--text);">Greenburg</span>
+       </div>
+       <p style="font-size:14px; line-height:1.65; color:var(--text2); margin:18px 0 24px;">Los Angeles–based editor &amp; post lead. A decade of commercial, music-video, and long-form cuts. Reels here are real sequences — scrub them.</p>
+       <div style="display:flex; flex-direction:column; gap:16px;">
+         <div><div style="font-family:'Geist Mono',monospace; font-size:8px; letter-spacing:0.16em; text-transform:uppercase; color:var(--faint); margin-bottom:4px;">Email</div><a href="mailto:hello@ericgreenburg.tv" style="font-family:'Geist Mono',monospace; font-size:13px; color:var(--accent2); text-decoration:none;">hello@ericgreenburg.tv</a></div>
+         <div><div style="font-family:'Geist Mono',monospace; font-size:8px; letter-spacing:0.16em; text-transform:uppercase; color:var(--faint); margin-bottom:4px;">Based in</div><div style="font-family:'Geist Mono',monospace; font-size:13px; color:var(--text2);">Los Angeles, CA</div></div>
+         <div><div style="font-family:'Geist Mono',monospace; font-size:8px; letter-spacing:0.16em; text-transform:uppercase; color:var(--faint); margin-bottom:4px;">Availability</div><div style="font-family:'Geist Mono',monospace; font-size:13px; color:var(--text2);">Freelance &amp; contract — 2026</div></div>
+         <div><div style="font-family:'Geist Mono',monospace; font-size:8px; letter-spacing:0.16em; text-transform:uppercase; color:var(--faint); margin-bottom:4px;">Represented by</div><div style="font-family:'Geist Mono',monospace; font-size:13px; color:var(--text2);">Instrument · Los Angeles</div></div>
+       </div>
+     </div>
+   </div>
+   </sc-if>
+
+   <!-- bottom-sheet inspector -->
+   <sc-if value="{{ sheetOpen }}" hint-placeholder-val="{{ false }}">
+   <div style="position:absolute; inset:0; z-index:20; background:rgba(30,25,18,0.32);" onClick="{{ closeSheet }}"></div>
+   <div style="position:absolute; left:0; right:0; bottom:0; z-index:21; background:var(--panel); border-top:1px solid var(--border); border-radius:16px 16px 0 0; padding:14px 18px 26px; animation:sheetup .22s ease; box-shadow:0 -12px 40px rgba(40,34,24,0.22);">
+     <div style="width:38px; height:4px; border-radius:3px; background:var(--border); margin:0 auto 14px;"></div>
+     <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+       <span style="width:9px; height:9px; border-radius:2px; background:{{ sheetColor }}; flex-shrink:0;"></span>
+       <span style="font-family:'Geist Mono',monospace; font-size:8.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--text3);">{{ sheetKind }}</span>
+       <span onClick="{{ closeSheet }}" style="margin-left:auto; color:var(--text3); cursor:pointer; font-size:16px; line-height:1;">✕</span>
+     </div>
+     <div style="font-family:'Geist Mono',monospace; font-size:14px; color:var(--text); word-break:break-all; line-height:1.4; margin-bottom:16px;">{{ sheetName }}</div>
+     <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px 18px;">
+       <sc-for list="{{ sheetFields }}" as="f" hint-placeholder-count="4">
+         <div>
+           <div style="font-family:'Geist Mono',monospace; font-size:8px; letter-spacing:0.14em; text-transform:uppercase; color:var(--faint); margin-bottom:3px;">{{ f.label }}</div>
+           <div style="font-family:'Geist Mono',monospace; font-size:12px; color:var(--text2);">{{ f.value }}</div>
+         </div>
+       </sc-for>
+     </div>
+     <sc-if value="{{ sheetHasChips }}" hint-placeholder-val="{{ false }}">
+       <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:16px; padding-top:14px; border-top:1px solid var(--border);">
+         <sc-for list="{{ sheetChips }}" as="c" hint-placeholder-count="2">
+           <span style="display:flex; align-items:center; gap:4px; padding:4px 9px; border-radius:20px; background:var(--surface); border:1px solid var(--border);">
+             <span style="width:5px; height:5px; border-radius:50%; background:{{ c.dot }};"></span>
+             <span style="font-family:'Geist Mono',monospace; font-size:9px; color:var(--text2);">{{ c.label }}</span>
+           </span>
+         </sc-for>
+       </div>
+     </sc-if>
+   </div>
+   </sc-if>
+
+ </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:440,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { seqs:{}, activeId:null, time:0, playing:false, mode:"detail", sheet:null, vw:440, screen:"boot", bootPct:0, thumbs:{}, openBins:{0:true}, highlightId:"wwe", scrubPeek:false };
+  VIDCAP = 6; AUDCAP = 6; HW = 52;
+
+  CATS = [
+    { name:"Featured", ids:["wwe","whiteclaw","samsung"] },
+    { name:"Commercial", locked:["Nike — Never Done (:60)","Salesforce — Trailblazer (:30)"] },
+    { name:"Music Video", locked:["Neon Tide — Afterglow"] },
+    { name:"Long Form", locked:["Wanderlust — Feature Doc"] },
+    { name:"Post Systems", locked:["Conform / Color Pipeline"] },
+    { name:"Archive", locked:["Reel 2021 — cut in FCP7, long gone"] },
+  ];
+
+  PALETTE = {
+    video:  { bg:"#ebe6f3", border:"#d3c8e6", fg:"#7263a0" },
+    title:  { bg:"#e2efdd", border:"#bdd9b2", fg:"#548a54" },
+    still:  { bg:"#f6ecdb", border:"#e3c193", fg:"#b07a32" },
+    adjust: { bg:"#f4e2de", border:"#e5bcb3", fg:"#b26a58" },
+    audio:  { bg:"#dfeae6", border:"#bcd5cc", fg:"#52897a" },
+    audioMusic: { bg:"#e9e3f2", border:"#cdbfe4", fg:"#6b5aa2" },
+    audioSfx:   { bg:"#f7e7cf", border:"#e6bd7c", fg:"#a9781f" },
+  };
+  PIECES = [
+    { id:"wwe", label:"WWE 2K24 — Launch", meta:"Commercial · Editor · :60", js:"./assets/wwe_60.js", mp4:"./assets/wwe_2k24.mp4" },
+    { id:"whiteclaw", label:"White Claw — Scott", meta:"Commercial · Editor · :30", js:"./assets/whiteclaw.js", mp4:"./assets/whiteclaw.mp4" },
+    { id:"samsung", label:"Samsung Galaxy", meta:"Commercial · Editor · :30", js:"./assets/samsung.js", mp4:"./assets/samsung_proxy.mp4" },
+  ];
+
+  setRoot = (el)=>{ this._root = el; };
+  setVideo = (el)=>{ this._video = el; };
+  setMap = (el)=>{ this._map = el; };
+  setBinScroll = (el)=>{ this._binScroll = el; };
+  _folderEls = {};
+  _previewUrls = {};
+
+  clipCat(c){
+    if(c.type==="audio"){ const r=(c.role||"").toLowerCase();
+      if(r.indexOf("music")>=0) return "audioMusic";
+      if(r.indexOf("sfx")>=0) return "audioSfx";
+      return "audio"; }
+    const nm=(c.name||"").toLowerCase();
+    if(/adjustment layer/.test(nm)) return "adjust";
+    if(c.type==="title") return "title";
+    if(/\.(png|jpe?g|psd|tiff?|ai|gif|webp|svg|exr)\b/.test(nm) || c.type==="still" || c.type==="image") return "still";
+    return "video";
+  }
+  fmtTC(sec){ sec=Math.max(0,sec||0); const m=Math.floor(sec/60), s=Math.floor(sec%60), f=Math.floor((sec-Math.floor(sec))*24); return `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}:${String(f).padStart(2,"0")}`; }
+  shortName(n){ n=(n||"").replace(/\.[a-z0-9]+$/i,""); return n.length>22?n.slice(0,21)+"…":n; }
+
+  componentDidMount(){
+    this.setState({ vw: Math.min(440, window.innerWidth) });
+    this.PIECES.forEach((p,i)=>this.loadPiece(p, i===0));
+    // boot splash → bin menu
+    const t0=performance.now(), dur=1700;
+    this._boot=()=>{ const p=Math.min(100,((performance.now()-t0)/dur)*100); this.setState({bootPct:p});
+      if(p>=100){ setTimeout(()=>this.setState({screen:"bin"}),240); return; } requestAnimationFrame(this._boot); };
+    requestAnimationFrame(this._boot);
+    this._raf = requestAnimationFrame(this.tick);
+    window.addEventListener("resize", this._onResize = ()=>this.setState({ vw: Math.min(440, window.innerWidth) }));
+    // poster thumbnails from real video frames (async, after first paint)
+    setTimeout(()=>this.PIECES.forEach(p=>this.genThumb(p)), 400);
+  }
+  componentWillUnmount(){ cancelAnimationFrame(this._raf); window.removeEventListener("resize", this._onResize); }
+
+  async genThumb(p){
+    try{
+      const r=await fetch(p.mp4); const b=await r.blob(); const u=URL.createObjectURL(b);
+      this._previewUrls[p.id] = u; // keep for inline hover-preview (do not revoke)
+      const v=document.createElement("video"); v.muted=true; v.playsInline=true; v.preload="auto"; v.src=u;
+      await new Promise((res,rej)=>{ v.onloadedmetadata=res; v.onerror=rej; });
+      const dur=v.duration; const cv=document.createElement("canvas"); cv.width=320; cv.height=180; const cx=cv.getContext("2d");
+      let best=null, bs=-1;
+      for(const f of [0.3,0.45,0.6,0.75]){
+        await new Promise(res=>{ v.onseeked=res; v.currentTime=Math.min(dur-0.1,dur*f); });
+        cx.drawImage(v,0,0,cv.width,cv.height);
+        const d=cx.getImageData(0,0,cv.width,cv.height).data; let sum=0,n=0;
+        for(let i=0;i<d.length;i+=160){ sum+=(d[i]+d[i+1]+d[i+2])/3; n++; }
+        const avg=sum/n, sc = avg>235? 235-(avg-235) : (avg<25? avg*0.2 : avg);
+        if(sc>bs){ bs=sc; best=cv.toDataURL("image/jpeg",0.8); }
+      }
+      if(best) this.setState(st=>({ thumbs:{...st.thumbs,[p.id]:best} }));
+    }catch(e){}
+  }
+
+  async loadPiece(p, makeDefault){
+    try {
+      const mod = await import(p.js);
+      const data = mod.default || mod;
+      const master = data[Object.keys(data)[0]];
+      if(!master) return;
+      const fps = master.fps || 24;
+      // keep real video tracks (non-empty); order by total footage so the main content is V1
+      let vtracks = master.tracks.filter(t=>t.kind==="video" && t.clips && t.clips.length>0).map(t=>({ clips:t.clips.slice() }));
+      vtracks.sort((a,b)=> b.clips.reduce((s,c)=>s+c.dur,0) - a.clips.reduce((s,c)=>s+c.dur,0));
+      // audio: dedup stereo pairs, then pack into dense non-overlapping lanes
+      let auds = master.tracks.filter(t=>t.kind==="audio");
+      const seen=new Set(); const aclips=[];
+      auds.forEach(t=>t.clips.forEach(c=>{ const k=`${c.name}|${Math.round(c.start*fps)}|${Math.round(c.dur*fps)}`; if(seen.has(k))return; seen.add(k); aclips.push(c); }));
+      aclips.sort((a,b)=>a.start-b.start);
+      const laneEnds=[]; const packed=[];
+      for(const c of aclips){ let ln=laneEnds.findIndex(e=>c.start>=e-0.05);
+        if(ln<0){ if(laneEnds.length<this.AUDCAP){ ln=laneEnds.length; laneEnds.push(0); packed.push([]); } else { ln=laneEnds.reduce((mi,e,idx,arr)=>e<arr[mi]?idx:mi,0); } }
+        packed[ln].push(c); laneEnds[ln]=Math.max(laneEnds[ln],c.start+c.dur); }
+      const seq = { id:p.id, name:master.name, fps, duration:master.duration, videoTracks:vtracks, audioLanes:packed, mp4:p.mp4 };
+      this.setState(s=>({ seqs:{...s.seqs,[p.id]:seq}, activeId: makeDefault&&!s.activeId ? p.id : s.activeId }));
+    } catch(e){ console.warn("mobile load failed", p.id, e); }
+  }
+
+  async syncVideo(){
+    const seq=this.active; const v=this._video; if(!seq||!v) return;
+    try {
+      const r = await fetch(seq.mp4); const b = await r.blob();
+      if(this._url) URL.revokeObjectURL(this._url);
+      this._url = URL.createObjectURL(b);
+      v.src = this._url; v.currentTime = 0;
+    } catch(e){ v.src = seq.mp4; }
+    if(this._map) this._map.scrollLeft = 0;
+  }
+
+  get active(){ return this.state.seqs[this.state.activeId]; }
+  get pps(){ const seq=this.active; if(!seq) return 80; if(this.state.mode==="overview"){ return Math.max(6,(this.state.vw-70)/seq.duration); } return 80; }
+
+  tick = ()=>{
+    const v=this._video;
+    if(v && this.active && this.state.screen==="edit"){
+      const t=v.currentTime||0;
+      if(Math.abs(t-this.state.time)>0.016){
+        this.setState({ time:t, playing:!v.paused });
+        if(!v.paused && this._map && this.state.mode==="detail"){ this._prog=true; this._map.scrollLeft = t*this.pps; requestAnimationFrame(()=>{ this._prog=false; }); }
+      } else if(v.paused===this.state.playing){ this.setState({ playing:!v.paused }); }
+    }
+    this._raf = requestAnimationFrame(this.tick);
+  };
+  onMapScroll = ()=>{ if(this._prog) return; const v=this._video; const seq=this.active; if(!v||!seq) return; if(!v.paused) v.pause(); const t=Math.max(0,Math.min(seq.duration, this._map.scrollLeft/this.pps)); try{ v.currentTime=t; }catch(e){} };
+  // drag/swipe the timeline itself to scrub (manual so it works reliably on touch); taps still open clips
+  onMapDown = (e)=>{
+    if(this._dragActive || !this._map) return; this._dragActive=true; this._moved=false;
+    const v=this._video; if(v&&!v.paused) v.pause();
+    const sx=(e.touches&&e.touches[0])?e.touches[0].clientX:e.clientX, sy=(e.touches&&e.touches[0])?e.touches[0].clientY:e.clientY;
+    const l0=this._map.scrollLeft, t0=this._map.scrollTop;
+    const mv=(ev)=>{ const cx=(ev.touches&&ev.touches[0])?ev.touches[0].clientX:ev.clientX, cy=(ev.touches&&ev.touches[0])?ev.touches[0].clientY:ev.clientY;
+      const dx=cx-sx, dy=cy-sy; if(Math.abs(dx)>4||Math.abs(dy)>4) this._moved=true;
+      this._map.scrollLeft=l0-dx; this._map.scrollTop=t0-dy;
+      // seek directly — programmatic scrollLeft doesn't always emit a scroll event, so don't rely on onMapScroll
+      const seq=this.active; if(seq&&v){ const t=Math.max(0,Math.min(seq.duration, this._map.scrollLeft/this.pps)); try{ v.currentTime=t; }catch(e){} this.setState({ time:t }); } };
+    const up=()=>{ this._dragActive=false;
+      window.removeEventListener("pointermove",mv); window.removeEventListener("pointerup",up);
+      window.removeEventListener("touchmove",mv); window.removeEventListener("touchend",up); window.removeEventListener("touchcancel",up);
+      setTimeout(()=>{ this._moved=false; }, 60); };
+    window.addEventListener("pointermove",mv); window.addEventListener("pointerup",up);
+    window.addEventListener("touchmove",mv,{passive:true}); window.addEventListener("touchend",up); window.addEventListener("touchcancel",up);
+  };
+  // program mini-scrubber only appears while playing or while the screen is being pressed
+  showScrub(){ this.setState({ scrubPeek:true }); clearTimeout(this._peekTimer); this._peekTimer=setTimeout(()=>this.setState({ scrubPeek:false }), 2400); }
+  onMonitorPress = ()=>{ this.showScrub(); };
+  togglePlay = ()=>{ const v=this._video; if(!v) return; if(v.paused) v.play(); else v.pause(); };
+  swallow = (e)=>{ if(e&&e.stopPropagation) e.stopPropagation(); };
+
+  // ----- program mini-scrubber (ported from desktop): drag/tap the monitor's bottom edge to seek -----
+  setMonStrip = (el)=>{ this._monStrip = el; };
+  seekTo(t){ const v=this._video, seq=this.active; if(!v||!seq) return; t=Math.max(0,Math.min(seq.duration, t)); try{ v.currentTime=t; }catch(e){} this.setState({ time:t }); if(this._map){ this._prog=true; this._map.scrollLeft=t*this.pps; requestAnimationFrame(()=>{ this._prog=false; }); } }
+  monScrubFromEvent(e){ const el=this._monStrip, seq=this.active; if(!el||!seq) return; const r=el.getBoundingClientRect(); const cx = (e.touches&&e.touches[0])?e.touches[0].clientX:e.clientX; const f=Math.max(0,Math.min(1,(cx-r.left)/r.width)); this.seekTo(f*seq.duration); }
+  onMonScrubStart = (e)=>{ if(e&&e.stopPropagation) e.stopPropagation(); this.showScrub(); const v=this._video; if(v&&!v.paused) v.pause(); this.monScrubFromEvent(e);
+    const mv=(ev)=>{ if(ev.cancelable) ev.preventDefault(); this.monScrubFromEvent(ev); };
+    const up=()=>{ this.showScrub(); window.removeEventListener("pointermove",mv); window.removeEventListener("pointerup",up); window.removeEventListener("touchmove",mv); window.removeEventListener("touchend",up); };
+    window.addEventListener("pointermove",mv); window.addEventListener("pointerup",up);
+    window.addEventListener("touchmove",mv,{passive:false}); window.addEventListener("touchend",up);
+  };
+  openPiece(id){
+    const ci = this.CATS.findIndex(c=>(c.ids||[]).includes(id));
+    this.setState(s=>({ activeId:id, time:0, sheet:null, screen:"edit", playing:false, openBins:{...s.openBins,[ci]:true} }),
+      ()=>{ this.syncVideo(); setTimeout(()=>this.scrollToActiveFolder(), 520); });
+  }
+  scrollToActiveFolder(){
+    const ci = this.CATS.findIndex(c=>(c.ids||[]).includes(this.state.activeId));
+    const el = this._folderEls[ci], sc = this._binScroll;
+    if(!el || !sc) return;
+    // rect-based delta so the active folder header lands right at the top of the bin, tucked under the player
+    const delta = el.getBoundingClientRect().top - sc.getBoundingClientRect().top;
+    sc.scrollTo({ top: Math.max(0, sc.scrollTop + delta - 6), behavior:"smooth" });
+  }
+  dismissPlayer = ()=>{ const v=this._video; if(v){ try{v.pause();}catch(e){} } this.setState({ screen:"bin", sheet:null, playing:false }); };
+  backToBin = ()=>this.dismissPlayer();
+  onGrabStart = (e)=>{
+    const y0 = e.touches ? e.touches[0].clientY : e.clientY; this._gDy = 0;
+    const mv = (ev)=>{ const y = ev.touches ? ev.touches[0].clientY : ev.clientY; this._gDy = y - y0; };
+    const up = ()=>{ window.removeEventListener("pointermove",mv); window.removeEventListener("pointerup",up); window.removeEventListener("touchmove",mv); window.removeEventListener("touchend",up); if(this._gDy < -36) this.dismissPlayer(); this._gDy = 0; };
+    window.addEventListener("pointermove",mv); window.addEventListener("pointerup",up);
+    window.addEventListener("touchmove",mv,{passive:true}); window.addEventListener("touchend",up);
+  };
+  openContact = ()=>this.setState({ screen:"contact", sheet:null });
+  toggleBin(i){ this.setState(s=>{ const open=!s.openBins[i]; const cat=this.CATS[i]; let hl=s.highlightId;
+    if(open && cat.ids && cat.ids.length){ hl = cat.ids[0]; } // opening a folder highlights its top video
+    return { openBins:{...s.openBins,[i]:open}, highlightId:hl }; }); }
+  // preview audio: quiet, and only audible after a user gesture (browsers block autoplay-with-sound before that)
+  previewRef = (el)=>{ if(!el) return; el.volume = 0.12; el.muted = !this._gestured; };
+  // two-tap: first tap highlights + previews, second tap (already highlighted) opens the piece
+  rowTap(id){ this._gestured = true; if(this.state.highlightId===id) this.openPiece(id); else this.setState({ highlightId:id }); }
+  setMode(m){ const curT=this.state.time; this.setState({mode:m}, ()=>{ if(this._map) this._map.scrollLeft = curT*this.pps; }); }
+  openSheet(c, kind){ this.setState({ sheet:{...c, _kind:kind} }); }
+  closeSheet = ()=>this.setState({sheet:null});
+
+  renderVals(){
+    const s=this.state, seq=this.active, P=this.PALETTE, pps=this.pps;
+
+    const pieceById = id => this.PIECES.find(x=>x.id===id);
+    const binSections = this.CATS.map((cat,ci)=>{
+      const isOpen = !!s.openBins[ci];
+      const hasReal = (cat.ids||[]).length>0;
+      const PLAY="M7 5v14l12-7z", LOCK="M6 10V8a6 6 0 1 1 12 0v2h1v11H5V10z";
+      const rows = (cat.ids||[]).map(id=>{ const p=pieceById(id); const sq=s.seqs[id]; const th=s.thumbs[id];
+        const on = id===s.activeId && s.screen==="edit";
+        const hl = id===s.highlightId;
+        const preview = this._previewUrls[id];
+        const playPreview = hl && !!preview && s.screen!=="edit"; // stop bin preview once the player is open
+        return { title:p.label, meta:p.meta, trt: sq?this.fmtTC(sq.duration).slice(0,5):"—",
+          tracks: sq?`${sq.videoTracks.length}V · ${sq.audioLanes.length}A`:"—",
+          cursor:"pointer", opacity:"1", thumbBg: th?`url(${th})`:"none",
+          showPoster: !th && !playPreview, playPreview, previewUrl: preview||"", icon:PLAY,
+          rowBg: on?"#ecdcc4":(hl?"#f2e6d4":"var(--panel)"), rowBorder: (on||hl)?"var(--accent)":"var(--border)",
+          nowTag: on?"flex":"none", openTag: (hl&&!on)?"flex":"none",
+          open:()=>this.rowTap(id) };
+      }).concat((cat.locked||[]).map(t=>({ title:t, meta:"Archive · on request", trt:"—", tracks:"—",
+          cursor:"default", opacity:"0.5", thumbBg:"none", showPoster:true, playPreview:false, previewUrl:"", icon:LOCK,
+          rowBg:"var(--panel)", rowBorder:"var(--border)", hlBar:"transparent", nowTag:"none", openTag:"none", open:()=>{} })));
+      const activeHere = hasReal && cat.ids.includes(s.activeId) && s.screen==="edit";
+      return { name:cat.name, rows, count:rows.length, open:isOpen,
+        caret: isOpen?"rotate(90deg)":"rotate(0deg)",
+        iconColor: activeHere ? "var(--accent)" : ((isOpen&&hasReal)?"var(--accent)":"var(--text3)"),
+        headerRef:(el)=>{ if(el) this._folderEls[ci]=el; },
+        toggle:()=>this.toggleBin(ci) };
+    });
+
+    // boot log (streams in as the bar fills — reads like an app launching)
+    const logSteps=[ {p:8,t:"Mounting media volumes"},{p:28,t:"Loading 2 sequences"},{p:48,t:"Conforming proxies"},{p:70,t:"Building timeline engine"},{p:90,t:"Color pipeline ready"} ];
+    const bootLog = logSteps.map(l=>{ const done=s.bootPct>=l.p+8; return { t:l.t, mark:done?"✓":"›", done:done?"#7fae6a":"#c9a17c" }; }).filter((l,i)=>s.bootPct>=logSteps[i].p);
+
+    const base = { rootRef:this.setRoot, videoRef:this.setVideo, mapRef:this.setMap, onMapScroll:this.onMapScroll,
+      togglePlay:this.togglePlay, setOverview:()=>this.setMode("overview"), setDetail:()=>this.setMode("detail"),
+      closeSheet:this.closeSheet, backToBin:this.backToBin, openContact:this.openContact, binSections, bootLog,
+      binScrollRef:this.setBinScroll, dismissPlayer:this.dismissPlayer, onGrabStart:this.onGrabStart, previewRef:this.previewRef,
+      isBoot:s.screen==="boot", isBin:s.screen==="bin", isEdit:s.screen==="edit", isContact:s.screen==="contact",
+      mainAnim: s.screen==="boot" ? "none" : "riseup .5s cubic-bezier(.2,.6,.2,1) both",
+      playerOpen:s.screen==="edit", playerMax: s.screen==="edit" ? "660px" : "0px",
+      bootPct:Math.round(s.bootPct)+"%", bootBar:s.bootPct+"%",
+      ovBg:s.mode==="overview"?"var(--accent)":"transparent", ovFg:s.mode==="overview"?"#fff":"var(--text3)",
+      dtBg:s.mode==="detail"?"var(--accent)":"transparent", dtFg:s.mode==="detail"?"#fff":"var(--text3)" };
+
+    const monBase = { monStripRef:this.setMonStrip, onMonScrubStart:this.onMonScrubStart, onMapDown:this.onMapDown, onMonitorPress:this.onMonitorPress };
+    if(!seq){ return { ...base, ...monBase, activeName:"Loading…", tcBig:"00:00:00", trackSummary:"", contentW:"100%",
+      playheadLeft:"52px", playheadHeight:"0px", mapHeight:"170px", trackRows:[], hasFx:false, fxBadges:[],
+      scrubOpacity:"0", monProgress:"0%", monTicks:[], monMarkers:[],
+      sheetOpen:false, sheetName:"", sheetKind:"", sheetColor:"", sheetFields:[], sheetHasChips:false, sheetChips:[] }; }
+
+    const px = t => (t*pps)+"px";
+    const VROW=30, AROW=20;
+    const mkClip = (c) => { const cat=this.clipCat(c); const col=P[cat];
+      return { left:px(c.start), width:Math.max(3,c.dur*pps-1)+"px", bg:col.bg, border:col.border, fg:col.fg,
+        short:this.shortName(c.name), showLabel:c.dur*pps>40,
+        hasRamp:!!(c.speedRamp&&c.speedRamp.points), rampPoints:(c.speedRamp&&c.speedRamp.points)||"",
+        tap:()=>{ if(this._moved) return; this.openSheet(c, cat); } }; };
+
+    // top video tracks stay as V1..V3 (V1 = main content); everything else on video tracks folds into one GFX lane
+    const VIDSHOW=3;
+    const vShown = seq.videoTracks.slice(0,VIDSHOW);
+    const gfxClips = seq.videoTracks.slice(VIDSHOW).flatMap(t=>t.clips).sort((a,b)=>a.start-b.start);
+    const vRows = vShown.map((t,i)=>({ id:"V"+(i+1), color:P.video.fg, h:VROW+"px", clips:t.clips.map(mkClip) }));
+    if(gfxClips.length) vRows.push({ id:"GFX", color:P.title.fg, h:VROW+"px", clips:gfxClips.map(mkClip) });
+    const aRows = seq.audioLanes.slice(0,this.AUDCAP).map((lane,i)=>({ id:"A"+(i+1), color:P.audio.fg, h:AROW+"px",
+      clips:lane.map(c=>{ const col=P[this.clipCat(c)]||P.audio; return { left:px(c.start), width:Math.max(2,c.dur*pps-1)+"px", bg:col.bg, border:col.border, fg:col.fg,
+        short:this.shortName(c.name), showLabel:c.dur*pps>52, hasRamp:false, rampPoints:"",
+        tap:()=>{ if(this._moved) return; this.openSheet(c, this.clipCat(c)); } }; }) }));
+    const trackRows = [...vRows, ...aRows];
+    const tracksTotalH = vRows.length*VROW + aRows.length*AROW;
+
+    // fx badges from every video clip carrying a ramp / opacity / effect
+    const fxSrc = seq.videoTracks.flatMap(t=>t.clips);
+    const fxBadges = fxSrc.filter(c=>c.speedRamp||c.opacity||(c.effects&&c.effects.length)).map(c=>{
+      let label, dot;
+      if(c.speedRamp){ label=c.speedRamp.label||"Speed"; dot="#c87f47"; }
+      else if(c.effects&&c.effects.length){ label=c.effects[0].label||"FX"; dot="#7263a0"; }
+      else { label=c.opacity.label||"Opacity"; dot="#548a54"; }
+      return { left:px(c.start+c.dur/2), label, dot, border:"var(--border)", tap:()=>{ if(this._moved) return; this.openSheet(c, this.clipCat(c)); } };
+    }).slice(0,60);
+    const hasFx = fxBadges.length>0;
+
+    // playhead sits in the non-scrolling layer: static at the header edge in detail, travels only in overview; spans track rows only
+    const playheadLeft = (s.mode==="overview" ? (this.HW + s.time*pps) : this.HW)+"px";
+    const playheadHeight = tracksTotalH+"px";
+    const mapHeight = Math.min(224, tracksTotalH + (hasFx?30:0) + 6)+"px";
+    const contentW = (this.HW + seq.duration*pps + Math.max(0, s.vw - this.HW))+"px";
+
+    // program mini-scrubber geometry: ~one tick/sec (taller every 5s), title clips as markers
+    const monTicks=[]; const tickEvery = Math.max(1, Math.round(seq.duration/40));
+    for(let t=0; t<=seq.duration+0.001; t+=tickEvery){ const major=Math.round(t)%5===0;
+      monTicks.push({ x:(seq.duration>0?(t/seq.duration)*100:0)+"%", h:major?"9px":"5px", op:major?"0.55":"0.3" }); }
+    const monMarkers = fxSrc.filter(c=>this.clipCat(c)==="title").map(c=>({ x:(seq.duration>0?(c.start/seq.duration)*100:0)+"%" }));
+    const monProgress = (seq.duration>0 ? (s.time/seq.duration)*100 : 0)+"%";
+
+    const sh=s.sheet; let sheetFields=[], sheetChips=[], sheetColor="", sheetKind="", sheetName="";
+    if(sh){ const cat=sh._kind; sheetColor=P[cat]?P[cat].bg:P.video.bg; sheetName=sh.name||"Untitled";
+      const KIND={ video:"Footage", adjust:"Adjustment Layer", still:"Still / Graphic", title:"Title", audio:"Audio · Diegetic", audioMusic:"Audio · Music", audioSfx:"Audio · SFX" };
+      sheetKind = KIND[cat] || (cat.charAt(0).toUpperCase()+cat.slice(1));
+      sheetFields = [
+        { label:"Timeline In", value:this.fmtTC(sh.start) },
+        { label:"Duration", value:this.fmtTC(sh.dur) },
+        { label:"Source In", value:sh.in!=null?this.fmtTC(sh.in):"—" },
+        { label:"Speed", value:sh.speedRamp?(sh.speedRamp.label||"Ramp"):"100%" },
+      ];
+      if(sh.speedRamp) sheetChips.push({ label:sh.speedRamp.label||"Speed ramp", dot:"#c87f47" });
+      if(sh.opacity) sheetChips.push({ label:sh.opacity.label||"Opacity", dot:"#548a54" });
+      (sh.effects||[]).forEach(e=>sheetChips.push({ label:e.label||"Effect", dot:"#7263a0" }));
+    }
+
+    return { ...base, ...monBase,
+      trackRows, playheadLeft, playheadHeight, mapHeight, contentW, hasFx, fxBadges,
+      scrubOpacity: (s.playing || s.scrubPeek) ? "1" : "0",
+      monTicks, monMarkers, monProgress,
+      activeName:seq.name, tcBig:this.fmtTC(s.time), playing:s.playing, paused:!s.playing,
+      trackSummary:`${vShown.length} video${gfxClips.length? " + gfx":""} · ${aRows.length} audio${hasFx? " · "+fxBadges.length+" fx":""}`,
+      sheetOpen:!!sh, sheetName, sheetKind, sheetColor, sheetFields,
+      sheetHasChips:sheetChips.length>0, sheetChips };
+  }
+}
+</script>
+</body>
+</html>

@@ -5,8 +5,10 @@ A non-linear-editor styled portfolio site. Static HTML/JS/CSS — no build step,
 ## What's here
 
 ```
-index.html            The site (open directly in a browser, or serve it)
-support.js            Runtime that powers the page
+index.html            Device router — sends phones to mobile.html, everything else to desktop.html
+desktop.html          The desktop NLE editor
+mobile.html           The mobile edit-map layout
+support.js            Runtime that powers the pages
 netlify.toml          Netlify config (publish dir + cache headers)
 assets/
   wwe_60.js           WWE 2K24 :60 timeline data
