@@ -11,15 +11,17 @@ netlify.toml          Netlify config (publish dir + cache headers)
 assets/
   wwe_60.js           WWE 2K24 :60 timeline data
   whiteclaw.js        White Claw :30 timeline data
+  samsung.js          Samsung Galaxy :30 timeline data
   wwe_2k24.mp4        WWE program video
   whiteclaw.mp4       White Claw program video
+  samsung_proxy.mp4   Samsung Galaxy program video
   splash-art.jpg      Loading-screen image
   instrument-mark.png Studio imprint
   eric-e-serif.png    Header monogram
 ```
 
 Fonts load from Google Fonts and a couple of demo bins stream sample clips from public URLs,
-so the live site expects an internet connection. The two featured pieces (WWE, White Claw)
+so the live site expects an internet connection. The three featured pieces (WWE, White Claw, Samsung Galaxy)
 are fully local.
 
 ## Deploy to Netlify
@@ -47,7 +49,7 @@ git remote add origin https://github.com/<you>/<repo>.git
 git push -u origin main
 ```
 
-> Note: `wwe_2k24.mp4` (~11 MB) and `whiteclaw.mp4` (~17 MB) are committed normally.
+> Note: `wwe_2k24.mp4`, `whiteclaw.mp4`, and `samsung_proxy.mp4` are committed normally.
 > They're under GitHub's 100 MB per-file limit, so no Git LFS is required.
 
 ## Run locally

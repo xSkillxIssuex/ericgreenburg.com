@@ -2,8 +2,8 @@
 // optional role/speedRamp/opacity/effects/transitions fields are renderer hints.
 const seqs = {};
 
-seqs["wc-30s-scott-dc-220714"] = {
-  id: "wc-30s-scott-dc-220714",
+seqs["wc-30s-scott-dc-220714-1"] = {
+  id: "wc-30s-scott-dc-220714-1",
   name: "wc_30s_Scott_DC_220714",
   fps: 24,
   proxy: "",
@@ -293,11 +293,11 @@ seqs["wc-30s-scott-dc-220714"] = {
         {
           name: "triptyc_cut_slide_typo.mp4",
           type: "video",
-          role: "proxy-fill",
           start: 15.083333,
           dur: 0.791667,
-          in: 15.083333,
-          out: 15.875
+          in: 0.416667,
+          out: 1.208333,
+          role: "footage"
         },
         {
           name: "triptyc_cut_slide_typo.mp4",
@@ -741,6 +741,30 @@ seqs["wc-30s-scott-dc-220714"] = {
           ]
         },
         {
+          name: "cans_woman_textures_color_ice_lemon_v5.mp4",
+          type: "video",
+          start: 10.416667,
+          dur: 1.541667,
+          in: 0,
+          out: 1.541667,
+          role: "footage",
+          effects: [
+            {
+              kind: "effect",
+              label: "Crop"
+            }
+          ]
+        },
+        {
+          name: "WC_REFRSHR_30s_V009.mov",
+          type: "video",
+          start: 12,
+          dur: 0.708333,
+          in: 12.791667,
+          out: 13.5,
+          role: "footage"
+        },
+        {
           name: "A001C002_21042544.mov",
           type: "video",
           start: 13.041667,
@@ -752,6 +776,21 @@ seqs["wc-30s-scott-dc-220714"] = {
             {
               kind: "effect",
               label: "Crop"
+            }
+          ]
+        },
+        {
+          name: "B003_L10623903.mov",
+          type: "video",
+          start: 13.875,
+          dur: 1.208333,
+          in: 183.125,
+          out: 184.333333,
+          role: "footage",
+          effects: [
+            {
+              kind: "effect",
+              label: "Lumetri"
             }
           ]
         },
@@ -1199,29 +1238,36 @@ seqs["wc-30s-scott-dc-220714"] = {
           ]
         },
         {
-          name: "cans_woman_textures_color_ice_lemon_v5.mp4",
+          name: "border_ice_v1.mov",
           type: "video",
-          start: 10.416667,
-          dur: 1.541667,
-          in: 0,
-          out: 1.541667,
-          role: "footage",
+          start: 11.958333,
+          dur: 0.25,
+          in: 1.541667,
+          out: 1.791667,
+          role: "footage"
+        },
+        {
+          name: "WC_REFRSHR_30s_V006_ALPHA.mov",
+          type: "video",
+          start: 12.708333,
+          dur: 1.083333,
+          in: 13.583333,
+          out: 14.666667,
+          role: "footage"
+        },
+        {
+          name: "IMG_7321.JPG",
+          type: "video",
+          start: 13.791667,
+          dur: 1.291667,
+          in: 4495.541667,
+          out: 4497.125,
+          role: "still",
           effects: [
             {
               kind: "effect",
               label: "Crop"
-            }
-          ]
-        },
-        {
-          name: "B003_L10623903.mov",
-          type: "video",
-          start: 13.875,
-          dur: 1.208333,
-          in: 183.125,
-          out: 184.333333,
-          role: "footage",
-          effects: [
+            },
             {
               kind: "effect",
               label: "Lumetri"
@@ -1312,41 +1358,42 @@ seqs["wc-30s-scott-dc-220714"] = {
           role: "footage"
         },
         {
-          name: "WC_REFRSHR_30s_V009.mov",
-          type: "video",
-          start: 12,
-          dur: 0.708333,
-          in: 12.791667,
-          out: 13.5,
-          role: "footage"
-        },
-        {
           name: "WC_REFRSHR_30s_V006_ALPHA.mov",
           type: "video",
-          start: 12.708333,
-          dur: 1.083333,
-          in: 13.583333,
-          out: 14.666667,
-          role: "footage"
+          start: 13.166667,
+          dur: 0.625,
+          in: 19.375,
+          out: 20,
+          role: "footage",
+          speedRamp: {
+            kind: "timeremap",
+            label: "73%",
+            points: "0,15 47.400612,9.783032 48.929664,9.614743 100,4"
+          }
         },
         {
-          name: "IMG_7321.JPG",
+          name: "IMG_7322.JPG",
           type: "video",
-          start: 13.791667,
-          dur: 1.875,
+          start: 13.958333,
+          dur: 1.125,
           in: 4495.541667,
-          out: 4497.833333,
+          out: 4496.875,
           role: "still",
           effects: [
-            {
-              kind: "effect",
-              label: "Crop"
-            },
             {
               kind: "effect",
               label: "Lumetri"
             }
           ]
+        },
+        {
+          name: "WC_UPPERFUN30s_OUTRO_V002.mov",
+          type: "video",
+          start: 28.083333,
+          dur: 0.708333,
+          in: 0.958333,
+          out: 1.666667,
+          role: "footage"
         }
       ]
     },
@@ -1373,35 +1420,21 @@ seqs["wc-30s-scott-dc-220714"] = {
           role: "footage"
         },
         {
-          name: "border_ice_v1.mov",
+          name: "WC_REFRSHR_30s_V006_ALPHA.mov",
           type: "video",
-          start: 11.958333,
-          dur: 0.25,
-          in: 1.541667,
-          out: 1.791667,
+          start: 13.791667,
+          dur: 0.166667,
+          in: 14.333333,
+          out: 14.5,
           role: "footage"
         },
         {
-          name: "WC_REFRSHR_30s_V006_ALPHA.mov",
+          name: "IMG_7323.JPG",
           type: "video",
-          start: 13.166667,
-          dur: 0.625,
-          in: 19.375,
-          out: 20,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "73%",
-            points: "0,15 47.400612,9.783032 48.929664,9.614743 100,4"
-          }
-        },
-        {
-          name: "IMG_7322.JPG",
-          type: "video",
-          start: 13.958333,
-          dur: 1.708333,
+          start: 14.166667,
+          dur: 0.916667,
           in: 4495.541667,
-          out: 4497.583333,
+          out: 4496.666667,
           role: "still",
           effects: [
             {
@@ -1417,23 +1450,18 @@ seqs["wc-30s-scott-dc-220714"] = {
       kind: "video",
       clips: [
         {
-          name: "WC_REFRSHR_30s_V006_ALPHA.mov",
+          name: "IMG_7324.JPG",
           type: "video",
-          start: 13.791667,
-          dur: 0.166667,
-          in: 14.333333,
-          out: 14.5,
-          role: "footage"
-        },
-        {
-          name: "IMG_7323.JPG",
-          type: "video",
-          start: 14.166667,
-          dur: 1.5,
-          in: 4495.541667,
-          out: 4497.375,
+          start: 14.375,
+          dur: 0.708333,
+          in: 4495.791667,
+          out: 4496.583333,
           role: "still",
           effects: [
+            {
+              kind: "effect",
+              label: "Crop"
+            },
             {
               kind: "effect",
               label: "Lumetri"
@@ -1462,32 +1490,19 @@ seqs["wc-30s-scott-dc-220714"] = {
           ]
         },
         {
-          name: "IMG_7324.JPG",
+          name: "IMG_7325.JPG",
           type: "video",
-          start: 14.375,
-          dur: 1.291667,
-          in: 4495.791667,
-          out: 4497.333333,
+          start: 14.583333,
+          dur: 0.5,
+          in: 4495.083333,
+          out: 4495.625,
           role: "still",
           effects: [
-            {
-              kind: "effect",
-              label: "Crop"
-            },
             {
               kind: "effect",
               label: "Lumetri"
             }
           ]
-        },
-        {
-          name: "WC_UPPERFUN30s_OUTRO_V002.mov",
-          type: "video",
-          start: 28.083333,
-          dur: 0.708333,
-          in: 0.958333,
-          out: 1.666667,
-          role: "footage"
         }
       ]
     },
@@ -1496,14 +1511,18 @@ seqs["wc-30s-scott-dc-220714"] = {
       kind: "video",
       clips: [
         {
-          name: "IMG_7325.JPG",
+          name: "IMG_7326.JPG",
           type: "video",
-          start: 14.583333,
-          dur: 1.083333,
+          start: 14.791667,
+          dur: 0.291667,
           in: 4495.083333,
-          out: 4496.333333,
+          out: 4495.416667,
           role: "still",
           effects: [
+            {
+              kind: "effect",
+              label: "Crop"
+            },
             {
               kind: "effect",
               label: "Lumetri"
@@ -1514,36 +1533,6 @@ seqs["wc-30s-scott-dc-220714"] = {
     },
     {
       id: "V9",
-      kind: "video",
-      clips: [
-        {
-          name: "IMG_7326.JPG",
-          type: "video",
-          start: 14.791667,
-          dur: 0.875,
-          in: 4495.083333,
-          out: 4496.125,
-          role: "still",
-          effects: [
-            {
-              kind: "effect",
-              label: "Crop"
-            },
-            {
-              kind: "effect",
-              label: "Lumetri"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: "V10",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V11",
       kind: "video",
       clips: [
         {
@@ -1564,20 +1553,11 @@ seqs["wc-30s-scott-dc-220714"] = {
               label: "softlight"
             }
           ]
-        },
-        {
-          name: "triptyc_cut_slide_typo.mp4",
-          type: "video",
-          start: 15.083333,
-          dur: 0.791667,
-          in: 0.416667,
-          out: 1.208333,
-          role: "footage"
         }
       ]
     },
     {
-      id: "V12",
+      id: "V10",
       kind: "video",
       clips: [
         {
@@ -1625,100 +1605,221 @@ seqs["wc-30s-scott-dc-220714"] = {
       ]
     },
     {
-      id: "V13",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V14",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V15",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V16",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V17",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V18",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V19",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V20",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V21",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V22",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V23",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V24",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V25",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V26",
-      kind: "video",
-      clips: []
-    },
-    {
       id: "A1",
       kind: "audio",
       clips: [
         {
-          name: "WC_UF_30s_HERO_ProRes442hq_V28.mov",
-          type: "audio",
-          start: 0,
-          dur: 28.625,
-          in: 0,
-          out: 28.625
-        },
-        {
           name: "Curtis Waters - Stunnin' ft. Harm Franklin (Official Video).mp3",
           type: "audio",
-          start: 28.625,
-          dur: 2.041667,
-          in: 28.666667,
+          start: -0.041667,
+          dur: 2.208333,
+          in: 28.5,
           out: 30.708333,
           audioLevel: {
             kind: "volume",
             label: "-5dB",
             points: "0,15 100,15"
+          }
+        },
+        {
+          name: "Curtis Waters - Stunnin' ft. Harm Franklin (Official Video).mp3",
+          type: "audio",
+          start: 2.291667,
+          dur: 2.041667,
+          in: 57.583333,
+          out: 59.625,
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 4,
+              dur: 0.333333,
+              alignment: "center",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "Curtis Waters - Stunnin' ft. Harm Franklin (Official Video).mp3",
+          type: "audio",
+          start: 10.541667,
+          dur: 1.333333,
+          in: 27.458333,
+          out: 28.791667,
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,9 100,9"
           },
           transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 8.833333,
+              dur: 0.333333,
+              alignment: "center",
+              at: "in"
+            },
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 10.541667,
+              dur: 1,
+              alignment: "center",
+              at: "in"
+            }
+          ]
+        },
+        {
+          name: "Curtis Waters - Stunnin' ft. Harm Franklin (Official Video).mp3",
+          type: "audio",
+          start: 13.458333,
+          dur: 2.708333,
+          in: 54.958333,
+          out: 57.666667,
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 11.875,
+              dur: 0.25,
+              alignment: "start-black",
+              at: "in"
+            },
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 13.458333,
+              dur: 1,
+              alignment: "center",
+              at: "in"
+            }
+          ]
+        },
+        {
+          name: "Curtis Waters - Stunnin' ft. Harm Franklin (Official Video).mp3",
+          type: "audio",
+          start: 16.125,
+          dur: 0.583333,
+          in: 95.375,
+          out: 95.958333,
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 16.375,
+              dur: 0.333333,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "Curtis Waters - Stunnin' ft. Harm Franklin (Official Video).mp3",
+          type: "audio",
+          start: 16.708333,
+          dur: 4.583333,
+          in: 95.958333,
+          out: 100.541667,
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 16.708333,
+              dur: 0.791667,
+              alignment: "start-black",
+              at: "in"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "A2",
+      kind: "audio",
+      clips: [
+        {
+          name: "Curtis Waters - Stunnin' ft. Harm Franklin (Official Video).mp3",
+          type: "audio",
+          start: -0.041667,
+          dur: 2.583333,
+          in: 28.791667,
+          out: 31.375,
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,9 100,9"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 1.5,
+              dur: 0.875,
+              alignment: "start-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "Curtis Waters - Stunnin' ft. Harm Franklin (Official Video).mp3",
+          type: "audio",
+          start: 11.333333,
+          dur: 0.666667,
+          in: 133.75,
+          out: 134.416667
+        },
+        {
+          name: "Curtis Waters - Stunnin' ft. Harm Franklin (Official Video).mp3",
+          type: "audio",
+          start: 15.583333,
+          dur: 0.583333,
+          in: 124.083333,
+          out: 124.666667
+        },
+        {
+          name: "Curtis Waters - Stunnin' ft. Harm Franklin (Official Video).mp3",
+          type: "audio",
+          start: 16.125,
+          dur: 1.541667,
+          in: 133.75,
+          out: 135.291667,
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 17.208333,
+              dur: 0.458333,
+              alignment: "end-black",
+              at: "out"
+            },
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 20.375,
+              dur: 0.666667,
+              alignment: "start-black",
+              at: "out"
+            },
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 28.458333,
+              dur: 0.333333,
+              alignment: "center",
+              at: "out"
+            },
             {
               kind: "transition",
               label: "AF",
@@ -1726,6 +1827,161 @@ seqs["wc-30s-scott-dc-220714"] = {
               start: 29.666667,
               dur: 1,
               alignment: "end-black",
+              at: "out"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "A3",
+      kind: "audio",
+      clips: [
+        {
+          name: "Curtis Waters - Stunnin' ft. Harm Franklin (Official Video).mp3",
+          type: "audio",
+          start: -0.041667,
+          dur: 2.708333,
+          in: 64.125,
+          out: 66.833333,
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 1.166667,
+              dur: 0.75,
+              alignment: "start-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "Curtis Waters - Stunnin' ft. Harm Franklin (Official Video).mp3",
+          type: "audio",
+          start: 11.541667,
+          dur: 0.666667,
+          in: 18.666667,
+          out: 19.333333,
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 11.541667,
+              dur: 0.666667,
+              alignment: "start-black",
+              at: "out"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "A4",
+      kind: "audio",
+      clips: [
+        {
+          name: "Curtis Waters - Stunnin' ft. Harm Franklin (Official Video).mp3",
+          type: "audio",
+          start: -0.041667,
+          dur: 5.166667,
+          in: 20.916667,
+          out: 26.083333,
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,9 100,9"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 1.166667,
+              dur: 0.75,
+              alignment: "start-black",
+              at: "in"
+            },
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 4,
+              dur: 0.333333,
+              alignment: "center",
+              at: "out"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "A5",
+      kind: "audio",
+      clips: [
+        {
+          name: "Curtis Waters - Stunnin' ft. Harm Franklin (Official Video).mp3",
+          type: "audio",
+          start: -0.041667,
+          dur: 8.416667,
+          in: 114.041667,
+          out: 122.458333
+        }
+      ]
+    },
+    {
+      id: "A6",
+      kind: "audio",
+      clips: [
+        {
+          name: "Curtis Waters - Stunnin' ft. Harm Franklin (Official Video).mp3",
+          type: "audio",
+          start: 0,
+          dur: 2.5,
+          in: 0.125,
+          out: 2.625
+        }
+      ]
+    },
+    {
+      id: "A7",
+      kind: "audio",
+      clips: [
+        {
+          name: "Curtis Waters - Stunnin' ft. Harm Franklin (Official Video).mp3",
+          type: "audio",
+          start: 1.166667,
+          dur: 1.125,
+          in: 18.083333,
+          out: 19.208333,
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,9 100,9"
+          }
+        }
+      ]
+    },
+    {
+      id: "A8",
+      kind: "audio",
+      clips: [
+        {
+          name: "Curtis Waters - Stunnin' ft. Harm Franklin (Official Video).mp3",
+          type: "audio",
+          start: 1.5,
+          dur: 0.875,
+          in: 114.333333,
+          out: 115.208333,
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 1.5,
+              dur: 0.875,
+              alignment: "start-black",
               at: "out"
             }
           ]

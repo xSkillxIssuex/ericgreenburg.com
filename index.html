@@ -94,11 +94,11 @@
   </sc-if>
 
   <!-- ===== Top bar ===== -->
-  <div style="display:flex; align-items:center; height:66px; padding:0 24px; background:var(--panel); border-bottom:1px solid var(--border); flex-shrink:0;">
+  <div style="display:flex; align-items:center; height:74px; padding:0 24px; background:var(--panel); border-bottom:1px solid var(--border); flex-shrink:0;">
     <div style="display:flex; flex-direction:column; line-height:1; gap:2px;">
-      <span style="font-family:'Archivo Expanded','Archivo',sans-serif; font-weight:700; font-size:15px; letter-spacing:0.28em; text-transform:uppercase; color:var(--text);">Eric</span>
-      <span style="font-family:'Archivo Expanded','Archivo',sans-serif; font-weight:700; font-size:15px; letter-spacing:0.155em; text-transform:uppercase; color:var(--text);">Greenburg</span>
-      <span style="font-family:'Geist Mono',monospace; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--text3); margin-top:3px;">Editor <span style="color:var(--faint);">/</span> Post Lead</span>
+      <span style="font-family:'Archivo Expanded','Archivo',sans-serif; font-weight:700; font-size:19px; letter-spacing:0.28em; text-transform:uppercase; color:var(--text);">Eric</span>
+      <span style="font-family:'Archivo Expanded','Archivo',sans-serif; font-weight:700; font-size:19px; letter-spacing:0.155em; text-transform:uppercase; color:var(--text);">Greenburg</span>
+      <span style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--text3); margin-top:4px;">Editor <span style="color:var(--faint);">/</span> Post Lead</span>
     </div>
     <div style="margin-left:auto; display:flex; align-items:center;">
       <span style="width:38px; height:38px; border-radius:50%; background:#f5f1e8; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; overflow:hidden;">
@@ -114,7 +114,8 @@
    <div style="flex:1; display:flex; min-height:0;">
 
     <!-- ----- Project / Bin panel ----- -->
-    <div style="width:264px; flex-shrink:0; background:var(--panel2); border-right:1px solid var(--border); display:flex; flex-direction:column;">
+    <div ref="{{ sidebarRef }}" style="position:relative; width:264px; flex-shrink:0; background:var(--panel2); border-right:1px solid var(--border); display:flex; flex-direction:column;">
+      <div onPointerDown="{{ onSidebarResize }}" title="Drag to resize" style="position:absolute; top:0; bottom:0; right:-3px; width:7px; z-index:25; cursor:col-resize;" style-hover="background:var(--accent); opacity:0.25;"></div>
       <div style="height:46px; display:flex; align-items:center; padding:0 18px; border-bottom:1px solid var(--border2); flex-shrink:0;">
         <span style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--text3);">Project</span>
       </div>
@@ -179,7 +180,7 @@
             <span style="font-size:13px; color:var(--text2); font-weight:500;">{{ activeName }}</span>
           </div>
           <div style="flex:1; display:flex; align-items:center; justify-content:center; padding:0 22px 4px; min-height:0;">
-            <div ref="{{ monitorRef }}" class="prog-mon" style="position:relative; height:100%; width:auto; max-width:100%; aspect-ratio:16/9; background:#17130e; border-radius:9px; overflow:hidden; box-shadow:0 14px 40px rgba(20,16,10,0.28), 0 2px 6px rgba(20,16,10,0.16); border:1px solid var(--border);">
+            <div ref="{{ monitorRef }}" class="prog-mon" style="position:relative; height:100%; width:auto; max-width:100%; aspect-ratio:16/9; background:#17130e; border-radius:4.5px; overflow:hidden; box-shadow:0 14px 40px rgba(20,16,10,0.28), 0 2px 6px rgba(20,16,10,0.16); border:1px solid var(--border);">
               <video ref="{{ videoRef }}" onClick="{{ togglePlay }}" playsInline style="width:100%; height:100%; object-fit:cover; display:block; cursor:pointer; background:#17130e;"></video>
               <!-- fullscreen controls (revealed on hover while expanded) -->
               <div ref="{{ fsCloseRef }}" style="position:absolute; inset:0; z-index:40; display:none; opacity:0; transition:opacity .25s ease; pointer-events:none;">
@@ -288,6 +289,32 @@
                 </div>
               </div>
               </sc-if>
+
+              <!-- ===== Joke leader (no surviving timeline) ===== -->
+              <sc-if value="{{ jokeMode }}" hint-placeholder-val="{{ false }}">
+              <div onClick="{{ togglePlay }}" style="position:absolute; inset:0; background:#efe9dd; cursor:pointer; display:flex; flex-direction:column; overflow:hidden;">
+                <div style="display:flex; height:26%; flex-shrink:0;">
+                  <div style="flex:1; background:#cdc4b4;"></div>
+                  <div style="flex:1; background:#dcc488;"></div>
+                  <div style="flex:1; background:#a8cec4;"></div>
+                  <div style="flex:1; background:#b6c7a8;"></div>
+                  <div style="flex:1; background:#c9b6d6;"></div>
+                  <div style="flex:1; background:#d8ab90;"></div>
+                  <div style="flex:1; background:#a9b4c5;"></div>
+                </div>
+                <div style="flex:1; position:relative; background:#211e18; padding:30px 40px; display:flex; flex-direction:column; justify-content:center; min-height:0;">
+                  <span style="position:absolute; left:13px; top:13px; width:13px; height:13px;"><span style="position:absolute; top:6px; left:0; width:13px; height:1px; background:rgba(255,255,255,0.22);"></span><span style="position:absolute; left:6px; top:0; width:1px; height:13px; background:rgba(255,255,255,0.22);"></span></span>
+                  <span style="position:absolute; right:13px; bottom:13px; width:13px; height:13px;"><span style="position:absolute; top:6px; left:0; width:13px; height:1px; background:rgba(255,255,255,0.22);"></span><span style="position:absolute; left:6px; top:0; width:1px; height:13px; background:rgba(255,255,255,0.22);"></span></span>
+                  <div style="font-family:'Geist Mono',monospace; font-size:9.5px; letter-spacing:0.22em; text-transform:uppercase; color:#c77f4a; margin-bottom:16px;">⚠ Timeline Not Found · Media Offline</div>
+                  <div style="font-family:'Archivo Expanded','Archivo',sans-serif; font-weight:700; font-size:clamp(18px,2.5vw,30px); line-height:1.18; letter-spacing:0.005em; color:#f4efe5; max-width:760px;">{{ jokeMsg }}</div>
+                  <div style="display:flex; gap:30px; margin-top:26px; font-family:'Geist Mono',monospace; font-size:10.5px; color:#8a8270;">
+                    <span><span style="color:#6c6657;">TITLE</span>&nbsp;&nbsp;{{ jokeTitle }}</span>
+                    <span><span style="color:#6c6657;">EDITOR</span>&nbsp;&nbsp;Eric Greenburg</span>
+                    <span><span style="color:#6c6657;">STATUS</span>&nbsp;&nbsp;Archived</span>
+                  </div>
+                </div>
+              </div>
+              </sc-if>
             </div>
           </div>
           <!-- transport -->
@@ -366,7 +393,8 @@
    </div>
    <!-- ===== Timeline: full width, wall to wall ===== -->
    <sc-if value="{{ editMode }}" hint-placeholder-val="{{ true }}">
-   <div style="height:240px; flex-shrink:0; background:var(--panel2); border-top:1px solid var(--border); display:flex; flex-direction:column;">
+   <div ref="{{ timelineRef }}" style="position:relative; height:240px; flex-shrink:0; background:var(--panel2); border-top:1px solid var(--border); display:flex; flex-direction:column;">
+     <div onPointerDown="{{ onTimelineResize }}" title="Drag to resize" style="position:absolute; top:-3px; left:0; right:0; height:7px; z-index:25; cursor:row-resize;" style-hover="background:var(--accent); opacity:0.25;"></div>
      <div style="height:42px; display:flex; align-items:center; gap:12px; padding:0 18px; border-bottom:1px solid var(--border2); flex-shrink:0;">
        <span style="display:flex; align-items:center; gap:8px;">
          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--text3)" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -485,6 +513,7 @@ class Component extends DCLogic {
   PROXY = {
     wwe:    "assets/wwe_2k24.mp4",
     whiteclaw: "assets/whiteclaw.mp4",
+    samsung: "assets/samsung_proxy.mp4",
     sintel: "https://media.w3.org/2010/05/sintel/trailer.mp4",
     blazes: "https://www.w3schools.com/html/mov_bbb.mp4",
     bunny:  "https://www.w3schools.com/tags/movie.mp4",
@@ -499,14 +528,22 @@ class Component extends DCLogic {
   CLIPS = {
     light: {
       video:  { bg:"#ebe6f3", border:"#d3c8e6", fg:"#7263a0", tex:"none", texZoom:"repeating-linear-gradient(90deg,transparent 0 23px,rgba(114,99,160,0.05) 23px 24px)" },
-      title:  { bg:"#f6ecdb", border:"#e3c193", fg:"#b07a32", tex:"none", texZoom:"none" },
+      title:  { bg:"#e2efdd", border:"#bdd9b2", fg:"#548a54", tex:"none", texZoom:"none" },
+      still:  { bg:"#f6ecdb", border:"#e3c193", fg:"#b07a32", tex:"none", texZoom:"none" },
+      adjust: { bg:"#f4e2de", border:"#e5bcb3", fg:"#b26a58", tex:"repeating-linear-gradient(45deg,transparent 0 5px,rgba(178,106,88,0.08) 5px 6px)", texZoom:"repeating-linear-gradient(45deg,transparent 0 5px,rgba(178,106,88,0.12) 5px 6px)" },
       audio:  { bg:"#dfeae6", border:"#bcd5cc", fg:"#52897a", tex:"repeating-linear-gradient(90deg,rgba(82,137,122,0.28) 0 1px,transparent 1px 5px)", texZoom:"repeating-linear-gradient(90deg,rgba(82,137,122,0.32) 0 1px,transparent 1px 4px)" },
+      audioMusic: { bg:"#e9e3f2", border:"#cdbfe4", fg:"#6b5aa2", tex:"repeating-linear-gradient(90deg,rgba(107,90,162,0.28) 0 1px,transparent 1px 5px)", texZoom:"repeating-linear-gradient(90deg,rgba(107,90,162,0.32) 0 1px,transparent 1px 4px)" },
+      audioSfx: { bg:"#f7e7cf", border:"#e6bd7c", fg:"#a9781f", tex:"repeating-linear-gradient(90deg,rgba(169,120,31,0.28) 0 1px,transparent 1px 5px)", texZoom:"repeating-linear-gradient(90deg,rgba(169,120,31,0.32) 0 1px,transparent 1px 4px)" },
       locked: { bg:"#e8e4db", border:"#d3cdc0", fg:"#8c8474", tex:"repeating-linear-gradient(45deg,transparent 0 5px,rgba(140,132,116,0.07) 5px 6px)", texZoom:"repeating-linear-gradient(45deg,transparent 0 5px,rgba(140,132,116,0.1) 5px 6px)" },
     },
     dark: {
       video:  { bg:"#2a2640", border:"#4d426f", fg:"#bcace4", tex:"none", texZoom:"repeating-linear-gradient(90deg,transparent 0 23px,rgba(188,172,228,0.06) 23px 24px)" },
-      title:  { bg:"#352a18", border:"#7a5c30", fg:"#e6b87a", tex:"none", texZoom:"none" },
+      title:  { bg:"#22301f", border:"#3f5f38", fg:"#9ccf8f", tex:"none", texZoom:"none" },
+      still:  { bg:"#352a18", border:"#7a5c30", fg:"#e6b87a", tex:"none", texZoom:"none" },
+      adjust: { bg:"#33231f", border:"#6b4239", fg:"#d99b8c", tex:"repeating-linear-gradient(45deg,transparent 0 5px,rgba(217,155,140,0.1) 5px 6px)", texZoom:"repeating-linear-gradient(45deg,transparent 0 5px,rgba(217,155,140,0.14) 5px 6px)" },
       audio:  { bg:"#1c2f2a", border:"#365f53", fg:"#86c4b2", tex:"repeating-linear-gradient(90deg,rgba(134,196,178,0.3) 0 1px,transparent 1px 5px)", texZoom:"repeating-linear-gradient(90deg,rgba(134,196,178,0.36) 0 1px,transparent 1px 4px)" },
+      audioMusic: { bg:"#292142", border:"#4b3f72", fg:"#c3b0ec", tex:"repeating-linear-gradient(90deg,rgba(195,176,236,0.3) 0 1px,transparent 1px 5px)", texZoom:"repeating-linear-gradient(90deg,rgba(195,176,236,0.36) 0 1px,transparent 1px 4px)" },
+      audioSfx: { bg:"#332a17", border:"#75592c", fg:"#e6bd7a", tex:"repeating-linear-gradient(90deg,rgba(230,189,122,0.3) 0 1px,transparent 1px 5px)", texZoom:"repeating-linear-gradient(90deg,rgba(230,189,122,0.36) 0 1px,transparent 1px 4px)" },
       locked: { bg:"#26241c", border:"#3a362b", fg:"#8c8474", tex:"repeating-linear-gradient(45deg,transparent 0 5px,rgba(140,132,116,0.1) 5px 6px)", texZoom:"repeating-linear-gradient(45deg,transparent 0 5px,rgba(140,132,116,0.14) 5px 6px)" },
     },
   };
@@ -514,14 +551,26 @@ class Component extends DCLogic {
   HW = 72;
 
   state = {
-    seqs:null, activeId:"reel", openBins:null, view:"edit",
-    booting:true, bootPct:0, bootStep:0, leaderType:1, expanded:false,
+    seqs:null, activeId:"sfx-export", openBins:null, view:"edit",
+    booting:true, bootPct:0, bootStep:0, leaderType:0, expanded:false,
     time:0, playing:false, pxPerSec:60, selId:null, vol:1, theme:"light",
     form:{ name:"", email:"", subject:"", msg:"" },
   };
 
   // ---------- data ----------
   pad(n){ return String(Math.round(n)).padStart(3,"0"); }
+  // color category for a clip: footage=lavender, title=green, still(image)=pale yellow, adjustment=light red; audio by role: music=purple, sfx=amber, diegetic=teal
+  clipCat(c){
+    if(c.type==="audio"){ const r=(c.role||"").toLowerCase();
+      if(r.indexOf("music")>=0) return "audioMusic";
+      if(r.indexOf("sfx")>=0) return "audioSfx";
+      return "audio"; }
+    const nm=(c.name||"").toLowerCase();
+    if(/adjustment layer/.test(nm)) return "adjust";
+    if(c.type==="title") return "title";
+    if(/\.(png|jpe?g|psd|tiff?|ai|gif|webp|svg|exr)\b/.test(nm) || c.type==="still" || c.type==="image") return "still";
+    return "video";
+  }
   genSeq(id, name, fps, proxy, dur, nV, nA) {
     const vshots = ["A-CAM","B-CAM","BROLL","DRONE","INSERT","OVERLAY"];
     const segNames = ["DIALOGUE","BOOM","LAV","SFX","FOLEY"];
@@ -566,32 +615,6 @@ class Component extends DCLogic {
 
   buildSequences() {
     const seqs = {
-      reel: {
-        id:"reel", name:"Director's Reel 2026", fps:25, proxy:this.PROXY.sintel, duration:52,
-        tracks:[
-          { id:"V2", kind:"video", clips:[
-            {name:"Opening Card", type:"title", start:0, dur:4, in:0, out:4},
-            {name:"Lower 3rd", type:"title", start:40, dur:8, in:0, out:8},
-          ]},
-          { id:"V1", kind:"video", clips:[
-            {name:"Rooftop_GH6_012", type:"video", start:0, dur:14, in:102, out:116},
-            {name:"Studio_A7S_088", type:"video", start:14, dur:11, in:30, out:41},
-            {name:"Drone_044", type:"video", start:25, dur:13, in:8, out:21},
-            {name:"Interview_C", type:"video", start:38, dur:14, in:55, out:69},
-          ]},
-          { id:"A1", kind:"audio", clips:[ {name:"score_stem.wav", type:"audio", start:0, dur:52, in:0, out:52} ]},
-          { id:"A2", kind:"audio", clips:[
-            {name:"vo_greenburg_01.wav", type:"audio", start:1, dur:9, in:0, out:9},
-            {name:"vo_greenburg_02.wav", type:"audio", start:26, dur:12, in:0, out:12},
-          ]},
-          { id:"A3", kind:"audio", clips:[
-            {name:"whoosh_01.wav", type:"audio", start:0, dur:1.5, in:0, out:1.5},
-            {name:"impact_02.wav", type:"audio", start:14, dur:1, in:0, out:1},
-            {name:"riser_03.wav", type:"audio", start:36, dur:3, in:0, out:3},
-          ]},
-          { id:"A4", kind:"audio", clips:[ {name:"amb_rooftop.wav", type:"audio", start:0, dur:52, in:0, out:52} ]},
-        ],
-      },
       spot: {
         id:"spot", name:"Brand Spot — 0:10", fps:30, proxy:this.PROXY.blazes, duration:10,
         tracks:[
@@ -618,11 +641,16 @@ class Component extends DCLogic {
     seqs.ar2 = this.genSeq("ar2","Wedding_Hahn_2020.seq", 25, this.PROXY.blazes, 10, 2, 2);
     seqs.ar3 = this.genSeq("ar3","Corporate_AcmeCo_2019.seq", 25, this.PROXY.sintel, 52, 1, 2);
     seqs.ar4 = this.genSeq("ar4","SpecSpot_RunFree_2018.seq", 24, this.PROXY.bunny, 13, 2, 1);
+    // These are old enough that the project files are long gone — show a joke leader, not a fake cut.
+    seqs.ar1.joke = "Cut this in FCP7 back in 2021. Ain't no way I still have this timeline LOL.";
+    seqs.ar2.joke = "Wedding gig from 2020 — the project file went down with a dead LaCie. Pour one out.";
+    seqs.ar3.joke = "Premiere CS6, on a tower that no longer boots. You're getting the vibes from memory here.";
+    seqs.ar4.joke = "Spec spot, 2018. The XML for this lives in a Dropbox I lost the password to. It happens.";
     return seqs;
   }
 
   BINS = [
-    { name:"Featured",    icon:"star",   color:"#e8954f", open:true,  seqIds:["sfx-export","whiteclaw","reel"] },
+    { name:"Featured",    icon:"star",   color:"#e8954f", open:true,  seqIds:["sfx-export","whiteclaw","samsung"] },
     { name:"Commercial",  icon:"folder", color:"#4db3a4", open:false, seqIds:["spot"] },
     { name:"Music Video", icon:"folder", color:"#9b7fd4", open:false, seqIds:["mv1"] },
     { name:"Long Form",   icon:"folder", color:"#e0b54a", open:false, seqIds:["lf1","lf2","lf3","lf4"] },
@@ -633,7 +661,7 @@ class Component extends DCLogic {
   META = {
     "sfx-export": { prodCo:"2K / Visual Concepts", director:"—", sound:"Eric Greenburg", role:"Editor / Sound Design" },
     whiteclaw: { prodCo:"White Claw", director:"Scott", sound:"Eric Greenburg", role:"Editor" },
-    reel: { prodCo:"Instrument",      director:"—",          sound:"Eric Greenburg", role:"Editor / Sound Design" },
+    samsung: { prodCo:"Samsung Galaxy", director:"—", sound:"Eric Greenburg", role:"Editor" },
     spot: { prodCo:"Instrument",      director:"J. Marlo",   sound:"Eric Greenburg", role:"Editor" },
     mv1:  { prodCo:"Neon Tide",       director:"A. Reyes",   sound:"Eric Greenburg", role:"Editor / Color" },
     lf1:  { prodCo:"Wanderlust Films",director:"S. Okafor",  sound:"M. Vance",        role:"Editor" },
@@ -775,6 +803,11 @@ class Component extends DCLogic {
       seqId:"whiteclaw", jsPath:"./assets/whiteclaw.js", mp4Path:this.PROXY.whiteclaw,
       displayName:"White Claw — Scott (:30)", makeActive:false
     });
+    // Samsung Galaxy DC :30 commercial (Featured).
+    this.loadPortfolio({
+      seqId:"samsung", jsPath:"./assets/samsung.js", mp4Path:this.PROXY.samsung,
+      displayName:"Samsung Galaxy (:30)", makeActive:false
+    });
   }
 
   centerTimeline(){
@@ -829,6 +862,16 @@ class Component extends DCLogic {
   scrubMove(e){ if(this._scrubbing) this.scrubFromEvent(e); if(this._monScrubbing) this.monScrubFromEvent(e); }
   // --- Program-monitor mini scrubber ---
   setMonStrip = (el)=>{ this._monStrip = el; };
+  setSidebar = (el)=>{ this._sidebar = el; if(el){ const w=parseInt(localStorage.getItem("erg_sidebarW")||"",10); if(w>=180&&w<=520) el.style.width=w+"px"; } };
+  setTimelineEl = (el)=>{ this._timeline = el; if(el){ const h=parseInt(localStorage.getItem("erg_timelineH")||"",10); if(h>=120&&h<=560) el.style.height=h+"px"; } };
+  onSidebarResize = (e)=>{ e.preventDefault(); const el=this._sidebar; if(!el) return; const x0=e.clientX, w0=el.getBoundingClientRect().width; document.body.style.cursor="col-resize"; document.body.style.userSelect="none";
+    const mv=(ev)=>{ const w=Math.max(180,Math.min(520,w0+(ev.clientX-x0))); el.style.width=w+"px"; };
+    const up=()=>{ window.removeEventListener("pointermove",mv); window.removeEventListener("pointerup",up); document.body.style.cursor=""; document.body.style.userSelect=""; localStorage.setItem("erg_sidebarW",String(Math.round(el.getBoundingClientRect().width))); };
+    window.addEventListener("pointermove",mv); window.addEventListener("pointerup",up); };
+  onTimelineResize = (e)=>{ e.preventDefault(); const el=this._timeline; if(!el) return; const y0=e.clientY, h0=el.getBoundingClientRect().height; document.body.style.cursor="row-resize"; document.body.style.userSelect="none";
+    const mv=(ev)=>{ const h=Math.max(120,Math.min(560,h0-(ev.clientY-y0))); el.style.height=h+"px"; };
+    const up=()=>{ window.removeEventListener("pointermove",mv); window.removeEventListener("pointerup",up); document.body.style.cursor=""; document.body.style.userSelect=""; localStorage.setItem("erg_timelineH",String(Math.round(el.getBoundingClientRect().height))); };
+    window.addEventListener("pointermove",mv); window.addEventListener("pointerup",up); };
   monScrubFromEvent(e){ const el=this._monStrip; if(!el||!this.active) return; const r=el.getBoundingClientRect(); const f=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width)); this.seekTo(f*this.active.duration); }
   onMonScrubStart = (e)=>{ if(e&&e.stopPropagation)e.stopPropagation(); this._monScrubbing=true; if(this.videoEl && !this.videoEl.paused) this.videoEl.pause(); this.monScrubFromEvent(e); };
 
@@ -868,7 +911,7 @@ class Component extends DCLogic {
     const m=this._monitor, v=this._video; if(!m) return;
     m.dataset.exp="";
     this.setState({expanded:false});
-    Object.assign(m.style,{ position:"relative", left:"", top:"", right:"", bottom:"", width:"auto", height:"100%", maxWidth:"100%", maxHeight:"", aspectRatio:"16 / 9", borderRadius:"9px", border:"1px solid var(--border)", zIndex:"", background:"#17130e" });
+    Object.assign(m.style,{ position:"relative", left:"", top:"", right:"", bottom:"", width:"auto", height:"100%", maxWidth:"100%", maxHeight:"", aspectRatio:"16 / 9", borderRadius:"4.5px", border:"1px solid var(--border)", zIndex:"", background:"#17130e" });
     if(v) v.style.objectFit="cover";
     if(this._fsClose){ this._fsClose.style.display="none"; this._fsClose.style.opacity="0"; }
     if(this._onFsMove){ m.removeEventListener("mousemove", this._onFsMove); this._onFsMove=null; }
@@ -909,6 +952,7 @@ class Component extends DCLogic {
       bootStatus:this.BOOT_STEPS[s.bootStep]||"Ready", bootIsReady:s.bootPct>=100,
       bootFade: s.bootPct>=100 ? "0" : "1", bootPointer: s.bootPct>=100 ? "none" : "auto",
       brand:this.brand, rootRef:this.setRoot, videoRef:this.setVideo, scrollRef:this.setScroll, monitorRef:this.setMonitor,
+      sidebarRef:this.setSidebar, timelineRef:this.setTimelineEl, onSidebarResize:this.onSidebarResize, onTimelineResize:this.onTimelineResize,
       onScrubStart:this.onScrubStart, togglePlay:this.togglePlay, skipStart:this.skipStart, skipEnd:this.skipEnd,
       stepBack:this.stepBack, stepFwd:this.stepFwd, zoomIn:this.zoomIn, zoomOut:this.zoomOut, onZoom:this.onZoom,
       onVolume:this.onVolume, toggleFs:this.toggleFs, toggleTheme:this.toggleTheme, openContact:this.openContact, closeContact:this.closeContact, sendMail:this.sendMail,
@@ -927,7 +971,7 @@ class Component extends DCLogic {
         activeProxy:"", tcBig:"00:00:00:00", tcDur:"00:00:00:00", playing:false, paused:true, playheadLeft:"72px",
         monProgress:"0%", monTicks:[], monMarkers:[], monStripRef:this.setMonStrip, onMonScrubStart:this.onMonScrubStart, scrubDisplay:"none",
         overlayLabel:null, overlayTC:"", selClip:false, selName:"", selRange:"", trackCount:0, rightStatus:"",
-        showLeader:true, leaderTitle:"", leaderFields:[], leaderSlate:"", leaderRes:"", leaderCue:"", activeFps:25, role:"" };
+        showLeader:true, leaderTitle:"", leaderFields:[], leaderSlate:"", leaderRes:"", leaderCue:"", activeFps:25, role:"", jokeMode:false, jokeMsg:"", jokeTitle:"" };
     }
     const seq=this.active, fps=seq.fps, ppx=s.pxPerSec;
     const contentW = (this.HW + seq.duration*ppx + 60);
@@ -958,7 +1002,7 @@ class Component extends DCLogic {
       const baseCol = isAudio?C.audio:C.video;
       return { id:trk.id, h:(isAudio?24:34)+"px", isAudio, isVideo:!isAudio, isMarkerTrack:false, showIcons:true,
         labelColor:isLocked?C.locked.fg:(isAudio?C.audio.fg:C.video.fg),
-        clips:trk.clips.map((c,ci)=>{ let col=C[c.type]||C.video; if(isLocked) col=C.locked; const sel=s.selId===`${ti}:${ci}`;
+        clips:trk.clips.map((c,ci)=>{ let col=C[this.clipCat(c)]||C.video; if(isLocked) col=C.locked; const sel=s.selId===`${ti}:${ci}`;
           return { isBlock:true, isMarker:false, name:c.name, left:(c.start*ppx)+"px", width:Math.max(3,(c.dur*ppx)-2)+"px",
             bg:col.bg, border:sel?P.accent2:col.border, fg:col.fg, texture:zoomed?col.texZoom:col.tex,
             shadow:sel?`0 0 0 1.5px ${P.accent2}`:"none",
@@ -983,7 +1027,8 @@ class Component extends DCLogic {
     for(const trk of seq.tracks) for(const c of trk.clips) if(c.type==="title" && s.time>=c.start && s.time<c.start+c.dur){ overlayLabel=c.name; overlayTC=this.fmtTC(c.start,fps).slice(3,8); }
 
     // leader card  (synced typewriter reveal — shared progress, all fields finish together)
-    const showLeader = !s.playing && s.time < 0.2;
+    const jokeMode = !!seq.joke;
+    const showLeader = !jokeMode && !s.playing && s.time < 0.2;
     const tp = (s.leaderType==null) ? 1 : s.leaderType;
     const T = (str)=>{ str = (str==null?"":""+str); return str.slice(0, Math.ceil(tp*str.length)); };
     const leaderTitleRaw = seq.name.replace(/\s—\s\d+:\d+\s*$/,"").replace(/\.seq$/i,"").replace(/_/g," ");
@@ -1023,6 +1068,7 @@ class Component extends DCLogic {
       scrubDisplay: (showLeader || s.expanded) ? "none" : "block",
       overlayLabel, overlayTC, selClip, selName, selRange, trackCount:seq.tracks.length,
       showLeader, leaderTitle, leaderFields, leaderSlate, leaderRes, leaderCue, activeFps:fps,
+      jokeMode, jokeMsg:seq.joke||"", jokeTitle:leaderTitleRaw,
       role:meta.role,
       rightStatus: contactMode ? "" : `${fps} FPS · ${this.fmtTC(seq.duration,fps).slice(3)}`,
     };

@@ -2,8 +2,8 @@
 // optional role/speedRamp/opacity/effects/transitions fields are renderer hints.
 const seqs = {};
 
-seqs["wwe2k24-launch-60-rc5-240227"] = {
-  id: "wwe2k24-launch-60-rc5-240227",
+seqs["wwe2k24-launch-60-rc5-240227-copy-01"] = {
+  id: "wwe2k24-launch-60-rc5-240227-copy-01",
   name: "wwe2k24_2_Launch_60_rc5_240227 Copy 01",
   fps: 24,
   proxy: "",
@@ -142,13 +142,14 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           }
         },
         {
-          name: "Eye Blink Green Screen Transition.mp4",
+          name: "119-10",
           type: "video",
           role: "proxy-fill",
           start: 4.041667,
           dur: 6.583333,
           in: 4.041667,
-          out: 10.625
+          out: 10.625,
+          edlName: true
         },
         {
           name: "124-3 Hulk MWS",
@@ -168,8 +169,22 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           name: "124-3 Hulk MWS",
           type: "video",
           start: 10.791667,
-          dur: 2.833333,
+          dur: 1.416667,
           in: 4.625,
+          out: 6.041667,
+          role: "footage",
+          speedRamp: {
+            kind: "timeremap",
+            label: "2754%",
+            points: "0,15 42.125984,9.907349 43.307087,9.764226 48.425197,9.422934 49.212598,9.410352 52.755906,9.158707 60.23622,8.240206 62.204724,8.086074 66.535433,7.917787 67.716535,7.824993 70.472441,7.499428 100,4"
+          }
+        },
+        {
+          name: "124-3 Hulk MWS",
+          type: "video",
+          start: 12.208333,
+          dur: 1.416667,
+          in: 6.041667,
           out: 7.458333,
           role: "footage",
           speedRamp: {
@@ -182,9 +197,9 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           name: "C001_231116_C065.mov",
           type: "video",
           start: 13.625,
-          dur: 0.083333,
+          dur: 0.125,
           in: 13.791667,
-          out: 13.875,
+          out: 13.916667,
           role: "footage",
           speedRamp: {
             kind: "timeremap",
@@ -193,35 +208,74 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           }
         },
         {
-          name: "C001_231116_C075.mov",
+          name: "118-3 Stone Cold MWS",
           type: "video",
           role: "proxy-fill",
-          start: 13.708333,
-          dur: 7.916667,
-          in: 13.708333,
-          out: 21.625
+          start: 13.75,
+          dur: 2.666667,
+          in: 13.75,
+          out: 16.416667,
+          edlName: true
+        },
+        {
+          name: "C001_231116_C075.mov",
+          type: "video",
+          start: 16.416667,
+          dur: 1.25,
+          in: 10.166667,
+          out: 11.416667,
+          role: "footage",
+          speedRamp: {
+            kind: "timeremap",
+            label: "2772%",
+            points: "0,15 67.590028,8.290297 72.853186,7.767063 75.900277,7.344959 100,4"
+          }
+        },
+        {
+          name: "108-1",
+          type: "video",
+          role: "proxy-fill",
+          start: 17.666667,
+          dur: 3.875,
+          in: 17.666667,
+          out: 21.541667,
+          edlName: true
         },
         {
           name: "C001_231115_C034.mov",
           type: "video",
-          start: 21.625,
-          dur: 2.416667,
+          start: 21.541667,
+          dur: 1.583333,
           in: 20.708333,
-          out: 23.125,
+          out: 22.291667,
           role: "footage",
           speedRamp: {
             kind: "timeremap",
-            label: "1190%",
-            points: "0,15 78.515008,7.728516 80.884676,7.509364 83.886256,7.361801 84.992101,7.350113 86.097946,7.224465 92.575039,5.72254 100,4"
+            label: "1228%",
+            points: "0,15 80.944625,7.73428 82.57329,7.588352 83.876221,7.511011 84.201954,7.49204 84.527687,7.446803 87.13355,6.867471 100,4"
           }
         },
         {
           name: "C001_231115_C020.mov",
           type: "video",
+          start: 23.125,
+          dur: 1.583333,
+          in: 23.166667,
+          out: 24.75,
+          role: "footage",
+          speedRamp: {
+            kind: "timeremap",
+            label: "1037%",
+            points: "0,15 81.337481,8.948845 84.603421,8.740924 85.692068,8.686469 86.158631,8.617162 86.469673,8.533003 87.713841,8.193069 88.180404,8.125413 90.979782,7.773927 91.446345,7.641914 92.379471,7.245875 100,4"
+          }
+        },
+        {
+          name: "Program Video (proxy fill)",
+          type: "video",
           role: "proxy-fill",
-          start: 24.041667,
-          dur: 1.166667,
-          in: 24.041667,
+          start: 24.708333,
+          dur: 0.5,
+          in: 24.708333,
           out: 25.208333
         },
         {
@@ -241,11 +295,16 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
         {
           name: "C001_231115_C024.mov",
           type: "video",
-          role: "proxy-fill",
           start: 25.333333,
           dur: 0.875,
-          in: 25.333333,
-          out: 26.208333
+          in: 8.5,
+          out: 9.375,
+          role: "footage",
+          speedRamp: {
+            kind: "timeremap",
+            label: "2496%",
+            points: "0,15 42.939481,11.194897 48.70317,10.962475 51.008646,10.697033 55.619597,9.797829 58.789625,9.373629 64.841499,8.56587 66.282421,8.433784 66.282421,8.432514 100,4"
+          }
         },
         {
           name: "C001_231115_C024.mov",
@@ -253,7 +312,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           start: 26.208333,
           dur: 0.25,
           in: 7.625,
-          out: 7.833333,
+          out: 7.875,
           role: "footage",
           speedRamp: {
             kind: "timeremap",
@@ -267,7 +326,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           start: 26.458333,
           dur: 0.166667,
           in: 7.875,
-          out: 8,
+          out: 8.041667,
           role: "footage",
           speedRamp: {
             kind: "timeremap",
@@ -282,13 +341,14 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           ]
         },
         {
-          name: "Adjustment Layer",
+          name: "106-4.3 Roman MCU",
           type: "video",
           role: "proxy-fill",
           start: 26.625,
           dur: 5.125,
           in: 26.625,
-          out: 31.75
+          out: 31.75,
+          edlName: true
         },
         {
           name: "P003C004_240111_RP4B.mov",
@@ -314,7 +374,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           }
         },
         {
-          name: "Adjustment Layer",
+          name: "P002C002_240111_RP4B.mov",
           type: "video",
           role: "proxy-fill",
           start: 36.666667,
@@ -332,13 +392,14 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           role: "footage"
         },
         {
-          name: "Adjustment Layer",
+          name: "PU105_T4",
           type: "video",
           role: "proxy-fill",
           start: 39.875,
           dur: 3.541667,
           in: 39.875,
-          out: 43.416667
+          out: 43.416667,
+          edlName: true
         },
         {
           name: "Program Video (sequence render)",
@@ -350,7 +411,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           role: "proxy-fill"
         },
         {
-          name: "Graphic",
+          name: "2KCAP_Orion_Launch-Trailer_20%_Build-1323871_Feb-9_WM25_Shawn-Michaels_Finisher-Reshoot_02.mp4",
           type: "video",
           role: "proxy-fill",
           start: 45.291667,
@@ -373,7 +434,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           start: 46.666667,
           dur: 0.75,
           in: 3.041667,
-          out: 3.708333,
+          out: 3.791667,
           role: "footage",
           speedRamp: {
             kind: "timeremap",
@@ -387,7 +448,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           start: 47.416667,
           dur: 0.833333,
           in: 1.125,
-          out: 1.916667,
+          out: 1.958333,
           role: "footage",
           speedRamp: {
             kind: "timeremap",
@@ -401,7 +462,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           start: 48.25,
           dur: 0.583333,
           in: 1.875,
-          out: 2.375,
+          out: 2.458333,
           role: "footage",
           speedRamp: {
             kind: "timeremap",
@@ -429,7 +490,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           start: 49.75,
           dur: 0.708333,
           in: 0.291667,
-          out: 0.958333,
+          out: 1,
           role: "footage",
           speedRamp: {
             kind: "timeremap",
@@ -467,11 +528,11 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
         {
           name: "2KCAP_Orion_Launch-Trailer_100%_Build-1307586_WM39_Cody-vs-Roman_Cody-Entrance.mp4",
           type: "video",
-          role: "proxy-fill",
           start: 52.125,
           dur: 0.666667,
-          in: 52.125,
-          out: 52.791667
+          in: 107.416667,
+          out: 108.083333,
+          role: "footage"
         },
         {
           name: "2KCAP_Orion_Launch-Trailer_100%_Build-1323871_Feb-14_WM39_Roman-Reigns-Belt-No-Heyman_01.mp4",
@@ -485,24 +546,57 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
         {
           name: "2KCAP_Orion_Showcase-Trailer_20%_Build_1300079_Jan-23_Stone-Cold-KO_WM38_Stone-Cold-Finisher_03.mp4",
           type: "video",
-          role: "proxy-fill",
           start: 53.416667,
-          dur: 1.583333,
-          in: 53.416667,
-          out: 55
+          dur: 0.708333,
+          in: 0,
+          out: 0.708333,
+          role: "footage",
+          speedRamp: {
+            kind: "timeremap",
+            label: "500%",
+            points: "0,15 29.310345,11.775862 100,4"
+          }
+        },
+        {
+          name: "2KCAP_Orion_Launch-Trailer_20%_Build-1314752_Feb-8_Eddie-Guerrero_Signature_01.mp4",
+          type: "video",
+          start: 54.125,
+          dur: 0.541667,
+          in: 7,
+          out: 7.541667,
+          role: "footage",
+          speedRamp: {
+            kind: "timeremap",
+            label: "700%",
+            points: "0,15 81.553398,6.029126 87.378641,5.38835 100,4"
+          }
+        },
+        {
+          name: "2KCAP_Orion_Launch-Trailer_20%_Build-1314752_Feb-8_AJ-Styles_Throw_02.mp4",
+          type: "video",
+          start: 54.666667,
+          dur: 0.416667,
+          in: 0.5,
+          out: 0.916667,
+          role: "footage",
+          speedRamp: {
+            kind: "timeremap",
+            label: "500%",
+            points: "0,15 23.529412,12.411765 41.176471,10.470588 100,4"
+          }
         },
         {
           name: "2KCAP_Orion_Launch-Trailer_20%_Build-1321180_Feb-9_Mankind_Signature_02.mp4",
           type: "video",
-          start: 55,
-          dur: 0.458333,
-          in: 2.458333,
+          start: 55.083333,
+          dur: 0.375,
+          in: 2.541667,
           out: 2.916667,
           role: "footage",
           speedRamp: {
             kind: "timeremap",
             label: "500%",
-            points: "0,15 54.12844,9.045872 64.220183,7.93578 100,4"
+            points: "0,15 55.963303,8.844037 64.220183,7.93578 100,4"
           }
         },
         {
@@ -520,7 +614,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           start: 56.041667,
           dur: 3.958333,
           in: 0.083333,
-          out: 4
+          out: 4.041667
         }
       ]
     },
@@ -543,7 +637,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           start: 0.041667,
           dur: 0.166667,
           in: 1.166667,
-          out: 1.291667,
+          out: 1.333333,
           role: "footage",
           speedRamp: {
             kind: "timeremap",
@@ -562,7 +656,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           start: 5.375,
           dur: 0.125,
           in: 1.666667,
-          out: 1.75,
+          out: 1.791667,
           role: "footage",
           speedRamp: {
             kind: "timeremap",
@@ -585,7 +679,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           start: 5.541667,
           dur: 0.25,
           in: 1.833333,
-          out: 2.041667,
+          out: 2.083333,
           role: "footage",
           speedRamp: {
             kind: "timeremap",
@@ -599,7 +693,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           start: 6.625,
           dur: 0.125,
           in: 1.666667,
-          out: 1.75,
+          out: 1.791667,
           role: "footage",
           speedRamp: {
             kind: "timeremap",
@@ -622,7 +716,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           start: 6.791667,
           dur: 0.25,
           in: 1.833333,
-          out: 2.041667,
+          out: 2.083333,
           role: "footage",
           speedRamp: {
             kind: "timeremap",
@@ -636,7 +730,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           start: 8.875,
           dur: 0.125,
           in: 1.666667,
-          out: 1.75,
+          out: 1.791667,
           role: "footage",
           speedRamp: {
             kind: "timeremap",
@@ -659,7 +753,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           start: 9.041667,
           dur: 0.208333,
           in: 1.833333,
-          out: 2,
+          out: 2.041667,
           role: "footage",
           speedRamp: {
             kind: "timeremap",
@@ -686,6 +780,117 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           role: "footage"
         },
         {
+          name: "Eye Blink Green Screen Transition.mp4",
+          type: "video",
+          start: 13.583333,
+          dur: 0.125,
+          in: 1.666667,
+          out: 1.791667,
+          role: "footage",
+          speedRamp: {
+            kind: "timeremap",
+            label: "500%",
+            points: "0,15 19.704433,12.832512 20.689655,12.724138 100,4"
+          }
+        },
+        {
+          name: "Black Video 23.98",
+          type: "video",
+          start: 13.708333,
+          dur: 0.041667,
+          in: 1.958333,
+          out: 2,
+          role: "footage"
+        },
+        {
+          name: "Eye Blink Green Screen Transition.mp4",
+          type: "video",
+          start: 13.75,
+          dur: 0.25,
+          in: 1.833333,
+          out: 2.083333,
+          role: "footage",
+          speedRamp: {
+            kind: "timeremap",
+            label: "500%",
+            points: "0,15 21.674877,12.615764 24.137931,12.344828 100,4"
+          }
+        },
+        {
+          name: "Eye Blink Green Screen Transition.mp4",
+          type: "video",
+          start: 16.291667,
+          dur: 0.125,
+          in: 1.666667,
+          out: 1.791667,
+          role: "footage",
+          speedRamp: {
+            kind: "timeremap",
+            label: "500%",
+            points: "0,15 19.704433,12.832512 20.689655,12.724138 100,4"
+          }
+        },
+        {
+          name: "Black Video 23.98",
+          type: "video",
+          start: 16.416667,
+          dur: 0.041667,
+          in: 1.958333,
+          out: 2,
+          role: "footage"
+        },
+        {
+          name: "Eye Blink Green Screen Transition.mp4",
+          type: "video",
+          start: 16.458333,
+          dur: 0.25,
+          in: 1.833333,
+          out: 2.083333,
+          role: "footage",
+          speedRamp: {
+            kind: "timeremap",
+            label: "500%",
+            points: "0,15 21.674877,12.615764 24.137931,12.344828 100,4"
+          }
+        },
+        {
+          name: "Eye Blink Green Screen Transition.mp4",
+          type: "video",
+          start: 23,
+          dur: 0.125,
+          in: 1.666667,
+          out: 1.791667,
+          role: "footage",
+          speedRamp: {
+            kind: "timeremap",
+            label: "500%",
+            points: "0,15 19.704433,12.832512 20.689655,12.724138 100,4"
+          }
+        },
+        {
+          name: "Black Video 23.98",
+          type: "video",
+          start: 23.125,
+          dur: 0.041667,
+          in: 1.958333,
+          out: 2,
+          role: "footage"
+        },
+        {
+          name: "Eye Blink Green Screen Transition.mp4",
+          type: "video",
+          start: 23.166667,
+          dur: 0.208333,
+          in: 1.833333,
+          out: 2.041667,
+          role: "footage",
+          speedRamp: {
+            kind: "timeremap",
+            label: "500%",
+            points: "0,15 21.674877,12.615764 23.64532,12.399015 100,4"
+          }
+        },
+        {
           name: "C001_231115_C024.mov",
           type: "video",
           start: 25.208333,
@@ -697,20 +902,6 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
             kind: "timeremap",
             label: "2496%",
             points: "0,15 42.939481,11.194897 48.70317,10.962475 51.008646,10.697033 55.619597,9.797829 57.925072,9.489204 64.841499,8.56587 66.282421,8.433784 66.282421,8.432514 58.789625,9.416811 100,4"
-          }
-        },
-        {
-          name: "C001_231115_C024.mov",
-          type: "video",
-          start: 25.333333,
-          dur: 0.875,
-          in: 8.5,
-          out: 9.375,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "2496%",
-            points: "0,15 42.939481,11.194897 48.70317,10.962475 51.008646,10.697033 55.619597,9.797829 58.789625,9.373629 64.841499,8.56587 66.282421,8.433784 66.282421,8.432514 100,4"
           }
         },
         {
@@ -833,49 +1024,12 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           }
         },
         {
-          name: "2KCAP_Orion_Launch-Trailer_100%_Build-1307586_WM39_Cody-vs-Roman_Cody-Entrance.mp4",
-          type: "video",
-          start: 52.125,
-          dur: 0.666667,
-          in: 107.416667,
-          out: 108.083333,
-          role: "footage"
-        },
-        {
-          name: "2KCAP_Orion_Showcase-Trailer_20%_Build_1300079_Jan-23_Stone-Cold-KO_WM38_Stone-Cold-Finisher_03.mp4",
-          type: "video",
-          start: 53.416667,
-          dur: 0.666667,
-          in: 0,
-          out: 0.666667,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "500%",
-            points: "0,15 27.586207,11.965517 100,4"
-          }
-        },
-        {
-          name: "2KCAP_Orion_Launch-Trailer_20%_Build-1314752_Feb-8_AJ-Styles_Throw_02.mp4",
-          type: "video",
-          start: 54.625,
-          dur: 0.458333,
-          in: 0.458333,
-          out: 0.875,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "500%",
-            points: "0,15 21.568627,12.627451 41.176471,10.470588 100,4"
-          }
-        },
-        {
           name: "Asset 1@4x.png",
           type: "video",
           start: 56.041667,
           dur: 3.958333,
           in: 4495.541667,
-          out: 4500.458333,
+          out: 4499.5,
           role: "still"
         }
       ]
@@ -884,14 +1038,6 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
       id: "V3",
       kind: "video",
       clips: [
-        {
-          name: "WWE2K24_SUPER-3_v2_4K_ALPHA.png",
-          type: "title",
-          start: -0.041667,
-          dur: 2.708333,
-          in: 4495,
-          out: 4497.708333
-        },
         {
           name: "Adjustment Layer",
           type: "video",
@@ -933,36 +1079,17 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
               dur: 0.25,
               alignment: "start-black",
               at: "out"
+            },
+            {
+              kind: "transition",
+              label: "D",
+              name: "Cross Dissolve",
+              start: 47.583333,
+              dur: 0.25,
+              alignment: "start-black",
+              at: "out"
             }
           ]
-        },
-        {
-          name: "2KCAP_Orion_Showcase-Trailer_20%_Build_1300079_Jan-23_Stone-Cold-KO_WM38_Stone-Cold-Finisher_03.mp4",
-          type: "video",
-          start: 53.416667,
-          dur: 0.708333,
-          in: 0,
-          out: 0.708333,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "500%",
-            points: "0,15 29.310345,11.775862 100,4"
-          }
-        },
-        {
-          name: "2KCAP_Orion_Launch-Trailer_20%_Build-1314752_Feb-8_Eddie-Guerrero_Signature_01.mp4",
-          type: "video",
-          start: 54.125,
-          dur: 0.541667,
-          in: 7,
-          out: 7.5,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "700%",
-            points: "0,15 81.553398,6.029126 87.378641,5.38835 100,4"
-          }
         },
         {
           name: "Adjustment Layer",
@@ -973,6 +1100,15 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           out: 3597.791667,
           role: "adjustment",
           transitions: [
+            {
+              kind: "transition",
+              label: "D",
+              name: "Cross Dissolve",
+              start: 50.5,
+              dur: 0.25,
+              alignment: "start-black",
+              at: "in"
+            },
             {
               kind: "transition",
               label: "D",
@@ -1011,6 +1147,24 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
               kind: "transition",
               label: "D",
               name: "Cross Dissolve",
+              start: 62.291667,
+              dur: 0.625,
+              alignment: "end-black",
+              at: "out"
+            },
+            {
+              kind: "transition",
+              label: "D",
+              name: "Cross Dissolve",
+              start: 65.75,
+              dur: 0.625,
+              alignment: "end-black",
+              at: "out"
+            },
+            {
+              kind: "transition",
+              label: "D",
+              name: "Cross Dissolve",
               start: 55.875,
               dur: 0.333333,
               alignment: "center",
@@ -1025,58 +1179,6 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
       kind: "video",
       clips: [
         {
-          name: "WWE2K24_SUPER-2__v3_4K_ALPHA.png",
-          type: "title",
-          start: -0.041667,
-          dur: 3.416667,
-          in: 4495.333333,
-          out: 4498.75
-        },
-        {
-          name: "WWE2K24_SUPER-1_v4_4K_ALPHA.png",
-          type: "title",
-          start: -0.041667,
-          dur: 3.25,
-          in: 4495.166667,
-          out: 4498.416667
-        },
-        {
-          name: "WWE2K24_SUPER-4_4K_ALPHA.png",
-          type: "title",
-          start: -0.041667,
-          dur: 3.125,
-          in: 4495.5,
-          out: 4498.625
-        },
-        {
-          name: "124-3 Hulk MWS",
-          type: "video",
-          start: 12.208333,
-          dur: 1.416667,
-          in: 6.041667,
-          out: 7.458333,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "2754%",
-            points: "0,15 42.125984,9.907349 43.307087,9.764226 48.425197,9.422934 49.212598,9.410352 52.755906,9.158707 60.23622,8.240206 62.204724,8.086074 66.535433,7.917787 67.716535,7.824993 70.472441,7.499428 100,4"
-          }
-        },
-        {
-          name: "C001_231116_C065.mov",
-          type: "video",
-          start: 13.625,
-          dur: 0.125,
-          in: 13.791667,
-          out: 13.916667,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "1457%",
-            points: "0,15 68.814969,7.42955 71.517672,7.132762 100,4"
-          }
-        },
-        {
           name: "Arena VFX Eye Transition.mov",
           type: "video",
           start: 35.958333,
@@ -1088,44 +1190,26 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
             kind: "timeremap",
             label: "200%",
             points: "0,15 100,4"
-          },
+          }
+        },
+        {
+          name: "Graphic",
+          type: "title",
+          start: 45.208333,
+          dur: 4,
+          in: 3596.375,
+          out: 3600.375,
+          effects: [
+            {
+              kind: "effect",
+              label: "Vector Motion"
+            },
+            {
+              kind: "effect",
+              label: "Contains a mixture of gameplay and cinematics captured on PC."
+            }
+          ],
           transitions: [
-            {
-              kind: "transition",
-              label: "D",
-              name: "Cross Dissolve",
-              start: 47.583333,
-              dur: 0.25,
-              alignment: "start-black",
-              at: "out"
-            },
-            {
-              kind: "transition",
-              label: "D",
-              name: "Cross Dissolve",
-              start: 62.291667,
-              dur: 0.625,
-              alignment: "end-black",
-              at: "out"
-            },
-            {
-              kind: "transition",
-              label: "D",
-              name: "Cross Dissolve",
-              start: 50.5,
-              dur: 0.25,
-              alignment: "start-black",
-              at: "out"
-            },
-            {
-              kind: "transition",
-              label: "D",
-              name: "Cross Dissolve",
-              start: 65.75,
-              dur: 0.625,
-              alignment: "end-black",
-              at: "out"
-            },
             {
               kind: "transition",
               label: "D",
@@ -1153,20 +1237,6 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
       kind: "video",
       clips: [
         {
-          name: "C001_231115_C034.mov",
-          type: "video",
-          start: 21.541667,
-          dur: 2.5,
-          in: 20.708333,
-          out: 23.208333,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "1190%",
-            points: "0,15 78.515008,7.728516 80.884676,7.509364 83.886256,7.361801 84.992101,7.350113 86.097946,7.224465 92.575039,5.72254 100,4"
-          }
-        },
-        {
           name: "P001C003_240111_RP4B.mov",
           type: "video",
           start: 36.5,
@@ -1193,24 +1263,6 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
             label: "100%",
             points: "0,15 88.179148,5.363968 88.325991,5.347921 88.497308,5.310479 88.717572,5.238269 88.76652,5.227571 89.892315,5.104547 100,4"
           }
-        },
-        {
-          name: "Graphic",
-          type: "title",
-          start: 45.208333,
-          dur: 4,
-          in: 3596.375,
-          out: 3600.375,
-          effects: [
-            {
-              kind: "effect",
-              label: "Vector Motion"
-            },
-            {
-              kind: "effect",
-              label: "Contains a mixture of gameplay and cinematics captured on PC."
-            }
-          ]
         }
       ]
     },
@@ -1275,34 +1327,6 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
       kind: "video",
       clips: [
         {
-          name: "C001_231116_C075.mov",
-          type: "video",
-          start: 16.458333,
-          dur: 1.208333,
-          in: 10.541667,
-          out: 11.75,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "2733%",
-            points: "0,15 48.63388,10.091073 64.480874,8.492152 65.300546,8.440468 70.218579,8.318404 72.131148,8.16555 75.136612,7.747676 77.595628,7.377087 100,4"
-          }
-        },
-        {
-          name: "C001_231115_C034.mov",
-          type: "video",
-          start: 21.541667,
-          dur: 1.583333,
-          in: 20.708333,
-          out: 22.291667,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "1228%",
-            points: "0,15 80.944625,7.73428 82.57329,7.588352 83.876221,7.511011 84.201954,7.49204 84.527687,7.446803 87.13355,6.867471 100,4"
-          }
-        },
-        {
           name: "Adjustment Layer",
           type: "video",
           start: 36.666667,
@@ -1314,255 +1338,238 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
       ]
     },
     {
-      id: "V8",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V9",
-      kind: "video",
-      clips: [
-        {
-          name: "C001_231115_C020.mov",
-          type: "video",
-          start: 23.125,
-          dur: 1.583333,
-          in: 23.166667,
-          out: 24.75,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "1037%",
-            points: "0,15 81.337481,8.948845 84.603421,8.740924 85.692068,8.686469 86.158631,8.617162 86.469673,8.533003 87.713841,8.193069 88.180404,8.125413 90.979782,7.773927 91.446345,7.641914 92.379471,7.245875 100,4"
-          }
-        }
-      ]
-    },
-    {
-      id: "V10",
-      kind: "video",
-      clips: [
-        {
-          name: "C001_231116_C075.mov",
-          type: "video",
-          start: 16.416667,
-          dur: 1.25,
-          in: 10.166667,
-          out: 11.416667,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "2772%",
-            points: "0,15 67.590028,8.290297 72.853186,7.767063 75.900277,7.344959 100,4"
-          }
-        }
-      ]
-    },
-    {
-      id: "V11",
-      kind: "video",
-      clips: [
-        {
-          name: "Eye Blink Green Screen Transition.mp4",
-          type: "video",
-          start: 13.583333,
-          dur: 0.125,
-          in: 1.666667,
-          out: 1.75,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "500%",
-            points: "0,15 19.704433,12.832512 20.689655,12.724138 100,4"
-          }
-        },
-        {
-          name: "Black Video 23.98",
-          type: "video",
-          start: 13.708333,
-          dur: 0.041667,
-          in: 1.958333,
-          out: 2,
-          role: "footage"
-        },
-        {
-          name: "Eye Blink Green Screen Transition.mp4",
-          type: "video",
-          start: 13.75,
-          dur: 0.25,
-          in: 1.833333,
-          out: 2.041667,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "500%",
-            points: "0,15 21.674877,12.615764 24.137931,12.344828 100,4"
-          }
-        }
-      ]
-    },
-    {
-      id: "V12",
-      kind: "video",
-      clips: [
-        {
-          name: "Eye Blink Green Screen Transition.mp4",
-          type: "video",
-          start: 23,
-          dur: 0.125,
-          in: 1.666667,
-          out: 1.75,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "500%",
-            points: "0,15 19.704433,12.832512 20.689655,12.724138 100,4"
-          }
-        },
-        {
-          name: "Black Video 23.98",
-          type: "video",
-          start: 23.125,
-          dur: 0.041667,
-          in: 1.958333,
-          out: 2,
-          role: "footage"
-        },
-        {
-          name: "Eye Blink Green Screen Transition.mp4",
-          type: "video",
-          start: 23.166667,
-          dur: 0.208333,
-          in: 1.833333,
-          out: 2,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "500%",
-            points: "0,15 21.674877,12.615764 23.64532,12.399015 100,4"
-          }
-        }
-      ]
-    },
-    {
-      id: "V13",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V14",
-      kind: "video",
-      clips: [
-        {
-          name: "Eye Blink Green Screen Transition.mp4",
-          type: "video",
-          start: 16.291667,
-          dur: 0.125,
-          in: 1.666667,
-          out: 1.75,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "500%",
-            points: "0,15 19.704433,12.832512 20.689655,12.724138 100,4"
-          }
-        },
-        {
-          name: "Black Video 23.98",
-          type: "video",
-          start: 16.416667,
-          dur: 0.041667,
-          in: 1.958333,
-          out: 2,
-          role: "footage"
-        },
-        {
-          name: "Eye Blink Green Screen Transition.mp4",
-          type: "video",
-          start: 16.458333,
-          dur: 0.25,
-          in: 1.833333,
-          out: 2.041667,
-          role: "footage",
-          speedRamp: {
-            kind: "timeremap",
-            label: "500%",
-            points: "0,15 21.674877,12.615764 24.137931,12.344828 100,4"
-          }
-        }
-      ]
-    },
-    {
-      id: "V15",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V16",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V17",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V18",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V19",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V20",
-      kind: "video",
-      clips: []
-    },
-    {
-      id: "V21",
-      kind: "video",
-      clips: []
-    },
-    {
       id: "A1",
       kind: "audio",
       clips: [
         {
-          name: "ES_Stadium Crowd 2 - SFX Producer.wav",
+          name: "106T05.WAV",
           type: "audio",
-          start: -0.041667,
-          dur: 7.125,
-          in: 60.708333,
-          out: 67.833333,
+          start: 29.083333,
+          dur: 0.166667,
+          in: 54.791667,
+          out: 54.958333,
+          role: "audio-diegetic",
           audioLevel: {
             kind: "volume",
-            label: "-2dB",
+            label: "+5dB",
             points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 119.5,
-              dur: 1.041667,
-              alignment: "start-black",
-              at: "out"
-            },
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 125.625,
-              dur: 1,
-              alignment: "end-black",
-              at: "out"
-            }
-          ]
+          }
+        },
+        {
+          name: "A004C010_231115_RP3G.mov",
+          type: "audio",
+          start: 29.083333,
+          dur: 0.166667,
+          in: 78.333333,
+          out: 78.5,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+5dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "106-4.3",
+          type: "audio",
+          start: 29.25,
+          dur: 2.291667,
+          in: 70.375,
+          out: 72.666667,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+5dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "P003C004_240111_RP4B.mov",
+          type: "audio",
+          start: 34.208333,
+          dur: 1.458333,
+          in: 58.541667,
+          out: 60,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+11dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "14T04.WAV",
+          type: "audio",
+          start: 35.666667,
+          dur: 1.166667,
+          in: 46.791667,
+          out: 47.958333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,4 100,15"
+          }
+        },
+        {
+          name: "P001C003_240111_RP4B.mov",
+          type: "audio",
+          start: 37,
+          dur: 1.166667,
+          in: 426.541667,
+          out: 427.708333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+13dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "P002C003_240111_RP4B.mov",
+          type: "audio",
+          start: 38.5,
+          dur: 1.833333,
+          in: 198.75,
+          out: 200.583333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+12dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "A004C007_231206_RP4B.mov",
+          type: "audio",
+          start: 40.791667,
+          dur: 2.791667,
+          in: 17.333333,
+          out: 20.125,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+13dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "B001C007_231206_ROOG.mov",
+          type: "audio",
+          start: 40.791667,
+          dur: 2.791667,
+          in: 10.75,
+          out: 13.541667,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+13dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "PU105_T4.wav",
+          type: "audio",
+          start: 40.791667,
+          dur: 2.791667,
+          in: 27.291667,
+          out: 30.083333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+13dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "A004C008_231206_RP4B.mov",
+          type: "audio",
+          start: 43.583333,
+          dur: 2.041667,
+          in: 34.958333,
+          out: 37,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+16dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "B002C001_231206_ROOG.mov",
+          type: "audio",
+          start: 43.583333,
+          dur: 2.041667,
+          in: 26.916667,
+          out: 28.958333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+16dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "PU106_T1.wav",
+          type: "audio",
+          start: 43.583333,
+          dur: 2.041667,
+          in: 47.625,
+          out: 49.666667,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+16dB",
+            points: "0,15 100,15"
+          }
+        }
+      ]
+    },
+    {
+      id: "A2",
+      kind: "audio",
+      clips: [
+        {
+          name: "Triple H.m4a",
+          type: "audio",
+          start: 0.458333,
+          dur: 0.791667,
+          in: 5.833333,
+          out: 6.625,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+1dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "DC001_13.mov",
+          type: "audio",
+          start: 2.958333,
+          dur: 1.125,
+          in: 17.75,
+          out: 18.875,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,4 100,15"
+          }
+        },
+        {
+          name: "PU102_T4.wav",
+          type: "audio",
+          start: 2.958333,
+          dur: 1.125,
+          in: 18.375,
+          out: 19.5,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,4 100,15"
+          }
         },
         {
           name: "hogan_grunts_v1.m4a",
@@ -1571,6 +1578,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           dur: 1.916667,
           in: 18.5,
           out: 20.416667,
+          role: "audio-diegetic",
           audioLevel: {
             kind: "volume",
             label: "+7dB",
@@ -1589,877 +1597,13 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           ]
         },
         {
-          name: "Hits.wav",
-          type: "audio",
-          start: 9.541667,
-          dur: 0.958333,
-          in: 26.958333,
-          out: 27.916667,
-          audioLevel: {
-            kind: "volume",
-            label: "+6dB",
-            points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 10.125,
-              dur: 0.375,
-              alignment: "end-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "Risers.wav",
-          type: "audio",
-          start: 10.5,
-          dur: 3.125,
-          in: 19.791667,
-          out: 22.916667,
-          audioLevel: {
-            kind: "volume",
-            label: "VOL",
-            points: "0,15 100,4"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 10.5,
-              dur: 0.791667,
-              alignment: "start-black",
-              at: "in"
-            }
-          ]
-        },
-        {
-          name: "WWE2K24_Audio_LaunchTrail2rev1-USA-Nielsen.wav",
-          type: "audio",
-          start: 13.625,
-          dur: 2.708333,
-          in: 242.5,
-          out: 245.208333,
-          audioLevel: {
-            kind: "volume",
-            label: "+12dB",
-            points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 16.166667,
-              dur: 0.166667,
-              alignment: "end-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "2K24_ConsumerFacing_1116-MP4.mp4",
-          type: "audio",
-          start: 16.291667,
-          dur: 1.333333,
-          in: 3159.125,
-          out: 3160.458333,
-          audioLevel: {
-            kind: "volume",
-            label: "+13dB",
-            points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 16.291667,
-              dur: 1,
-              alignment: "start-black",
-              at: "in"
-            }
-          ]
-        },
-        {
-          name: "2K24_ConsumerFacing_1116-MP4.mp4",
-          type: "audio",
-          start: 17.625,
-          dur: 0.916667,
-          in: 3160.458333,
-          out: 3161.375,
-          audioLevel: {
-            kind: "volume",
-            label: "+13dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "WWE2K24_Audio_LaunchTrailer_REV2-USA-Nielsen.wav",
-          type: "audio",
-          start: 18.583333,
-          dur: 0.916667,
-          in: 120,
-          out: 120.916667,
-          audioLevel: {
-            kind: "volume",
-            label: "+12dB",
-            points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 27.583333,
-              dur: 0.625,
-              alignment: "start-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "2 - swoosh - norm.wav",
-          type: "audio",
-          start: 19.5,
-          dur: 0.75,
-          in: 0.166667,
-          out: 0.916667
-        },
-        {
-          name: "CC-DS Punch Cinematic 02.wav",
-          type: "audio",
-          start: 20.25,
-          dur: 0.583333,
-          in: 6.75,
-          out: 7.333333
-        },
-        {
-          name: "WWE2K24_Audio_LaunchTrail2rev1-USA-Nielsen.wav",
-          type: "audio",
-          start: 20.875,
-          dur: 2.666667,
-          in: 14.916667,
-          out: 17.583333,
-          audioLevel: {
-            kind: "volume",
-            label: "-1dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "WWE2K24_Audio_LaunchTrail2rev1-USA-Nielsen.wav",
-          type: "audio",
-          start: 23.75,
-          dur: 1.375,
-          in: 62.125,
-          out: 63.5
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix).mp3",
-          type: "audio",
-          start: 25.083333,
-          dur: 1.041667,
-          in: 109.166667,
-          out: 110.208333,
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 25.083333,
-              dur: 0.25,
-              alignment: "start-black",
-              at: "in"
-            }
-          ]
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
-          type: "audio",
-          start: 26.125,
-          dur: 2.541667,
-          in: 131.416667,
-          out: 133.958333
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
-          type: "audio",
-          start: 28.666667,
-          dur: 3.583333,
-          in: 133.958333,
-          out: 137.541667,
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 31.166667,
-              dur: 1.083333,
-              alignment: "center",
-              at: "out"
-            },
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 35.208333,
-              dur: 0.083333,
-              alignment: "end-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "P003C004_240111_RP4B.mov",
-          type: "audio",
-          start: 34.208333,
-          dur: 1.458333,
-          in: 58.541667,
-          out: 60,
-          audioLevel: {
-            kind: "volume",
-            label: "+11dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "14T04.WAV",
-          type: "audio",
-          start: 35.666667,
-          dur: 1.166667,
-          in: 46.791667,
-          out: 47.958333,
-          audioLevel: {
-            kind: "volume",
-            label: "VOL",
-            points: "0,4 100,15"
-          }
-        },
-        {
-          name: "P001C003_240111_RP4B.mov",
-          type: "audio",
-          start: 37,
-          dur: 1.166667,
-          in: 426.541667,
-          out: 427.708333,
-          audioLevel: {
-            kind: "volume",
-            label: "+13dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "16BT03.WAV",
-          type: "audio",
-          start: 38.416667,
-          dur: 0.666667,
-          in: 144.708333,
-          out: 145.375,
-          audioLevel: {
-            kind: "volume",
-            label: "+25dB",
-            points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 38.416667,
-              dur: 0.25,
-              alignment: "start-black",
-              at: "in"
-            }
-          ]
-        },
-        {
-          name: "triple_h_headset_v1.m4a",
-          type: "audio",
-          start: 39.416667,
-          dur: 0.791667,
-          in: 12.916667,
-          out: 13.708333,
-          audioLevel: {
-            kind: "volume",
-            label: "+8dB",
-            points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 40.125,
-              dur: 0.083333,
-              alignment: "end-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "A004C007_231206_RP4B.mov",
-          type: "audio",
-          start: 40.791667,
-          dur: 2.791667,
-          in: 17.333333,
-          out: 20.125,
-          audioLevel: {
-            kind: "volume",
-            label: "+13dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "A004C008_231206_RP4B.mov",
-          type: "audio",
-          start: 43.583333,
-          dur: 2.041667,
-          in: 34.958333,
-          out: 37,
-          audioLevel: {
-            kind: "volume",
-            label: "+16dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix).mp3",
-          type: "audio",
-          start: 45.875,
-          dur: 5.375,
-          in: 153,
-          out: 158.375
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix).mp3",
-          type: "audio",
-          start: 51.25,
-          dur: 5.208333,
-          in: 94.083333,
-          out: 99.291667
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
-          type: "audio",
-          start: 56.458333,
-          dur: 3.208333,
-          in: 176.333333,
-          out: 179.541667,
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 57.416667,
-              dur: 2.25,
-              alignment: "end-black",
-              at: "out"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: "A2",
-      kind: "audio",
-      clips: [
-        {
-          name: "ES_Stadium Crowd 2 - SFX Producer.wav",
-          type: "audio",
-          start: -0.041667,
-          dur: 5.916667,
-          in: 60.708333,
-          out: 66.625,
-          audioLevel: {
-            kind: "volume",
-            label: "-2dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
-          type: "audio",
-          start: 6.625,
-          dur: 2.291667,
-          in: 42.5,
-          out: 44.791667,
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 8.5,
-              dur: 0.416667,
-              alignment: "center",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "WWE2K24_Audio_LaunchTrailer_REV2-USA-Nielsen.wav",
-          type: "audio",
-          start: 8.958333,
-          dur: 0.416667,
-          in: 120.541667,
-          out: 120.958333,
-          audioLevel: {
-            kind: "volume",
-            label: "+12dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
-          type: "audio",
-          start: 9.833333,
-          dur: 3.083333,
-          in: 53.583333,
-          out: 56.666667,
-          audioLevel: {
-            kind: "volume",
-            label: "VOL",
-            points: "0,4 6.185567,15 74.226804,15 100,4"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 12.75,
-              dur: 0.166667,
-              alignment: "end-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
-          type: "audio",
-          start: 13.166667,
-          dur: 0.5,
-          in: 109.708333,
-          out: 110.208333
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
-          type: "audio",
-          start: 13.666667,
-          dur: 3,
-          in: 74.666667,
-          out: 77.666667,
-          audioLevel: {
-            kind: "volume",
-            label: "VOL",
-            points: "0,4 14.285714,15 71.428571,15 100,4"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 16.5,
-              dur: 0.166667,
-              alignment: "center",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "CC-DS Punch Cinematic 02.wav",
-          type: "audio",
-          start: 17.75,
-          dur: 1.75,
-          in: 4.25,
-          out: 6
-        },
-        {
-          name: "WWE2K24_Audio_LaunchTrail2rev1-USA-Nielsen.wav",
-          type: "audio",
-          start: 19.583333,
-          dur: 2.041667,
-          in: 25.333333,
-          out: 27.375
-        },
-        {
-          name: "Hits.wav",
-          type: "audio",
-          start: 21.916667,
-          dur: 2.708333,
-          in: 25.875,
-          out: 28.583333,
-          audioLevel: {
-            kind: "volume",
-            label: "+3dB",
-            points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 23.166667,
-              dur: 1.458333,
-              alignment: "end-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "WWE2K24_Audio_LaunchTrail2rev1-USA-Nielsen.wav",
-          type: "audio",
-          start: 24.583333,
-          dur: 1.458333,
-          in: 71.25,
-          out: 72.708333,
-          audioLevel: {
-            kind: "volume",
-            label: "+5dB",
-            points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 25.625,
-              dur: 0.416667,
-              alignment: "end-black",
-              at: "out"
-            },
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 30.958333,
-              dur: 1.041667,
-              alignment: "start-black",
-              at: "out"
-            },
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 35.875,
-              dur: 1,
-              alignment: "end-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "BURNISH HITS_SLAMS_BOOMS_SOUND EFFECTS.wav",
-          type: "audio",
-          start: 26.333333,
-          dur: 2.333333,
-          in: 183.916667,
-          out: 186.25,
-          audioLevel: {
-            kind: "volume",
-            label: "VOL",
-            points: "0,4 100,15"
-          }
-        },
-        {
-          name: "erg_Best_Whooshes.wav",
-          type: "audio",
-          start: 28.666667,
-          dur: 3.166667,
-          in: 491.875,
-          out: 495.041667,
-          audioLevel: {
-            kind: "volume",
-            label: "+8dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "erg_Best_Whooshes.wav",
-          type: "audio",
-          start: 31.833333,
-          dur: 0.416667,
-          in: 494.625,
-          out: 495.041667,
-          audioLevel: {
-            kind: "volume",
-            label: "+8dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
-          type: "audio",
-          start: 35.166667,
-          dur: 2.625,
-          in: 119.666667,
-          out: 122.291667,
-          audioLevel: {
-            kind: "volume",
-            label: "VOL",
-            points: "0,4 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 36.625,
-              dur: 1.166667,
-              alignment: "center",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "triple_h_headset_v1.m4a",
-          type: "audio",
-          start: 37.833333,
-          dur: 1.083333,
-          in: 3.5,
-          out: 4.583333,
-          audioLevel: {
-            kind: "volume",
-            label: "0dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "A004C007_231206_RP4B.mov",
-          type: "audio",
-          start: 39.833333,
-          dur: 0.958333,
-          in: 16.375,
-          out: 17.333333,
-          audioLevel: {
-            kind: "volume",
-            label: "+13dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "B001C007_231206_ROOG.mov",
-          type: "audio",
-          start: 40.791667,
-          dur: 2.791667,
-          in: 10.75,
-          out: 13.541667,
-          audioLevel: {
-            kind: "volume",
-            label: "+13dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "A005C003_231206_RP4B.mov",
-          type: "audio",
-          start: 43.583333,
-          dur: 2.041667,
-          in: 39.875,
-          out: 41.916667,
-          audioLevel: {
-            kind: "volume",
-            label: "+23dB",
-            points: "0,15 100,15"
-          }
-        }
-      ]
-    },
-    {
-      id: "A3",
-      kind: "audio",
-      clips: [
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
-          type: "audio",
-          start: -0.041667,
-          dur: 4.666667,
-          in: 11.5,
-          out: 16.166667,
-          audioLevel: {
-            kind: "volume",
-            label: "VOL",
-            points: "0,4 100,15"
-          }
-        },
-        {
-          name: "WWE2K24_Audio_LaunchTrailer_REV2-USA-Nielsen.wav",
-          type: "audio",
-          start: 5.583333,
-          dur: 2.041667,
-          in: 17.25,
-          out: 19.291667,
-          audioLevel: {
-            kind: "volume",
-            label: "+12dB",
-            points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 7.541667,
-              dur: 0.083333,
-              alignment: "center",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
-          type: "audio",
-          start: 8.5,
-          dur: 1.333333,
-          in: 87.166667,
-          out: 88.5,
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 8.5,
-              dur: 0.416667,
-              alignment: "center",
-              at: "in"
-            }
-          ]
-        },
-        {
-          name: "Hits.wav",
-          type: "audio",
-          start: 9.958333,
-          dur: 1.541667,
-          in: 16.041667,
-          out: 17.583333,
-          audioLevel: {
-            kind: "volume",
-            label: "+10dB",
-            points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 10.75,
-              dur: 0.75,
-              alignment: "end-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "WWE2K24_Audio_LaunchTrailer_REV2-USA-Nielsen.wav",
-          type: "audio",
-          start: 12.166667,
-          dur: 1.458333,
-          in: 196.041667,
-          out: 197.5,
-          audioLevel: {
-            kind: "volume",
-            label: "+12dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "CC-DS Punch Knuckle Bright Hard 02.wav",
-          type: "audio",
-          start: 14.666667,
-          dur: 0.541667,
-          in: 1.375,
-          out: 1.916667
-        },
-        {
-          name: "CC-DS Punch Torso Hard 01.wav",
-          type: "audio",
-          start: 15.916667,
-          dur: 0.5,
-          in: 4.375,
-          out: 4.875
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
-          type: "audio",
-          start: 16.5,
-          dur: 1.958333,
-          in: 80.875,
-          out: 82.833333,
-          audioLevel: {
-            kind: "volume",
-            label: "VOL",
-            points: "0,4 14.285714,15 71.428571,15 100,4"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 16.5,
-              dur: 0.166667,
-              alignment: "center",
-              at: "in"
-            }
-          ]
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix).mp3",
-          type: "audio",
-          start: 18.458333,
-          dur: 4.375,
-          in: 85.541667,
-          out: 89.916667
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix).mp3",
-          type: "audio",
-          start: 22.833333,
-          dur: 2.083333,
-          in: 95.291667,
-          out: 97.375,
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 24.458333,
-              dur: 0.5,
-              alignment: "center",
-              at: "out"
-            },
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 25.666667,
-              dur: 0.416667,
-              alignment: "end-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "WWE2K24_Audio_LaunchTrail2rev1-USA-Nielsen.wav",
-          type: "audio",
-          start: 25.208333,
-          dur: 1.166667,
-          in: 155.208333,
-          out: 156.375,
-          audioLevel: {
-            kind: "volume",
-            label: "+12dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
           name: "107T02.WAV",
           type: "audio",
           start: 26.75,
           dur: 1.916667,
           in: 10.208333,
           out: 12.125,
+          role: "audio-diegetic",
           audioLevel: {
             kind: "volume",
             label: "+8dB",
@@ -2467,28 +1611,46 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           }
         },
         {
-          name: "BURNISH HITS_SLAMS_BOOMS_SOUND EFFECTS.wav",
+          name: "A004C012_231115_RP3G.mov",
           type: "audio",
-          start: 28.666667,
-          dur: 1.5,
-          in: 94.75,
-          out: 96.25,
+          start: 26.75,
+          dur: 1.916667,
+          in: 6.083333,
+          out: 8,
+          role: "audio-diegetic",
           audioLevel: {
             kind: "volume",
-            label: "+6dB",
+            label: "+8dB",
             points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 29.166667,
-              dur: 1,
-              alignment: "end-black",
-              at: "out"
-            }
-          ]
+          }
+        },
+        {
+          name: "107T02.WAV",
+          type: "audio",
+          start: 28.666667,
+          dur: 1.458333,
+          in: 12.125,
+          out: 13.583333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+8dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "A004C012_231115_RP3G.mov",
+          type: "audio",
+          start: 28.666667,
+          dur: 1.458333,
+          in: 8,
+          out: 9.458333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+8dB",
+            points: "0,15 100,15"
+          }
         },
         {
           name: "107T02.WAV",
@@ -2497,6 +1659,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           dur: 0.416667,
           in: 13.166667,
           out: 13.583333,
+          role: "audio-diegetic",
           audioLevel: {
             kind: "volume",
             label: "+8dB",
@@ -2524,89 +1687,30 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           ]
         },
         {
-          name: "BURNISH HITS_SLAMS_BOOMS_SOUND EFFECTS.wav",
+          name: "A004C012_231115_RP3G.mov",
           type: "audio",
-          start: 30.5,
-          dur: 2,
-          in: 94.75,
-          out: 96.75,
+          start: 30.125,
+          dur: 0.416667,
+          in: 9.041667,
+          out: 9.458333,
+          role: "audio-diegetic",
           audioLevel: {
             kind: "volume",
-            label: "+6dB",
+            label: "+8dB",
             points: "0,15 100,15"
           }
         },
         {
-          name: "P002C003_240111_RP4B.mov",
+          name: "16BT03.WAV",
           type: "audio",
-          start: 38.5,
-          dur: 1.833333,
-          in: 198.75,
-          out: 200.583333,
+          start: 38.416667,
+          dur: 0.666667,
+          in: 144.708333,
+          out: 145.375,
+          role: "audio-diegetic",
           audioLevel: {
             kind: "volume",
-            label: "+12dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "PU105_T4.wav",
-          type: "audio",
-          start: 40.791667,
-          dur: 2.791667,
-          in: 27.291667,
-          out: 30.083333,
-          audioLevel: {
-            kind: "volume",
-            label: "+13dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "B002C001_231206_ROOG.mov",
-          type: "audio",
-          start: 43.583333,
-          dur: 2.041667,
-          in: 26.916667,
-          out: 28.958333,
-          audioLevel: {
-            kind: "volume",
-            label: "+16dB",
-            points: "0,15 100,15"
-          }
-        }
-      ]
-    },
-    {
-      id: "A4",
-      kind: "audio",
-      clips: [
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
-          type: "audio",
-          start: -0.041667,
-          dur: 4.125,
-          in: 115.041667,
-          out: 119.166667
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix).mp3",
-          type: "audio",
-          start: 4.083333,
-          dur: 4.416667,
-          in: 16.416667,
-          out: 20.833333
-        },
-        {
-          name: "ALIBI-FX-Drums-Epic Drum Finish 1_STEM Riser.aiff",
-          type: "audio",
-          start: 8.583333,
-          dur: 1.375,
-          in: 1.875,
-          out: 3.25,
-          audioLevel: {
-            kind: "volume",
-            label: "-10dB",
+            label: "+25dB",
             points: "0,15 100,15"
           },
           transitions: [
@@ -2614,13 +1718,103 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
               kind: "transition",
               label: "AF",
               name: "Cross Fade (+3dB)",
-              start: 8.583333,
-              dur: 0.583333,
+              start: 38.416667,
+              dur: 0.25,
               alignment: "start-black",
               at: "in"
             }
           ]
         },
+        {
+          name: "A004C007_231206_RP4B.mov",
+          type: "audio",
+          start: 39.833333,
+          dur: 0.958333,
+          in: 16.375,
+          out: 17.333333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+13dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "B001C007_231206_ROOG.mov",
+          type: "audio",
+          start: 39.833333,
+          dur: 0.958333,
+          in: 9.791667,
+          out: 10.75,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+13dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "PU105_T4.wav",
+          type: "audio",
+          start: 39.833333,
+          dur: 0.958333,
+          in: 26.333333,
+          out: 27.291667,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+13dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "A005C003_231206_RP4B.mov",
+          type: "audio",
+          start: 43.583333,
+          dur: 2.041667,
+          in: 39.875,
+          out: 41.916667,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+23dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "B002C006_231206_ROOG.mov",
+          type: "audio",
+          start: 43.583333,
+          dur: 2.041667,
+          in: 41.041667,
+          out: 43.083333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+23dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "PU106C_T1.wav",
+          type: "audio",
+          start: 43.583333,
+          dur: 2.041667,
+          in: 47.541667,
+          out: 49.583333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+23dB",
+            points: "0,15 100,15"
+          }
+        }
+      ]
+    },
+    {
+      id: "A3",
+      kind: "audio",
+      clips: [
         {
           name: "WWE2K24_Audio_LaunchTrail2rev1-USA-Nielsen.wav",
           type: "audio",
@@ -2628,6 +1822,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           dur: 1.583333,
           in: 258.541667,
           out: 260.125,
+          role: "audio-diegetic",
           audioLevel: {
             kind: "volume",
             label: "+12dB",
@@ -2646,450 +1841,18 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           ]
         },
         {
-          name: "ALIBI-FX-Lifestyle-Transitions-Swift_Full.aiff",
+          name: "107T02.WAV",
           type: "audio",
-          start: 12.458333,
-          dur: 1.791667,
-          in: 0,
-          out: 1.791667,
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 10.5,
-              dur: 0.208333,
-              alignment: "start-black",
-              at: "in"
-            },
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 11.166667,
-              dur: 1.291667,
-              alignment: "end-black",
-              at: "in"
-            },
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 17.333333,
-              dur: 0.208333,
-              alignment: "start-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "CC-DS Punch Knuckle Blunt Medium 02.wav",
-          type: "audio",
-          start: 14.666667,
-          dur: 0.5,
-          in: 0.166667,
-          out: 0.666667
-        },
-        {
-          name: "DSGNMisc_ORGANIC IMPACT HIGH-Clash_B00M_BRUTE FORCE.wav",
-          type: "audio",
-          start: 16.25,
-          dur: 0.916667,
-          in: 0.166667,
-          out: 1.083333
-        },
-        {
-          name: "CC-DS Punch Knuckle Bright Medium 02.wav",
-          type: "audio",
-          start: 17.833333,
-          dur: 0.583333,
-          in: 1.625,
-          out: 2.208333
-        },
-        {
-          name: "CC-CK Punch Slap Sweetener 06.wav",
-          type: "audio",
-          start: 18.625,
-          dur: 0.5,
-          in: 4.625,
-          out: 5.125,
+          start: 26.75,
+          dur: 1.916667,
+          in: 10.208333,
+          out: 12.125,
+          role: "audio-diegetic",
           audioLevel: {
             kind: "volume",
-            label: "+7dB",
+            label: "+8dB",
             points: "0,15 100,15"
           }
-        },
-        {
-          name: "ALIBI-FX-Lifestyle-Transitions-Answer Me_Full.aiff",
-          type: "audio",
-          start: 19.625,
-          dur: 0.958333,
-          in: 0.583333,
-          out: 1.541667
-        },
-        {
-          name: "WHSH_CINEMATIC GENERIC SLOW-Ending Story_B00M_CMDS.wav",
-          type: "audio",
-          start: 20.541667,
-          dur: 1.291667,
-          in: 0,
-          out: 1.291667,
-          audioLevel: {
-            kind: "volume",
-            label: "+6dB",
-            points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 18.208333,
-              dur: 0.958333,
-              alignment: "end-black",
-              at: "in"
-            },
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 21.5,
-              dur: 0.333333,
-              alignment: "center",
-              at: "out"
-            },
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 23.875,
-              dur: 0.916667,
-              alignment: "end-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "WHSH_CINEMATIC GENERIC SLOW-Ending Story_B00M_CMDS.wav",
-          type: "audio",
-          start: 22.25,
-          dur: 1.5,
-          in: 1.75,
-          out: 3.25,
-          audioLevel: {
-            kind: "volume",
-            label: "+6dB",
-            points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 23.041667,
-              dur: 0.708333,
-              alignment: "end-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "CC-DS Punch Cinematic 02.wav",
-          type: "audio",
-          start: 24,
-          dur: 3.083333,
-          in: 4.25,
-          out: 7.333333
-        },
-        {
-          name: "CLOTHMisc_SWEETENER-Cloth Duffle Bag Rolled Hit Hand Impact_B00M_MMCK.wav",
-          type: "audio",
-          start: 28.541667,
-          dur: 0.416667,
-          in: 0,
-          out: 0.416667,
-          audioLevel: {
-            kind: "volume",
-            label: "+3dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "106T05.WAV",
-          type: "audio",
-          start: 29.083333,
-          dur: 0.166667,
-          in: 54.791667,
-          out: 54.958333,
-          audioLevel: {
-            kind: "volume",
-            label: "+5dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "106-4.3",
-          type: "audio",
-          start: 29.25,
-          dur: 2.291667,
-          in: 70.375,
-          out: 72.666667,
-          audioLevel: {
-            kind: "volume",
-            label: "+5dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "triple_h_headset_v1.m4a",
-          type: "audio",
-          start: 38.541667,
-          dur: 1.083333,
-          in: 4.833333,
-          out: 5.916667,
-          audioLevel: {
-            kind: "volume",
-            label: "0dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "B001C007_231206_ROOG.mov",
-          type: "audio",
-          start: 39.833333,
-          dur: 0.958333,
-          in: 9.791667,
-          out: 10.75,
-          audioLevel: {
-            kind: "volume",
-            label: "+13dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "A004C006_231206_RP4B.mov",
-          type: "audio",
-          start: 42.166667,
-          dur: 0.791667,
-          in: 66.041667,
-          out: 66.833333,
-          audioLevel: {
-            kind: "volume",
-            label: "+14dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "A004C006_231206_RP4B.mov",
-          type: "audio",
-          start: 42.958333,
-          dur: 1,
-          in: 41.791667,
-          out: 42.791667,
-          audioLevel: {
-            kind: "volume",
-            label: "VOL",
-            points: "0,15 100,4"
-          }
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
-          type: "audio",
-          start: 44.458333,
-          dur: 1.416667,
-          in: 140.666667,
-          out: 142.083333
-        }
-      ]
-    },
-    {
-      id: "A5",
-      kind: "audio",
-      clips: [
-        {
-          name: "WHSH_CINEMATIC GENERIC SLOW-Ending Story_B00M_CMDS.wav",
-          type: "audio",
-          start: -0.041667,
-          dur: 3.291667,
-          in: 1.458333,
-          out: 4.75,
-          audioLevel: {
-            kind: "volume",
-            label: "+6dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "breathe.wav.wav.new.01.wav",
-          type: "audio",
-          start: 3.333333,
-          dur: 0.791667,
-          in: 12.25,
-          out: 13.041667
-        },
-        {
-          name: "119T08.WAV",
-          type: "audio",
-          start: 4.083333,
-          dur: 0.166667,
-          in: 10.041667,
-          out: 10.208333,
-          audioLevel: {
-            kind: "volume",
-            label: "-2dB",
-            points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 10.583333,
-              dur: 0.375,
-              alignment: "start-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix).mp3",
-          type: "audio",
-          start: 6.625,
-          dur: 2.25,
-          in: 59.041667,
-          out: 61.291667,
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 8.375,
-              dur: 0.5,
-              alignment: "end-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "BYND-Stinger_AXS005.mp3",
-          type: "audio",
-          start: 10.5,
-          dur: 2.208333,
-          in: 0,
-          out: 2.208333,
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 10.666667,
-              dur: 2.041667,
-              alignment: "end-black",
-              at: "out"
-            },
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 12.791667,
-              dur: 0.375,
-              alignment: "start-black",
-              at: "out"
-            },
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 13.416667,
-              dur: 0.958333,
-              alignment: "end-black",
-              at: "out"
-            },
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 15.833333,
-              dur: 0.083333,
-              alignment: "start-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "Hits.wav",
-          type: "audio",
-          start: 12.791667,
-          dur: 2.083333,
-          in: 26.5,
-          out: 28.583333,
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 13.916667,
-              dur: 0.958333,
-              alignment: "end-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "CC-DS Punch Cinematic 03.wav",
-          type: "audio",
-          start: 17.875,
-          dur: 1.5,
-          in: 0.416667,
-          out: 1.916667
-        },
-        {
-          name: "WHOOSH_AIRY_01.wav",
-          type: "audio",
-          start: 19.666667,
-          dur: 1.083333,
-          in: 0,
-          out: 1.083333
-        },
-        {
-          name: "WWE2K24_Audio_LaunchTrail2rev1-USA-Nielsen.wav",
-          type: "audio",
-          start: 23.208333,
-          dur: 0.666667,
-          in: 53.083333,
-          out: 53.75
-        },
-        {
-          name: "CC-DS Punch Knuckle Bright Medium 02.wav",
-          type: "audio",
-          start: 24,
-          dur: 0.583333,
-          in: 1.625,
-          out: 2.208333
-        },
-        {
-          name: "Risers.wav",
-          type: "audio",
-          start: 25.375,
-          dur: 0.958333,
-          in: 10.833333,
-          out: 11.791667,
-          audioLevel: {
-            kind: "volume",
-            label: "+7dB",
-            points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 25.375,
-              dur: 0.25,
-              alignment: "start-black",
-              at: "in"
-            }
-          ]
         },
         {
           name: "A004C012_231115_RP3G.mov",
@@ -3098,6 +1861,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           dur: 1.916667,
           in: 6.083333,
           out: 8,
+          role: "audio-diegetic",
           audioLevel: {
             kind: "volume",
             label: "+8dB",
@@ -3111,6 +1875,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           dur: 1.458333,
           in: 12.125,
           out: 13.583333,
+          role: "audio-diegetic",
           audioLevel: {
             kind: "volume",
             label: "+8dB",
@@ -3120,10 +1885,11 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
         {
           name: "A004C012_231115_RP3G.mov",
           type: "audio",
-          start: 30.125,
-          dur: 0.416667,
-          in: 9.041667,
+          start: 28.666667,
+          dur: 1.458333,
+          in: 8,
           out: 9.458333,
+          role: "audio-diegetic",
           audioLevel: {
             kind: "volume",
             label: "+8dB",
@@ -3131,17 +1897,240 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           }
         },
         {
-          name: "erg_Best_Whooshes.wav",
+          name: "107T02.WAV",
           type: "audio",
-          start: 30.708333,
+          start: 30.125,
           dur: 0.416667,
-          in: 676,
-          out: 676.416667,
+          in: 13.166667,
+          out: 13.583333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+8dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 33.625,
+              dur: 0.25,
+              alignment: "start-black",
+              at: "out"
+            },
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 33.958333,
+              dur: 0.208333,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "A004C012_231115_RP3G.mov",
+          type: "audio",
+          start: 30.125,
+          dur: 0.416667,
+          in: 9.041667,
+          out: 9.458333,
+          role: "audio-diegetic",
           audioLevel: {
             kind: "volume",
             label: "+8dB",
             points: "0,15 100,15"
           }
+        },
+        {
+          name: "triple_h_headset_v1.m4a",
+          type: "audio",
+          start: 37.833333,
+          dur: 1.083333,
+          in: 3.5,
+          out: 4.583333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "0dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "triple_h_headset_v1.m4a",
+          type: "audio",
+          start: 39.416667,
+          dur: 0.791667,
+          in: 12.916667,
+          out: 13.708333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+8dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 40.125,
+              dur: 0.083333,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "A004C006_231206_RP4B.mov",
+          type: "audio",
+          start: 42.958333,
+          dur: 1,
+          in: 41.791667,
+          out: 42.791667,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,15 100,4"
+          }
+        },
+        {
+          name: "B001C006_231206_ROOG.mov",
+          type: "audio",
+          start: 42.958333,
+          dur: 1,
+          in: 30.416667,
+          out: 31.416667,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,15 100,4"
+          }
+        },
+        {
+          name: "PU105_T3.wav",
+          type: "audio",
+          start: 42.958333,
+          dur: 1,
+          in: 43.25,
+          out: 44.25,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,15 100,4"
+          }
+        }
+      ]
+    },
+    {
+      id: "A4",
+      kind: "audio",
+      clips: [
+        {
+          name: "triple_h_headset_v1.m4a",
+          type: "audio",
+          start: 38.541667,
+          dur: 1.083333,
+          in: 4.833333,
+          out: 5.916667,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "0dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "A004C006_231206_RP4B.mov",
+          type: "audio",
+          start: 42.166667,
+          dur: 0.791667,
+          in: 66.041667,
+          out: 66.833333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+14dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "B001C006_231206_ROOG.mov",
+          type: "audio",
+          start: 42.166667,
+          dur: 0.791667,
+          in: 54.666667,
+          out: 55.458333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+14dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "PU105_T3.wav",
+          type: "audio",
+          start: 42.166667,
+          dur: 0.791667,
+          in: 67.5,
+          out: 68.291667,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+14dB",
+            points: "0,15 100,15"
+          }
+        }
+      ]
+    },
+    {
+      id: "A5",
+      kind: "audio",
+      clips: [
+        {
+          name: "2K24_ConsumerFacing_1116-MP4.mp4",
+          type: "audio",
+          start: 17.625,
+          dur: 0.916667,
+          in: 3160.458333,
+          out: 3161.375,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+13dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "WWE2K24_Audio_LaunchTrailer_REV2-USA-Nielsen.wav",
+          type: "audio",
+          start: 18.583333,
+          dur: 0.916667,
+          in: 120,
+          out: 120.916667,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+12dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 27.583333,
+              dur: 0.625,
+              alignment: "start-black",
+              at: "out"
+            }
+          ]
         },
         {
           name: "P002C003_240111_RP4B.mov",
@@ -3150,6 +2139,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           dur: 0.416667,
           in: 96.416667,
           out: 96.833333,
+          role: "audio-diegetic",
           audioLevel: {
             kind: "volume",
             label: "+18dB",
@@ -3184,45 +2174,6 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
               at: "in"
             }
           ]
-        },
-        {
-          name: "PU105_T4.wav",
-          type: "audio",
-          start: 39.833333,
-          dur: 0.958333,
-          in: 26.333333,
-          out: 27.291667,
-          audioLevel: {
-            kind: "volume",
-            label: "+13dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "B001C006_231206_ROOG.mov",
-          type: "audio",
-          start: 42.166667,
-          dur: 0.791667,
-          in: 54.666667,
-          out: 55.458333,
-          audioLevel: {
-            kind: "volume",
-            label: "+14dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "B001C006_231206_ROOG.mov",
-          type: "audio",
-          start: 42.958333,
-          dur: 1,
-          in: 30.416667,
-          out: 31.416667,
-          audioLevel: {
-            kind: "volume",
-            label: "VOL",
-            points: "0,15 100,4"
-          }
         }
       ]
     },
@@ -3231,156 +2182,73 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
       kind: "audio",
       clips: [
         {
-          name: "BURNISH HITS_SLAMS_BOOMS_SOUND EFFECTS.wav",
-          type: "audio",
-          start: -0.041667,
-          dur: 3.083333,
-          in: 127.583333,
-          out: 130.666667
-        },
-        {
-          name: "ALIBI-Whoosh-Low Whoosh By.aiff",
-          type: "audio",
-          start: 3.458333,
-          dur: 1.708333,
-          in: 2.375,
-          out: 4.083333,
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 3.458333,
-              dur: 0.166667,
-              alignment: "center",
-              at: "in"
-            }
-          ]
-        },
-        {
-          name: "ALIBI-FX-Heartbeats-Body Throb_Full w Percussion.aiff",
-          type: "audio",
-          start: 6.625,
-          dur: 2.041667,
-          in: 25.25,
-          out: 27.291667
-        },
-        {
-          name: "ALIBI-FX-Heartbeats-Body Throb_Full w Percussion.aiff",
-          type: "audio",
-          start: 8.666667,
-          dur: 0.5,
-          in: 24.75,
-          out: 25.25
-        },
-        {
-          name: "WHSH_CINEMATIC GENERIC SLOW-Ending Story_B00M_CMDS.wav",
-          type: "audio",
-          start: 10.958333,
-          dur: 1.5,
-          in: 1.75,
-          out: 3.25,
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 11.75,
-              dur: 0.708333,
-              alignment: "end-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "CSDS PUNCH LAYER Fatman.wav",
-          type: "audio",
-          start: 17.916667,
-          dur: 1.333333,
-          in: 0.25,
-          out: 1.583333,
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 16.375,
-              dur: 1.041667,
-              alignment: "end-black",
-              at: "in"
-            }
-          ]
-        },
-        {
-          name: "CC-CK Punch Low Smack 09.wav",
-          type: "audio",
-          start: 20.083333,
-          dur: 0.458333,
-          in: 4.875,
-          out: 5.333333
-        },
-        {
-          name: "05 Impact.wav",
-          type: "audio",
-          start: 20.583333,
-          dur: 5,
-          in: 0,
-          out: 5,
-          audioLevel: {
-            kind: "volume",
-            label: "VOL",
-            points: "0,4 100,15"
-          }
-        },
-        {
           name: "WWE2K24_Audio_LaunchTrail2rev1-USA-Nielsen.wav",
           type: "audio",
-          start: 25.666667,
-          dur: 1.416667,
-          in: 156.375,
-          out: 157.791667,
-          audioLevel: {
-            kind: "volume",
-            label: "+6dB",
-            points: "0,15 100,15"
-          }
+          start: 19.583333,
+          dur: 2.041667,
+          in: 25.333333,
+          out: 27.375,
+          role: "audio-diegetic"
         },
         {
-          name: "erg_Best_Whooshes.wav",
+          name: "CLOTHMisc_SWEETENER-Cloth Duffle Bag Rolled Hit Hand Impact_B00M_MMCK.wav",
           type: "audio",
           start: 28.541667,
-          dur: 0.125,
-          in: 491.75,
-          out: 491.875,
+          dur: 0.416667,
+          in: 0,
+          out: 0.416667,
+          role: "audio-sfx",
           audioLevel: {
             kind: "volume",
-            label: "+8dB",
+            label: "+3dB",
             points: "0,15 100,15"
           }
         },
         {
-          name: "A004C012_231115_RP3G.mov",
+          name: "CLOTHMisc_SWEETENER-Cloth Duffle Bag Rolled Hit Hand Impact_B00M_MMCK.wav",
           type: "audio",
-          start: 28.666667,
-          dur: 1.458333,
-          in: 8,
-          out: 9.458333,
+          start: 29.5,
+          dur: 0.416667,
+          in: 0,
+          out: 0.416667,
+          role: "audio-sfx",
           audioLevel: {
             kind: "volume",
-            label: "+8dB",
+            label: "+1dB",
             points: "0,15 100,15"
           }
         },
         {
-          name: "BURNISH HITS_SLAMS_BOOMS_SOUND EFFECTS.wav",
+          name: "CLOTHMisc_SWEETENER-Cloth Duffle Bag Rolled Hit Hand Impact_B00M_MMCK.wav",
           type: "audio",
-          start: 30.291667,
-          dur: 0.375,
-          in: 95.833333,
-          out: 96.208333,
+          start: 30.375,
+          dur: 0.416667,
+          in: 0,
+          out: 0.416667,
+          role: "audio-sfx",
           audioLevel: {
             kind: "volume",
-            label: "+6dB",
+            label: "+1dB",
+            points: "0,15 100,15"
+          }
+        }
+      ]
+    },
+    {
+      id: "A7",
+      kind: "audio",
+      clips: [
+        {
+          name: "119T08.WAV",
+          type: "audio",
+          start: 4.083333,
+          dur: 0.166667,
+          in: 10.041667,
+          out: 10.208333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "-2dB",
             points: "0,15 100,15"
           },
           transitions: [
@@ -3388,12 +2256,88 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
               kind: "transition",
               label: "AF",
               name: "Cross Fade (+3dB)",
-              start: 30.291667,
+              start: 10.583333,
               dur: 0.375,
-              alignment: "end-black",
+              alignment: "start-black",
               at: "out"
             }
           ]
+        },
+        {
+          name: "B002C016_231116HR.mov",
+          type: "audio",
+          start: 4.083333,
+          dur: 0.166667,
+          in: 10.041667,
+          out: 10.208333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "-2dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "E002_C019.mov",
+          type: "audio",
+          start: 4.083333,
+          dur: 0.166667,
+          in: 35.5,
+          out: 35.666667,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "-2dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "2K24_ConsumerFacing_1116-MP4.mp4",
+          type: "audio",
+          start: 16.291667,
+          dur: 1.333333,
+          in: 3159.125,
+          out: 3160.458333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+13dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 16.291667,
+              dur: 1,
+              alignment: "start-black",
+              at: "in"
+            }
+          ]
+        },
+        {
+          name: "WWE2K24_Audio_LaunchTrail2rev1-USA-Nielsen.wav",
+          type: "audio",
+          start: 18.833333,
+          dur: 1.25,
+          in: 4.958333,
+          out: 6.208333,
+          role: "audio-diegetic"
+        },
+        {
+          name: "WWE2K24_Audio_LaunchTrail2rev1-USA-Nielsen.wav",
+          type: "audio",
+          start: 20.875,
+          dur: 2.666667,
+          in: 14.916667,
+          out: 17.583333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "-1dB",
+            points: "0,15 100,15"
+          }
         },
         {
           name: "FULL MATCH - Roman Reigns vs. Cody Rhodes — WWE Universal Championship Match WrestleMania 39 Sunday.mp4",
@@ -3402,6 +2346,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           dur: 0.041667,
           in: 2275.333333,
           out: 2275.375,
+          role: "audio-diegetic",
           audioLevel: {
             kind: "volume",
             label: "+5dB",
@@ -3436,6 +2381,825 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
               at: "out"
             }
           ]
+        }
+      ]
+    },
+    {
+      id: "A8",
+      kind: "audio",
+      clips: [
+        {
+          name: "WWE2K24_Audio_LaunchTrail2rev1-USA-Nielsen.wav",
+          type: "audio",
+          start: 23.208333,
+          dur: 0.666667,
+          in: 53.083333,
+          out: 53.75,
+          role: "audio-diegetic"
+        },
+        {
+          name: "WWE2K24_Audio_LaunchTrail2rev1-USA-Nielsen.wav",
+          type: "audio",
+          start: 24.583333,
+          dur: 1.458333,
+          in: 71.25,
+          out: 72.708333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+5dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 25.625,
+              dur: 0.416667,
+              alignment: "end-black",
+              at: "out"
+            },
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 30.958333,
+              dur: 1.041667,
+              alignment: "start-black",
+              at: "out"
+            },
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 35.875,
+              dur: 1,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "A9",
+      kind: "audio",
+      clips: [
+        {
+          name: "WWE2K24_Audio_LaunchTrail2rev1-USA-Nielsen.wav",
+          type: "audio",
+          start: 23.75,
+          dur: 1.375,
+          in: 62.125,
+          out: 63.5,
+          role: "audio-diegetic"
+        },
+        {
+          name: "WWE2K24_Audio_LaunchTrail2rev1-USA-Nielsen.wav",
+          type: "audio",
+          start: 25.666667,
+          dur: 1.416667,
+          in: 156.375,
+          out: 157.791667,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+6dB",
+            points: "0,15 100,15"
+          }
+        }
+      ]
+    },
+    {
+      id: "A10",
+      kind: "audio",
+      clips: [
+        {
+          name: "WWE2K24_Audio_LaunchTrailer_REV2-USA-Nielsen.wav",
+          type: "audio",
+          start: 8.958333,
+          dur: 0.416667,
+          in: 120.541667,
+          out: 120.958333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+12dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "WWE2K24_Audio_LaunchTrailer_REV2-USA-Nielsen.wav",
+          type: "audio",
+          start: 12.166667,
+          dur: 1.458333,
+          in: 196.041667,
+          out: 197.5,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+12dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "WWE2K24_Audio_LaunchTrail2rev1-USA-Nielsen.wav",
+          type: "audio",
+          start: 13.625,
+          dur: 2.708333,
+          in: 242.5,
+          out: 245.208333,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+12dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 16.166667,
+              dur: 0.166667,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "WWE2K24_Audio_LaunchTrail2rev1-USA-Nielsen.wav",
+          type: "audio",
+          start: 25.208333,
+          dur: 1.166667,
+          in: 155.208333,
+          out: 156.375,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+12dB",
+            points: "0,15 100,15"
+          }
+        }
+      ]
+    },
+    {
+      id: "A11",
+      kind: "audio",
+      clips: [
+        {
+          name: "WWE2K24_Audio_LaunchTrailer_REV2-USA-Nielsen.wav",
+          type: "audio",
+          start: 0,
+          dur: 1.625,
+          in: 1.041667,
+          out: 2.666667,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+5dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "WWE2K24_Audio_LaunchTrailer_REV2-USA-Nielsen.wav",
+          type: "audio",
+          start: 1.625,
+          dur: 1.291667,
+          in: 3.583333,
+          out: 4.875,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+8dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 2.666667,
+              dur: 0.25,
+              alignment: "center",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "WWE2K24_Audio_LaunchTrailer_REV2-USA-Nielsen.wav",
+          type: "audio",
+          start: 2.666667,
+          dur: 2.916667,
+          in: 6.208333,
+          out: 9.125,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+10dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 2.666667,
+              dur: 0.25,
+              alignment: "center",
+              at: "in"
+            }
+          ]
+        },
+        {
+          name: "WWE2K24_Audio_LaunchTrailer_REV2-USA-Nielsen.wav",
+          type: "audio",
+          start: 5.583333,
+          dur: 2.041667,
+          in: 17.25,
+          out: 19.291667,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+12dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 7.541667,
+              dur: 0.083333,
+              alignment: "center",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "WWE2K24_Audio_LaunchTrailer_REV2-USA-Nielsen.wav",
+          type: "audio",
+          start: 7.541667,
+          dur: 1.916667,
+          in: 19.375,
+          out: 21.291667,
+          role: "audio-diegetic",
+          audioLevel: {
+            kind: "volume",
+            label: "+10dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 7.541667,
+              dur: 0.083333,
+              alignment: "center",
+              at: "in"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "A12",
+      kind: "audio",
+      clips: [
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix).mp3",
+          type: "audio",
+          start: 4.083333,
+          dur: 4.416667,
+          in: 16.416667,
+          out: 20.833333,
+          role: "audio-music"
+        }
+      ]
+    },
+    {
+      id: "A13",
+      kind: "audio",
+      clips: [
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
+          type: "audio",
+          start: 6.625,
+          dur: 2.291667,
+          in: 42.5,
+          out: 44.791667,
+          role: "audio-music",
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 8.5,
+              dur: 0.416667,
+              alignment: "center",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
+          type: "audio",
+          start: 8.5,
+          dur: 1.333333,
+          in: 87.166667,
+          out: 88.5,
+          role: "audio-music",
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 8.5,
+              dur: 0.416667,
+              alignment: "center",
+              at: "in"
+            }
+          ]
+        },
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
+          type: "audio",
+          start: 9.833333,
+          dur: 3.083333,
+          in: 53.583333,
+          out: 56.666667,
+          role: "audio-music",
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,4 6.185567,15 74.226804,15 100,4"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 12.75,
+              dur: 0.166667,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
+          type: "audio",
+          start: 13.166667,
+          dur: 0.5,
+          in: 109.708333,
+          out: 110.208333,
+          role: "audio-music"
+        },
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
+          type: "audio",
+          start: 13.666667,
+          dur: 3,
+          in: 74.666667,
+          out: 77.666667,
+          role: "audio-music",
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,4 14.285714,15 71.428571,15 100,4"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 16.5,
+              dur: 0.166667,
+              alignment: "center",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
+          type: "audio",
+          start: 16.5,
+          dur: 1.958333,
+          in: 80.875,
+          out: 82.833333,
+          role: "audio-music",
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,4 14.285714,15 71.428571,15 100,4"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 16.5,
+              dur: 0.166667,
+              alignment: "center",
+              at: "in"
+            }
+          ]
+        },
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix).mp3",
+          type: "audio",
+          start: 18.458333,
+          dur: 4.375,
+          in: 85.541667,
+          out: 89.916667,
+          role: "audio-music"
+        },
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix).mp3",
+          type: "audio",
+          start: 22.833333,
+          dur: 2.083333,
+          in: 95.291667,
+          out: 97.375,
+          role: "audio-music",
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 24.458333,
+              dur: 0.5,
+              alignment: "center",
+              at: "out"
+            },
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 25.666667,
+              dur: 0.416667,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
+          type: "audio",
+          start: 35.166667,
+          dur: 2.625,
+          in: 119.666667,
+          out: 122.291667,
+          role: "audio-music",
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,4 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 36.625,
+              dur: 1.166667,
+              alignment: "center",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
+          type: "audio",
+          start: 39.958333,
+          dur: 4.5,
+          in: 14.833333,
+          out: 19.333333,
+          role: "audio-music",
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,4 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 39.958333,
+              dur: 1.333333,
+              alignment: "center",
+              at: "in"
+            }
+          ]
+        },
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
+          type: "audio",
+          start: 44.458333,
+          dur: 1.416667,
+          in: 140.666667,
+          out: 142.083333,
+          role: "audio-music"
+        }
+      ]
+    },
+    {
+      id: "A14",
+      kind: "audio",
+      clips: [
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix).mp3",
+          type: "audio",
+          start: 6.625,
+          dur: 2.25,
+          in: 59.041667,
+          out: 61.291667,
+          role: "audio-music",
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 8.375,
+              dur: 0.5,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix).mp3",
+          type: "audio",
+          start: 25.083333,
+          dur: 1.041667,
+          in: 109.166667,
+          out: 110.208333,
+          role: "audio-music",
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 25.083333,
+              dur: 0.25,
+              alignment: "start-black",
+              at: "in"
+            }
+          ]
+        },
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
+          type: "audio",
+          start: 26.125,
+          dur: 2.541667,
+          in: 131.416667,
+          out: 133.958333,
+          role: "audio-music"
+        },
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
+          type: "audio",
+          start: 28.666667,
+          dur: 3.583333,
+          in: 133.958333,
+          out: 137.541667,
+          role: "audio-music",
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 31.166667,
+              dur: 1.083333,
+              alignment: "center",
+              at: "out"
+            },
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 35.208333,
+              dur: 0.083333,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix).mp3",
+          type: "audio",
+          start: 45.875,
+          dur: 5.375,
+          in: 153,
+          out: 158.375,
+          role: "audio-music"
+        },
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix).mp3",
+          type: "audio",
+          start: 51.25,
+          dur: 5.208333,
+          in: 94.083333,
+          out: 99.291667,
+          role: "audio-music"
+        },
+        {
+          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
+          type: "audio",
+          start: 56.458333,
+          dur: 3.208333,
+          in: 176.333333,
+          out: 179.541667,
+          role: "audio-music",
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 57.416667,
+              dur: 2.25,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "A15",
+      kind: "audio",
+      clips: [
+        {
+          name: "ALIBI-FX-Lifestyle-Transitions-Answer Me_Full.aiff",
+          type: "audio",
+          start: 0.958333,
+          dur: 1.5,
+          in: 0,
+          out: 1.5,
+          role: "audio-sfx",
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 2.5,
+              dur: 0.708333,
+              alignment: "start-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "ALIBI-Whoosh-Low Whoosh By.aiff",
+          type: "audio",
+          start: 3.458333,
+          dur: 1.708333,
+          in: 2.375,
+          out: 4.083333,
+          role: "audio-sfx",
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 3.458333,
+              dur: 0.166667,
+              alignment: "center",
+              at: "in"
+            }
+          ]
+        },
+        {
+          name: "ALIBI-FX-Drums-Epic Drum Finish 1_STEM Riser.aiff",
+          type: "audio",
+          start: 8.583333,
+          dur: 1.375,
+          in: 1.875,
+          out: 3.25,
+          role: "audio-music",
+          audioLevel: {
+            kind: "volume",
+            label: "-10dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 8.583333,
+              dur: 0.583333,
+              alignment: "start-black",
+              at: "in"
+            }
+          ]
+        },
+        {
+          name: "Hits.wav",
+          type: "audio",
+          start: 9.958333,
+          dur: 1.541667,
+          in: 16.041667,
+          out: 17.583333,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "+10dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 10.75,
+              dur: 0.75,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "CC-DS Punch Knuckle Blunt Medium 02.wav",
+          type: "audio",
+          start: 14.666667,
+          dur: 0.5,
+          in: 0.166667,
+          out: 0.666667,
+          role: "audio-sfx"
+        },
+        {
+          name: "CC-DS Punch Torso Hard 01.wav",
+          type: "audio",
+          start: 15.916667,
+          dur: 0.5,
+          in: 4.375,
+          out: 4.875,
+          role: "audio-sfx"
+        },
+        {
+          name: "CC-DS Punch Cinematic 02.wav",
+          type: "audio",
+          start: 17.75,
+          dur: 1.75,
+          in: 4.25,
+          out: 6,
+          role: "audio-sfx"
+        },
+        {
+          name: "2 - swoosh - norm.wav",
+          type: "audio",
+          start: 19.5,
+          dur: 0.75,
+          in: 0.166667,
+          out: 0.916667,
+          role: "audio-diegetic"
+        },
+        {
+          name: "CC-DS Punch Cinematic 02.wav",
+          type: "audio",
+          start: 20.25,
+          dur: 0.583333,
+          in: 6.75,
+          out: 7.333333,
+          role: "audio-sfx"
+        },
+        {
+          name: "CSDS PUNCH LAYER Fatman.wav",
+          type: "audio",
+          start: 24.083333,
+          dur: 1.291667,
+          in: 0.25,
+          out: 1.541667,
+          role: "audio-sfx"
+        },
+        {
+          name: "Risers.wav",
+          type: "audio",
+          start: 25.375,
+          dur: 0.958333,
+          in: 10.833333,
+          out: 11.791667,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "+7dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 25.375,
+              dur: 0.25,
+              alignment: "start-black",
+              at: "in"
+            }
+          ]
         },
         {
           name: "16CT01.WAV",
@@ -3444,6 +3208,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           dur: 0.166667,
           in: 129.625,
           out: 129.791667,
+          role: "audio-diegetic",
           audioLevel: {
             kind: "volume",
             label: "+27dB",
@@ -3469,417 +3234,13 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
               at: "in"
             }
           ]
-        },
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix) [music].wav",
-          type: "audio",
-          start: 39.958333,
-          dur: 4.5,
-          in: 14.833333,
-          out: 19.333333,
-          audioLevel: {
-            kind: "volume",
-            label: "VOL",
-            points: "0,4 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 39.958333,
-              dur: 1.333333,
-              alignment: "center",
-              at: "in"
-            }
-          ]
         }
       ]
     },
     {
-      id: "A7",
+      id: "A16",
       kind: "audio",
       clips: [
-        {
-          name: "ALIBI-FX-Sub Drop-Ghost Apocalypse Bass Muffled.aiff",
-          type: "audio",
-          start: -0.041667,
-          dur: 1.958333,
-          in: 1.041667,
-          out: 3
-        },
-        {
-          name: "WWE2K24_Audio_LaunchTrailer_REV2-USA-Nielsen.wav",
-          type: "audio",
-          start: 1.625,
-          dur: 1.291667,
-          in: 3.583333,
-          out: 4.875,
-          audioLevel: {
-            kind: "volume",
-            label: "+8dB",
-            points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 2.666667,
-              dur: 0.25,
-              alignment: "center",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "DC001_13.mov",
-          type: "audio",
-          start: 2.958333,
-          dur: 1.125,
-          in: 17.75,
-          out: 18.875,
-          audioLevel: {
-            kind: "volume",
-            label: "VOL",
-            points: "0,4 100,15"
-          }
-        },
-        {
-          name: "B002C016_231116HR.mov",
-          type: "audio",
-          start: 4.083333,
-          dur: 0.166667,
-          in: 10.041667,
-          out: 10.208333,
-          audioLevel: {
-            kind: "volume",
-            label: "-2dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "ALIBI-FX-Heartbeats-Body Throb_Full w Percussion.aiff",
-          type: "audio",
-          start: 6.75,
-          dur: 2.416667,
-          in: 28.5,
-          out: 30.916667
-        },
-        {
-          name: "WHSH_CINEMATIC GENERIC SLOW-Ending Story_B00M_CMDS.wav",
-          type: "audio",
-          start: 11.125,
-          dur: 0.416667,
-          in: 0.916667,
-          out: 1.333333,
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 11.125,
-              dur: 0.25,
-              alignment: "start-black",
-              at: "in"
-            }
-          ]
-        },
-        {
-          name: "CC-CK Punch Slap Sweetener 06.wav",
-          type: "audio",
-          start: 18.625,
-          dur: 0.375,
-          in: 0.083333,
-          out: 0.458333
-        },
-        {
-          name: "CC-CK Punch High Tight 02.wav",
-          type: "audio",
-          start: 18.791667,
-          dur: 0.166667,
-          in: 0,
-          out: 0.166667
-        },
-        {
-          name: "WWE2K24_Audio_LaunchTrail2rev1-USA-Nielsen.wav",
-          type: "audio",
-          start: 18.833333,
-          dur: 1.25,
-          in: 4.958333,
-          out: 6.208333
-        },
-        {
-          name: "5 - whoosh swoosh.wav",
-          type: "audio",
-          start: 20.333333,
-          dur: 0.583333,
-          in: 0.25,
-          out: 0.833333
-        },
-        {
-          name: "DSGNMisc_ORGANIC IMPACT LOW-Sub Distortion_B00M_BRUTE FORCE.wav",
-          type: "audio",
-          start: 24.041667,
-          dur: 0.625,
-          in: 0.083333,
-          out: 0.708333,
-          audioLevel: {
-            kind: "volume",
-            label: "-6dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "BURNISH HITS_SLAMS_BOOMS_SOUND EFFECTS.wav",
-          type: "audio",
-          start: 25.666667,
-          dur: 0.666667,
-          in: 182.916667,
-          out: 183.583333,
-          audioLevel: {
-            kind: "volume",
-            label: "-3dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "BURNISH HITS_SLAMS_BOOMS_SOUND EFFECTS.wav",
-          type: "audio",
-          start: 28.666667,
-          dur: 0.125,
-          in: 186.25,
-          out: 186.375,
-          audioLevel: {
-            kind: "volume",
-            label: "VOL",
-            points: "0,4 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 28.666667,
-              dur: 0.125,
-              alignment: "end-black",
-              at: "out"
-            }
-          ]
-        },
-        {
-          name: "erg_Best_Whooshes.wav",
-          type: "audio",
-          start: 28.791667,
-          dur: 1.916667,
-          in: 674.5,
-          out: 676.416667,
-          audioLevel: {
-            kind: "volume",
-            label: "+8dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "PU105_T3.wav",
-          type: "audio",
-          start: 42.166667,
-          dur: 0.791667,
-          in: 67.5,
-          out: 68.291667,
-          audioLevel: {
-            kind: "volume",
-            label: "+14dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "PU105_T3.wav",
-          type: "audio",
-          start: 42.958333,
-          dur: 1,
-          in: 43.25,
-          out: 44.25,
-          audioLevel: {
-            kind: "volume",
-            label: "VOL",
-            points: "0,15 100,4"
-          }
-        }
-      ]
-    },
-    {
-      id: "A8",
-      kind: "audio",
-      clips: [
-        {
-          name: "ALIBI-Whoosh-Boomy.aiff",
-          type: "audio",
-          start: -0.041667,
-          dur: 1.958333,
-          in: 1.916667,
-          out: 3.875,
-          audioLevel: {
-            kind: "volume",
-            label: "+8dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "WWE2K24_Audio_LaunchTrailer_REV2-USA-Nielsen.wav",
-          type: "audio",
-          start: 2.666667,
-          dur: 2.916667,
-          in: 6.208333,
-          out: 9.125,
-          audioLevel: {
-            kind: "volume",
-            label: "+10dB",
-            points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 2.666667,
-              dur: 0.25,
-              alignment: "center",
-              at: "in"
-            }
-          ]
-        },
-        {
-          name: "WWE2K24_Audio_LaunchTrailer_REV2-USA-Nielsen.wav",
-          type: "audio",
-          start: 7.541667,
-          dur: 1.916667,
-          in: 19.375,
-          out: 21.291667,
-          audioLevel: {
-            kind: "volume",
-            label: "+10dB",
-            points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 7.541667,
-              dur: 0.083333,
-              alignment: "center",
-              at: "in"
-            }
-          ]
-        },
-        {
-          name: "DSGNMisc_ORGANIC IMPACT LOW-Sub Distortion_B00M_BRUTE FORCE.wav",
-          type: "audio",
-          start: 18.708333,
-          dur: 0.625,
-          in: 0.083333,
-          out: 0.708333,
-          audioLevel: {
-            kind: "volume",
-            label: "-6dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "CSDS PUNCH LAYER Fatman.wav",
-          type: "audio",
-          start: 24.083333,
-          dur: 1.291667,
-          in: 0.25,
-          out: 1.541667
-        },
-        {
-          name: "erg_Best_Whooshes.wav",
-          type: "audio",
-          start: 28.791667,
-          dur: 0.041667,
-          in: 674.5,
-          out: 674.541667,
-          audioLevel: {
-            kind: "volume",
-            label: "+8dB",
-            points: "0,15 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 25.458333,
-              dur: 0.75,
-              alignment: "start-black",
-              at: "in"
-            },
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 27.833333,
-              dur: 0.708333,
-              alignment: "end-black",
-              at: "in"
-            }
-          ]
-        },
-        {
-          name: "erg_Best_Whooshes.wav",
-          type: "audio",
-          start: 28.833333,
-          dur: 0.416667,
-          in: 676,
-          out: 676.416667,
-          audioLevel: {
-            kind: "volume",
-            label: "+8dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "erg_Best_Whooshes.wav",
-          type: "audio",
-          start: 29.25,
-          dur: 1.458333,
-          in: 674.958333,
-          out: 676.416667,
-          audioLevel: {
-            kind: "volume",
-            label: "+8dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "B002C006_231206_ROOG.mov",
-          type: "audio",
-          start: 43.583333,
-          dur: 2.041667,
-          in: 41.041667,
-          out: 43.083333,
-          audioLevel: {
-            kind: "volume",
-            label: "+23dB",
-            points: "0,15 100,15"
-          }
-        }
-      ]
-    },
-    {
-      id: "A9",
-      kind: "audio",
-      clips: [
-        {
-          name: "Hits.wav",
-          type: "audio",
-          start: -0.041667,
-          dur: 1.833333,
-          in: 26.75,
-          out: 28.583333
-        },
         {
           name: "VFX1 Short Fills _ Rev#10E8.wav",
           type: "audio",
@@ -3887,6 +3248,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           dur: 0.75,
           in: 0,
           out: 0.75,
+          role: "audio-sfx",
           audioLevel: {
             kind: "volume",
             label: "-9dB",
@@ -3932,30 +3294,81 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           ]
         },
         {
-          name: "PU102_T4.wav",
+          name: "Hits.wav",
           type: "audio",
-          start: 2.958333,
-          dur: 1.125,
-          in: 18.375,
-          out: 19.5,
+          start: 9.541667,
+          dur: 0.958333,
+          in: 26.958333,
+          out: 27.916667,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "+6dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 10.125,
+              dur: 0.375,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "Risers.wav",
+          type: "audio",
+          start: 10.5,
+          dur: 3.125,
+          in: 19.791667,
+          out: 22.916667,
+          role: "audio-sfx",
           audioLevel: {
             kind: "volume",
             label: "VOL",
-            points: "0,4 100,15"
-          }
+            points: "0,15 100,4"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 10.5,
+              dur: 0.791667,
+              alignment: "start-black",
+              at: "in"
+            }
+          ]
         },
         {
-          name: "E002_C019.mov",
+          name: "CC-DS Punch Knuckle Bright Hard 02.wav",
           type: "audio",
-          start: 4.083333,
-          dur: 0.166667,
-          in: 35.5,
-          out: 35.666667,
-          audioLevel: {
-            kind: "volume",
-            label: "-2dB",
-            points: "0,15 100,15"
-          }
+          start: 14.666667,
+          dur: 0.541667,
+          in: 1.375,
+          out: 1.916667,
+          role: "audio-sfx"
+        },
+        {
+          name: "DSGNMisc_ORGANIC IMPACT HIGH-Clash_B00M_BRUTE FORCE.wav",
+          type: "audio",
+          start: 16.25,
+          dur: 0.916667,
+          in: 0.166667,
+          out: 1.083333,
+          role: "audio-sfx"
+        },
+        {
+          name: "CC-DS Punch Knuckle Bright Medium 02.wav",
+          type: "audio",
+          start: 17.833333,
+          dur: 0.583333,
+          in: 1.625,
+          out: 2.208333,
+          role: "audio-sfx"
         },
         {
           name: "CLOTHMisc_SWEETENER-Cloth Impact 04_B00M_MMCK.wav",
@@ -3964,11 +3377,118 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           dur: 0.541667,
           in: 0.166667,
           out: 0.708333,
+          role: "audio-sfx",
           audioLevel: {
             kind: "volume",
             label: "-10dB",
             points: "0,15 100,15"
           }
+        },
+        {
+          name: "ALIBI-FX-Lifestyle-Transitions-Answer Me_Full.aiff",
+          type: "audio",
+          start: 19.625,
+          dur: 0.958333,
+          in: 0.583333,
+          out: 1.541667,
+          role: "audio-sfx"
+        },
+        {
+          name: "DSGNMisc_ORGANIC IMPACT LOW-Sub Distortion_B00M_BRUTE FORCE.wav",
+          type: "audio",
+          start: 24.041667,
+          dur: 0.625,
+          in: 0.083333,
+          out: 0.708333,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "-6dB",
+            points: "0,15 100,15"
+          }
+        }
+      ]
+    },
+    {
+      id: "A17",
+      kind: "audio",
+      clips: [
+        {
+          name: "ALIBI-Whoosh-Low Whoosh By.aiff",
+          type: "audio",
+          start: 1.541667,
+          dur: 1.708333,
+          in: 1.75,
+          out: 3.458333,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "-6dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "WHSH_CINEMATIC GENERIC SLOW-Ending Story_B00M_CMDS.wav",
+          type: "audio",
+          start: 10.958333,
+          dur: 1.5,
+          in: 1.75,
+          out: 3.25,
+          role: "audio-sfx",
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 11.75,
+              dur: 0.708333,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "Hits.wav",
+          type: "audio",
+          start: 12.791667,
+          dur: 2.083333,
+          in: 26.5,
+          out: 28.583333,
+          role: "audio-sfx",
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 13.916667,
+              dur: 0.958333,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "DSGNMisc_ORGANIC IMPACT LOW-Sub Distortion_B00M_BRUTE FORCE.wav",
+          type: "audio",
+          start: 18.708333,
+          dur: 0.625,
+          in: 0.083333,
+          out: 0.708333,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "-6dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "WHOOSH_AIRY_01.wav",
+          type: "audio",
+          start: 19.666667,
+          dur: 1.083333,
+          in: 0,
+          out: 1.083333,
+          role: "audio-sfx"
         },
         {
           name: "CLOTHMisc_SWEETENER-Cloth Impact 04_B00M_MMCK.wav",
@@ -3977,22 +3497,10 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           dur: 0.541667,
           in: 0.166667,
           out: 0.708333,
+          role: "audio-sfx",
           audioLevel: {
             kind: "volume",
             label: "-10dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "A004C010_231115_RP3G.mov",
-          type: "audio",
-          start: 29.083333,
-          dur: 0.166667,
-          in: 78.333333,
-          out: 78.5,
-          audioLevel: {
-            kind: "volume",
-            label: "+5dB",
             points: "0,15 100,15"
           }
         },
@@ -4002,174 +3510,611 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           start: 29.458333,
           dur: 0.416667,
           in: 215.75,
-          out: 216.125
-        },
-        {
-          name: "CLOTHMisc_SWEETENER-Cloth Duffle Bag Rolled Hit Hand Impact_B00M_MMCK.wav",
-          type: "audio",
-          start: 30.375,
-          dur: 0.416667,
-          in: 0,
-          out: 0.416667,
-          audioLevel: {
-            kind: "volume",
-            label: "+1dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "PU106C_T1.wav",
-          type: "audio",
-          start: 43.583333,
-          dur: 2.041667,
-          in: 47.541667,
-          out: 49.583333,
-          audioLevel: {
-            kind: "volume",
-            label: "+23dB",
-            points: "0,15 100,15"
-          }
+          out: 216.166667,
+          role: "audio-sfx"
         }
       ]
     },
     {
-      id: "A10",
+      id: "A18",
       kind: "audio",
       clips: [
-        {
-          name: "FULL MATCH - Roman Reigns vs. Cody Rhodes — WWE Universal Championship Match WrestleMania 39 Sunday.mp4",
-          type: "audio",
-          start: -0.041667,
-          dur: 1.791667,
-          in: 2270.875,
-          out: 2272.666667,
-          audioLevel: {
-            kind: "volume",
-            label: "VOL",
-            points: "0,15 42.857143,4 100,15"
-          }
-        },
-        {
-          name: "ALIBI-Whoosh-Low Whoosh By.aiff",
-          type: "audio",
-          start: 1.541667,
-          dur: 1.708333,
-          in: 1.75,
-          out: 3.458333,
-          audioLevel: {
-            kind: "volume",
-            label: "-6dB",
-            points: "0,15 100,15"
-          }
-        },
         {
           name: "ALIBI-FX-Heartbeats-Body Throb_Full w Percussion.aiff",
           type: "audio",
           start: 3.791667,
           dur: 2.833333,
           in: 22.416667,
-          out: 25.25
+          out: 25.25,
+          role: "audio-sfx"
         },
         {
-          name: "CC-CK Punch High Tight 02.wav",
+          name: "ALIBI-FX-Heartbeats-Body Throb_Full w Percussion.aiff",
           type: "audio",
-          start: 18.708333,
-          dur: 0.291667,
-          in: 3.208333,
-          out: 3.5
-        },
-        {
-          name: "CLOTHMisc_SWEETENER-Cloth Duffle Bag Rolled Hit Hand Impact_B00M_MMCK.wav",
-          type: "audio",
-          start: 29.5,
-          dur: 0.416667,
-          in: 0,
-          out: 0.416667,
-          audioLevel: {
-            kind: "volume",
-            label: "+1dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "PU106_T1.wav",
-          type: "audio",
-          start: 43.583333,
+          start: 6.625,
           dur: 2.041667,
-          in: 47.625,
-          out: 49.666667,
-          audioLevel: {
-            kind: "volume",
-            label: "+16dB",
-            points: "0,15 100,15"
-          }
-        }
-      ]
-    },
-    {
-      id: "A11",
-      kind: "audio",
-      clips: [
-        {
-          name: "01 - NOIRCEUR - Motley Crue - Kickstart My Heart (Remix).mp3",
-          type: "audio",
-          start: -0.041667,
-          dur: 1.625,
-          in: 97.958333,
-          out: 99.583333
+          in: 25.25,
+          out: 27.291667,
+          role: "audio-sfx"
         },
         {
-          name: "WWE2K24_Audio_LaunchTrailer_REV2-USA-Nielsen.wav",
+          name: "ALIBI-FX-Heartbeats-Body Throb_Full w Percussion.aiff",
           type: "audio",
-          start: 0,
-          dur: 1.625,
-          in: 1.041667,
-          out: 2.666667,
-          audioLevel: {
-            kind: "volume",
-            label: "+5dB",
-            points: "0,15 100,15"
-          }
+          start: 8.666667,
+          dur: 0.5,
+          in: 24.75,
+          out: 25.25,
+          role: "audio-sfx"
         },
         {
-          name: "Triple H.m4a",
+          name: "BYND-Stinger_AXS005.mp3",
           type: "audio",
-          start: 0.458333,
-          dur: 0.791667,
-          in: 5.833333,
-          out: 6.625,
-          audioLevel: {
-            kind: "volume",
-            label: "+1dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "ALIBI-FX-Lifestyle-Transitions-Answer Me_Full.aiff",
-          type: "audio",
-          start: 0.958333,
-          dur: 1.5,
+          start: 10.5,
+          dur: 2.208333,
           in: 0,
-          out: 1.5,
+          out: 2.208333,
+          role: "audio-sfx",
           transitions: [
             {
               kind: "transition",
               label: "AF",
               name: "Cross Fade (+3dB)",
-              start: 2.5,
-              dur: 0.708333,
+              start: 10.666667,
+              dur: 2.041667,
+              alignment: "end-black",
+              at: "out"
+            },
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 12.791667,
+              dur: 0.375,
+              alignment: "start-black",
+              at: "out"
+            },
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 13.416667,
+              dur: 0.958333,
+              alignment: "end-black",
+              at: "out"
+            },
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 15.833333,
+              dur: 0.083333,
               alignment: "start-black",
               at: "out"
             }
           ]
         },
         {
+          name: "CSDS PUNCH LAYER Fatman.wav",
+          type: "audio",
+          start: 17.916667,
+          dur: 1.333333,
+          in: 0.25,
+          out: 1.583333,
+          role: "audio-sfx",
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 16.375,
+              dur: 1.041667,
+              alignment: "end-black",
+              at: "in"
+            }
+          ]
+        },
+        {
           name: "CC-CK Punch Low Smack 09.wav",
           type: "audio",
-          start: 18.75,
-          dur: 0.541667,
+          start: 20.083333,
+          dur: 0.458333,
+          in: 4.875,
+          out: 5.333333,
+          role: "audio-sfx"
+        },
+        {
+          name: "CC-DS Punch Cinematic 02.wav",
+          type: "audio",
+          start: 24,
+          dur: 3.083333,
+          in: 4.25,
+          out: 7.333333,
+          role: "audio-sfx"
+        },
+        {
+          name: "erg_Best_Whooshes.wav",
+          type: "audio",
+          start: 28.541667,
+          dur: 0.125,
+          in: 491.75,
+          out: 491.875,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "+8dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "erg_Best_Whooshes.wav",
+          type: "audio",
+          start: 28.666667,
+          dur: 3.166667,
+          in: 491.875,
+          out: 495.041667,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "+8dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "erg_Best_Whooshes.wav",
+          type: "audio",
+          start: 31.833333,
+          dur: 0.416667,
+          in: 494.625,
+          out: 495.041667,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "+8dB",
+            points: "0,15 100,15"
+          }
+        }
+      ]
+    },
+    {
+      id: "A19",
+      kind: "audio",
+      clips: [
+        {
+          name: "breathe.wav.wav.new.01.wav",
+          type: "audio",
+          start: 0,
+          dur: 2.083333,
+          in: 14.541667,
+          out: 16.625,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,4 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 0,
+              dur: 0.083333,
+              alignment: "start-black",
+              at: "in"
+            }
+          ]
+        },
+        {
+          name: "breathe.wav.wav.new.01.wav",
+          type: "audio",
+          start: 3.333333,
+          dur: 0.791667,
+          in: 12.25,
+          out: 13.041667,
+          role: "audio-sfx"
+        },
+        {
+          name: "ALIBI-FX-Heartbeats-Body Throb_Full w Percussion.aiff",
+          type: "audio",
+          start: 6.75,
+          dur: 2.416667,
+          in: 28.5,
+          out: 30.916667,
+          role: "audio-sfx"
+        },
+        {
+          name: "WHSH_CINEMATIC GENERIC SLOW-Ending Story_B00M_CMDS.wav",
+          type: "audio",
+          start: 11.125,
+          dur: 0.416667,
+          in: 0.916667,
+          out: 1.333333,
+          role: "audio-sfx",
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 11.125,
+              dur: 0.25,
+              alignment: "start-black",
+              at: "in"
+            }
+          ]
+        },
+        {
+          name: "CC-DS Punch Cinematic 03.wav",
+          type: "audio",
+          start: 17.875,
+          dur: 1.5,
+          in: 0.416667,
+          out: 1.916667,
+          role: "audio-sfx"
+        },
+        {
+          name: "WHSH_CINEMATIC GENERIC SLOW-Ending Story_B00M_CMDS.wav",
+          type: "audio",
+          start: 22.25,
+          dur: 1.5,
+          in: 1.75,
+          out: 3.25,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "+6dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 23.041667,
+              dur: 0.708333,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "CC-DS Punch Knuckle Bright Medium 02.wav",
+          type: "audio",
+          start: 24,
+          dur: 0.583333,
+          in: 1.625,
+          out: 2.208333,
+          role: "audio-sfx"
+        },
+        {
+          name: "BURNISH HITS_SLAMS_BOOMS_SOUND EFFECTS.wav",
+          type: "audio",
+          start: 25.666667,
+          dur: 0.666667,
+          in: 182.916667,
+          out: 183.583333,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "-3dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "BURNISH HITS_SLAMS_BOOMS_SOUND EFFECTS.wav",
+          type: "audio",
+          start: 26.333333,
+          dur: 2.333333,
+          in: 183.916667,
+          out: 186.25,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,4 100,15"
+          }
+        },
+        {
+          name: "BURNISH HITS_SLAMS_BOOMS_SOUND EFFECTS.wav",
+          type: "audio",
+          start: 28.666667,
+          dur: 0.125,
+          in: 186.25,
+          out: 186.375,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,4 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 28.666667,
+              dur: 0.125,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "erg_Best_Whooshes.wav",
+          type: "audio",
+          start: 28.791667,
+          dur: 1.916667,
+          in: 674.5,
+          out: 676.416667,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "+8dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "erg_Best_Whooshes.wav",
+          type: "audio",
+          start: 30.708333,
+          dur: 0.416667,
+          in: 676,
+          out: 676.416667,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "+8dB",
+            points: "0,15 100,15"
+          }
+        }
+      ]
+    },
+    {
+      id: "A20",
+      kind: "audio",
+      clips: [
+        {
+          name: "ALIBI-FX-Lifestyle-Transitions-Swift_Full.aiff",
+          type: "audio",
+          start: 12.458333,
+          dur: 1.791667,
           in: 0,
-          out: 0.541667
+          out: 1.791667,
+          role: "audio-sfx",
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 10.5,
+              dur: 0.208333,
+              alignment: "start-black",
+              at: "in"
+            },
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 11.166667,
+              dur: 1.291667,
+              alignment: "end-black",
+              at: "in"
+            },
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 17.333333,
+              dur: 0.208333,
+              alignment: "start-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "WHSH_CINEMATIC GENERIC SLOW-Ending Story_B00M_CMDS.wav",
+          type: "audio",
+          start: 20.541667,
+          dur: 1.291667,
+          in: 0,
+          out: 1.291667,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "+6dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 18.208333,
+              dur: 0.958333,
+              alignment: "end-black",
+              at: "in"
+            },
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 21.5,
+              dur: 0.333333,
+              alignment: "center",
+              at: "out"
+            },
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 23.875,
+              dur: 0.916667,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "erg_Best_Whooshes.wav",
+          type: "audio",
+          start: 28.791667,
+          dur: 0.041667,
+          in: 674.5,
+          out: 674.541667,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "+8dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 25.458333,
+              dur: 0.75,
+              alignment: "start-black",
+              at: "in"
+            },
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 27.833333,
+              dur: 0.708333,
+              alignment: "end-black",
+              at: "in"
+            }
+          ]
+        },
+        {
+          name: "erg_Best_Whooshes.wav",
+          type: "audio",
+          start: 28.833333,
+          dur: 0.416667,
+          in: 676,
+          out: 676.416667,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "+8dB",
+            points: "0,15 100,15"
+          }
+        },
+        {
+          name: "erg_Best_Whooshes.wav",
+          type: "audio",
+          start: 29.25,
+          dur: 1.458333,
+          in: 674.958333,
+          out: 676.416667,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "+8dB",
+            points: "0,15 100,15"
+          }
+        }
+      ]
+    },
+    {
+      id: "A21",
+      kind: "audio",
+      clips: [
+        {
+          name: "Hits.wav",
+          type: "audio",
+          start: 21.916667,
+          dur: 2.708333,
+          in: 25.875,
+          out: 28.583333,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "+3dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 23.166667,
+              dur: 1.458333,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "BURNISH HITS_SLAMS_BOOMS_SOUND EFFECTS.wav",
+          type: "audio",
+          start: 28.666667,
+          dur: 1.5,
+          in: 94.75,
+          out: 96.25,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "+6dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 29.166667,
+              dur: 1,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        },
+        {
+          name: "BURNISH HITS_SLAMS_BOOMS_SOUND EFFECTS.wav",
+          type: "audio",
+          start: 30.291667,
+          dur: 0.375,
+          in: 95.833333,
+          out: 96.208333,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "+6dB",
+            points: "0,15 100,15"
+          },
+          transitions: [
+            {
+              kind: "transition",
+              label: "AF",
+              name: "Cross Fade (+3dB)",
+              start: 30.291667,
+              dur: 0.375,
+              alignment: "end-black",
+              at: "out"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "A22",
+      kind: "audio",
+      clips: [
+        {
+          name: "05 Impact.wav",
+          type: "audio",
+          start: 20.583333,
+          dur: 5,
+          in: 0,
+          out: 5,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "VOL",
+            points: "0,4 100,15"
+          }
         },
         {
           name: "BURNISH HITS_SLAMS_BOOMS_SOUND EFFECTS.wav",
@@ -4178,6 +4123,7 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
           dur: 1.5,
           in: 94.75,
           out: 96.25,
+          role: "audio-sfx",
           audioLevel: {
             kind: "volume",
             label: "+6dB",
@@ -4198,160 +4144,126 @@ seqs["wwe2k24-launch-60-rc5-240227"] = {
       ]
     },
     {
-      id: "A12",
+      id: "A23",
       kind: "audio",
       clips: [
         {
-          name: "Hits.wav",
+          name: "5 - whoosh swoosh.wav",
           type: "audio",
-          start: -0.041667,
-          dur: 1.583333,
-          in: 14.666667,
-          out: 16.25,
-          audioLevel: {
-            kind: "volume",
-            label: "+4dB",
-            points: "0,15 100,15"
-          }
+          start: 20.333333,
+          dur: 0.583333,
+          in: 0.25,
+          out: 0.833333,
+          role: "audio-sfx"
         },
         {
-          name: "SD_Low_04.wav",
+          name: "BURNISH HITS_SLAMS_BOOMS_SOUND EFFECTS.wav",
           type: "audio",
-          start: -0.041667,
-          dur: 1.583333,
+          start: 30.5,
+          dur: 2,
+          in: 94.75,
+          out: 96.75,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "+6dB",
+            points: "0,15 100,15"
+          }
+        }
+      ]
+    },
+    {
+      id: "A24",
+      kind: "audio",
+      clips: [
+        {
+          name: "CC-CK Punch High Tight 02.wav",
+          type: "audio",
+          start: 18.791667,
+          dur: 0.166667,
           in: 0,
-          out: 1.583333
-        },
+          out: 0.166667,
+          role: "audio-sfx"
+        }
+      ]
+    },
+    {
+      id: "A25",
+      kind: "audio",
+      clips: [
         {
-          name: "erg_Best_Whooshes.wav",
+          name: "CC-CK Punch High Tight 02.wav",
           type: "audio",
-          start: -0.041667,
-          dur: 1.375,
-          in: 1189.791667,
-          out: 1191.166667,
-          audioLevel: {
-            kind: "volume",
-            label: "+12dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "WWE2K24_Audio_LaunchTrailer_REV2-USA-Nielsen.wav",
-          type: "audio",
-          start: -0.041667,
-          dur: 1.291667,
-          in: 120,
-          out: 121.291667,
-          audioLevel: {
-            kind: "volume",
-            label: "+12dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "FULL MATCH - Roman Reigns vs. Cody Rhodes — WWE Universal Championship Match WrestleMania 39 Sunday.mp4",
-          type: "audio",
-          start: -0.041667,
-          dur: 1.25,
-          in: 2272.541667,
-          out: 2273.791667,
-          audioLevel: {
-            kind: "volume",
-            label: "+5dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "FULL MATCH - Roman Reigns vs. Cody Rhodes — WWE Universal Championship Match WrestleMania 39 Sunday.mp4",
-          type: "audio",
-          start: -0.041667,
-          dur: 1.166667,
-          in: 2273.666667,
-          out: 2274.833333,
-          audioLevel: {
-            kind: "volume",
-            label: "+5dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "ALIBI-Whoosh-Low Whoosh By.aiff",
-          type: "audio",
-          start: -0.041667,
-          dur: 1.125,
-          in: 1.041667,
-          out: 2.166667
-        },
-        {
-          name: "P003C004_240111_RP4B.mov",
-          type: "audio",
-          start: -0.041667,
-          dur: 0.708333,
-          in: 57.875,
-          out: 58.583333,
-          audioLevel: {
-            kind: "volume",
-            label: "+24dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "P003C004_240111_RP4B.mov",
-          type: "audio",
-          start: -0.041667,
-          dur: 0.541667,
-          in: 17.541667,
-          out: 18.083333,
-          audioLevel: {
-            kind: "volume",
-            label: "+22dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "erg_Best_Whooshes.wav",
-          type: "audio",
-          start: -0.041667,
-          dur: 0.375,
-          in: 1189.25,
-          out: 1189.625,
-          audioLevel: {
-            kind: "volume",
-            label: "+12dB",
-            points: "0,15 100,15"
-          }
-        },
-        {
-          name: "breathe.wav.wav.new.01.wav",
-          type: "audio",
-          start: 0,
-          dur: 2.083333,
-          in: 14.541667,
-          out: 16.625,
-          audioLevel: {
-            kind: "volume",
-            label: "VOL",
-            points: "0,4 100,15"
-          },
-          transitions: [
-            {
-              kind: "transition",
-              label: "AF",
-              name: "Cross Fade (+3dB)",
-              start: 0,
-              dur: 0.083333,
-              alignment: "start-black",
-              at: "in"
-            }
-          ]
-        },
+          start: 18.708333,
+          dur: 0.291667,
+          in: 3.208333,
+          out: 3.5,
+          role: "audio-sfx"
+        }
+      ]
+    },
+    {
+      id: "A26",
+      kind: "audio",
+      clips: [
         {
           name: "CC-CK Punch Slap Hiss 03.wav",
           type: "audio",
           start: 18.75,
           dur: 0.291667,
           in: 0.291667,
-          out: 0.583333
+          out: 0.583333,
+          role: "audio-sfx"
+        }
+      ]
+    },
+    {
+      id: "A27",
+      kind: "audio",
+      clips: [
+        {
+          name: "CC-CK Punch Slap Sweetener 06.wav",
+          type: "audio",
+          start: 18.625,
+          dur: 0.375,
+          in: 0.083333,
+          out: 0.458333,
+          role: "audio-sfx"
+        }
+      ]
+    },
+    {
+      id: "A28",
+      kind: "audio",
+      clips: [
+        {
+          name: "CC-CK Punch Slap Sweetener 06.wav",
+          type: "audio",
+          start: 18.625,
+          dur: 0.5,
+          in: 4.625,
+          out: 5.125,
+          role: "audio-sfx",
+          audioLevel: {
+            kind: "volume",
+            label: "+7dB",
+            points: "0,15 100,15"
+          }
+        }
+      ]
+    },
+    {
+      id: "A29",
+      kind: "audio",
+      clips: [
+        {
+          name: "CC-CK Punch Low Smack 09.wav",
+          type: "audio",
+          start: 18.75,
+          dur: 0.541667,
+          in: 0,
+          out: 0.541667,
+          role: "audio-sfx"
         }
       ]
     }
