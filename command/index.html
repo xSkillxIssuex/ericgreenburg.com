@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eric Command Surface</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #202124;
+      --muted: #696b70;
+      --line: #d9d4c8;
+      --paper: #fbfaf6;
+      --band: #f0ece2;
+      --accent: #0f766e;
+      --warn: #9a4b14;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      background: var(--band);
+      padding: 24px clamp(18px, 4vw, 44px);
+    }
+    .top {
+      display: flex;
+      gap: 20px;
+      align-items: end;
+      justify-content: space-between;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    .brand h1 { font-size: clamp(28px, 4vw, 48px); line-height: 1; margin: 0 0 8px; }
+    .brand p { color: var(--muted); margin: 0; max-width: 760px; }
+    .command {
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 8px 10px;
+      white-space: nowrap;
+      font: 13px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      max-width: 1180px;
+      margin: 18px auto 0;
+    }
+    nav a {
+      color: var(--ink);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      padding: 7px 10px;
+      background: rgba(255,255,255,.55);
+    }
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 26px clamp(18px, 4vw, 44px) 64px;
+      display: grid;
+      gap: 22px;
+    }
+    section {
+      border-top: 3px solid var(--accent);
+      padding-top: 18px;
+    }
+    section h1 { font-size: 26px; margin-bottom: 14px; }
+    section h2 {
+      font-size: 18px;
+      margin: 26px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+    }
+    section h3 { font-size: 16px; margin: 18px 0 4px; color: var(--warn); }
+    ul { margin: 0 0 14px; padding-left: 22px; }
+    li { margin: 5px 0; }
+    li.meta { color: var(--muted); font-size: 14px; list-style: none; margin-left: -10px; }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: .92em;
+      background: #ece7da;
+      padding: 1px 4px;
+    }
+    pre {
+      overflow: auto;
+      background: #202124;
+      color: #f6f4ee;
+      padding: 14px;
+      border-radius: 6px;
+    }
+    .box {
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      border: 1px solid var(--muted);
+      margin-right: 8px;
+      vertical-align: -1px;
+      background: #fff;
+    }
+    .numbered {
+      padding-left: 14px;
+      border-left: 3px solid var(--line);
+      font-weight: 650;
+    }
+    @media (max-width: 720px) {
+      .top { display: block; }
+      .command { display: inline-block; margin-top: 16px; white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top">
+      <div class="brand">
+        <h1>Eric Command Surface</h1>
+        <p>Private working surface generated from local Markdown and Apple Notes scrapes. This page is display only; the source of truth is still the Google Drive folder.</p>
+      </div>
+      <div class="command">python3 scripts/pull_apple_notes.py</div>
+    </div>
+    <nav><a href="#TODAY">Today — 2026-07-08</a>
+<a href="#TODO_INTERVIEW">To-Do Interview</a>
+<a href="#LOOPS">Open Loops</a>
+<a href="#TODO_CANDIDATES">Apple Notes To-Do Candidates</a>
+<a href="#INBOX">Inbox</a>
+<a href="#LEDGER">Decision Ledger</a>
+<a href="#RITUAL">The Ritual (this IS the app)</a></nav>
+  </header>
+  <main><section id="TODAY"><h1>Today — 2026-07-08</h1>
+<p class="numbered"><strong>Call Covered California — 1-800-300-1506.</strong> Loss of Medi-Cal is a qualifying event; the special-enrollment window (60–90 days) is already running. Get yourself enrolled. Ask what the kids&#x27; status requires from you.</p>
+<p class="numbered"><strong>Start the LLC.</strong> Call the CPA/attorney who&#x27;ll file it, or file the CA LLC-1 yourself. From day one: your CHOICES compensation runs through the entity, on the books. (Framing for Mom, when it comes up: this protects *her* — IRS, City of Hope COI, estate cleanliness. Route structural asks through her estate attorney.)</p>
+<p class="numbered"><strong>Draft the endocrinologist email — with a number in it.</strong> Drafting counts today. Sending counts this week. The pitch: &quot;I run a medical education business end to end for a senior oncologist — strategy, production, evidence workflow, distribution. Here&#x27;s what a paid diagnostic engagement looks like.&quot;</p>
+<h2>This Week</h2>
+<ul>
+<li>Send the email.</li>
+<li>Ask Mom — directly, no Plaud pretext — for the recording lunches: her story, Dad&#x27;s story, their story. Cameras stay running after the lesson.</li>
+<li>Confirm the standing weekly recording block is actually booked.</li>
+<li>Calendar the 7/30 podcast (get the host&#x27;s name).</li>
+<li>Next Kaiser session + couples session on calendar.</li>
+</ul></section>
+<section id="TODO_INTERVIEW"><h1>To-Do Interview</h1>
+<p>Answer each item with: yes / no / priority 1-5 / note.</p>
+<p>The point is to decide what becomes real. &quot;No&quot; is useful. &quot;Later&quot; should get a priority 1 or 2.</p>
+<h2>Immediate Admin</h2>
+<ul>
+<li>Covered California: call 1-800-300-1506, enroll after loss of Medi-Cal, and ask what the kids&#x27; status requires from you.</li>
+<li>Kids&#x27; Medi-Cal status: confirm coverage is intact after adult terminations and get the Notice of Action from BenefitsCal.</li>
+<li>LLC: call the CPA/attorney or file CA LLC-1 yourself.</li>
+<li>CHOICES compensation through LLC: route compensation through the entity once formed.</li>
+</ul>
+<h2>Money / Legal / Estate</h2>
+<ul>
+<li>Guardian nomination: decide whether this is still open and who owns the next step.</li>
+<li>Mom succession paperwork: route CHOICES transfer intent through her estate attorney.</li>
+<li>Retirement account boundary: keep the $670K untouched except true disaster clause.</li>
+<li>Financial snapshot: make a manual snapshot of cash, debt, fixed monthly obligations, expected income, and upcoming expenses.</li>
+</ul>
+<h2>Work / Revenue</h2>
+<ul>
+<li>Endocrinologist engagement: draft the email with a concrete paid diagnostic engagement number.</li>
+<li>Endocrinologist engagement: send the email.</li>
+<li>Second expert client: decide whether endocrinologist is still the first target.</li>
+<li>MASCC Post 2: publish.</li>
+<li>Facebook survivor-group share approach: define a respectful utility-first format and pick 2-3 groups.</li>
+<li>CHOICES weekly recording block: confirm it is actually booked.</li>
+<li>COI clearance: check whether Dr. B has received City of Hope&#x27;s response.</li>
+<li>Casperson episode: determine release date or next follow-up.</li>
+<li>Podcast 2026-07-30: get host name and calendar details.</li>
+</ul>
+<h2>Mom / Family</h2>
+<ul>
+<li>Father biography ask to Mom: ask directly for recording lunches about her story, Dad&#x27;s story, and their story.</li>
+<li>Recording lunches: start with easy decades/how they met/who Dad was in a room.</li>
+<li>Cameras after lesson: decide if cameras stay running after the lesson or audio-first only.</li>
+<li>Next Kaiser session: confirm it is on calendar.</li>
+<li>Couples session: confirm it is on calendar.</li>
+</ul>
+<h2>Creative / Identity</h2>
+<ul>
+<li>DAD BOD: book the next show.</li>
+<li>DAD BOD: decide whether it is load-bearing active work or parked.</li>
+<li>Sex Lab: decide whether proposal and two sample chapters remain a half-day/week project.</li>
+<li>Cold Shower: keep parked unless the resurrection conditions are met.</li>
+<li>Writing/essays: choose one active draft or explicitly park the category.</li>
+</ul>
+<h2>Open Personal Decisions</h2>
+<ul>
+<li>Mensa: take it or drop it.</li>
+<li>If taking Mensa: pre-register in writing what each score will mean before sitting.</li>
+<li>Career transition: define one target outcome for the next 30 days.</li>
+<li>Health/fitness/libido: choose one appointment, habit, or question only; no omnibus redesign.</li>
+<li>Home/solar: write the unresolved question or park it.</li>
+</ul>
+<h2>Scrape Cleanup</h2>
+<ul>
+<li>TO DO: books/watchlists: treat as reference, not active tasks.</li>
+<li>TO DO: movies/TV watchlists: treat as reference, not active tasks.</li>
+<li>Apple Notes daily scrape: poll only notes modified in the last 1 day after this baseline.</li>
+<li>Apple Notes 30-day scrape: rerun only after deciding which folders count as actionable.</li>
+</ul></section>
+<section id="LOOPS"><h1>Open Loops</h1>
+<p>Things said to matter, not yet closed. Reviewed Fridays. Anything untouched 30+ days gets closed, killed, or promoted to TODAY.</p>
+<ul>
+<li><strong>Father biography ask to Mom</strong> — direct, spoken, not smuggled inside a productivity-device pitch. Start with the easy decades (how they met, who he was in a room). Audio first, kitchen table.</li>
+<li><strong>Endocrinologist engagement</strong> — draft Monday, send this week. THE loop. Three years old. Close it.</li>
+<li><strong>COI clearance</strong> — Dr. B filed with City of Hope, awaiting response. Gates cohort/live-offer timing.</li>
+<li><strong>Casperson episode</strong> — recorded, no release date. She asks directly (per plan W7).</li>
+<li><strong>Podcast 2026-07-30</strong> — host name unknown. Get it, calendar it.</li>
+<li><strong>MASCC Post 2</strong> — ready, publish (cadence gaps = flat months).</li>
+<li><strong>Facebook survivor-group share approach</strong> — Dr. B&#x27;s stated #1 lever; Eric to define respectful utility-first format + pick 2–3 groups.</li>
+<li><strong>Kids&#x27; Medi-Cal status</strong> — confirm coverage intact after adult terminations; get Notice of Action from BenefitsCal.</li>
+<li><strong>Guardian nomination</strong> — flagged July 2026 as highest-priority estate gap. Still open?</li>
+<li><strong>Mom&#x27;s succession paperwork</strong> — CHOICES transfer intent written into HER estate plan, not just strategy files. Route via her estate attorney as threat-reduction.</li>
+<li><strong>Mensa</strong> — take it or drop it; stop circling (16 months and counting).</li>
+<li><strong>DAD BOD</strong> — book the next show. Load-bearing, not hobby.</li>
+</ul></section>
+<section id="TODO_CANDIDATES"><h1>Apple Notes To-Do Candidates</h1>
+<p>Generated: 2026-07-10 10:47 PDT</p>
+<p>Notes scanned: 3</p>
+<p>Candidates found: 0</p>
+<p>Shown: 0</p>
+<p>This is a scrape, not a command list. Promote real items into TODAY.md or LOOPS.md; delete/ignore the rest.</p></section>
+<section id="INBOX"><h1>Inbox</h1>
+<p>(Paste raw captures here; say &quot;triage&quot; to sort. Empty = good.)</p></section>
+<section id="LEDGER"><h1>Decision Ledger</h1>
+<p>The unit here is a <strong>commitment</strong> — what was decided, when, on what evidence, and what would change it. Not insights. Not portraits. Append-only; revisit weekly.</p>
+<h2>2026-07-07 — Life-strategy session (full Claude + ChatGPT corpus review)</h2>
+<ul>
+<li><strong>CHOICES = anchor client + legacy project, not sole career.</strong> Stay, ~60% of the week, cap honored. Record everything while Mom is fully herself — the tape is the estate. Revenue gates stay (they matter to *her* psychology; earned wins &gt; dollar amounts).</li>
+<li><strong>Income formalizes through the LLC.</strong> Under-the-table + means-tested benefits was the single sharpest risk found in either corpus. Non-negotiable, this week.</li>
+<li><strong>Second expert client = the career.</strong> The offering is the centaur: one senior operator + AI who runs like a department. Endocrinologist first. This exists to take weight OFF the mother relationship, not just to diversify income.</li>
+<li><strong>Sex Lab = the Kabat-Zinn play.</strong> Serious ceiling: protocol + evidence grades + wonder, guru-hood refused. Half-day/week. Proposal + two sample chapters (Super-O, nipple — home territory, no new research) to literary agents by early 2027. Pseudonym. No Phase 4–7 research expansion. Own book&#x27;s safety rails apply to the author.</li>
+<li><strong>Cold Shower parked.</strong> Resurrection condition: one paying non-family client AND first course shipped.</li>
+<li><strong>Retirement ($670K) is untouchable</strong> — disaster clause only, never working capital.</li>
+<li><strong>Rooms senior to mirrors.</strong> Kaiser therapist, couples therapy, Anna carry the live weight. AI = production layer + staging ground, not the container. (Evidence: the Orna guardrail ruptures; &quot;lost and dissociated again&quot; after the ten-part portrait.)</li>
+<li><strong>Mensa: optional.</strong> If taken, pre-register in writing what each score will mean before sitting. The number is trivia; the pre-registration is the data.</li>
+<li><strong>No new systems for 6 months.</strong> Command Surface v1 (the web app) is a REWARD, gated on: (a) this ritual surviving 90 days of daily use, (b) TODAY.md 2026-07-08 items all done. Until then: these files + Claude Code + Apple Notes inbox folder. ChatGPT&#x27;s build plan is archived as the eventual spec (its correct calls: Notes = capture layer never canonical backend; design for replacement; no bidirectional sync; finance = manual snapshot not Plaid).</li>
+</ul>
+<h2>2026-07-10 — Apple Notes bridge is required</h2>
+<ul>
+<li><strong>Apple Notes pull is non-negotiable.</strong> Command Surface must import from the Apple Notes folder <code>Command Surface Inbox</code>, or the system will not be used.</li>
+<li><strong>Import is read-only.</strong> Notes remains the frictionless capture layer. The script appends new captures into <code>INBOX.md</code>, keeps raw import archives, and does not mutate Apple Notes.</li>
+<li><strong>Canonical state still lives here.</strong> After import, triage happens in these Markdown files. Notes is the mouth, not the memory.</li>
+<li><strong>Historical scrape is capped.</strong> The initial to-do scrape may look back 30 days. After that, routine polling looks back 1 day only unless Eric explicitly requests a deeper scan.</li>
+</ul>
+<h2>What would change these decisions</h2>
+<ul>
+<li>CHOICES Dec-31 gate results (2 of 3: 800+ subs / $800mo run rate / cohort ≥20).</li>
+<li>A real W2 offer (creative ops, $150K+): take seriously — CHOICES survives on 3 days/wk.</li>
+<li>Agent responses to the Sex Lab proposal (market prices the dream, ~Q1 2027).</li>
+<li>Mom&#x27;s health, COI ruling, or City of Hope exit (re-baseline everything).</li>
+</ul></section>
+<section id="RITUAL"><h1>The Ritual (this IS the app)</h1>
+<h2>Morning — 5 minutes</h2>
+<p>Open Claude Code in this directory. First pull Apple Notes:</p>
+<pre><code>python3 scripts/pull_apple_notes.py</code></pre>
+<p>Then say: <strong>&quot;morning&quot;</strong>.</p>
+<p>Claude reads INBOX.md, TODAY.md, LOOPS.md, LEDGER.md, asks what&#x27;s on the calendar, and gives you the day: what must happen, what&#x27;s slipping, what to ignore. You confirm or edit TODAY.md. Done.</p>
+<h2>Capture — all day, zero friction</h2>
+<p>Apple Notes folder: <strong>&quot;Command Surface Inbox&quot;</strong>. Dump everything there — tasks, ideas, worries, half-thoughts. No taxonomy, no tags, no discipline required at capture time.</p>
+<p>Pull Notes into this surface:</p>
+<pre><code>python3 scripts/pull_apple_notes.py
+python3 scripts/scrape_notes_todos.py</code></pre>
+<p>The first command appends new notes from <code>Command Surface Inbox</code> into <code>INBOX.md</code>, keeps a raw archive in <code>imports/apple-notes/</code>, and does not edit or delete anything in Notes. The second command scans notes modified in the last 1 day and writes possible actions to <code>TODO_CANDIDATES.md</code>.</p>
+<p>One-time baseline command:</p>
+<pre><code>python3 scripts/scrape_notes_todos.py --days 30</code></pre>
+<p>After the baseline, do not poll deeper than 1 day unless you explicitly ask for a deeper review.</p>
+<h2>Evening — 2 minutes (optional but compounding)</h2>
+<p>Run <code>python3 scripts/pull_apple_notes.py</code> and <code>python3 scripts/scrape_notes_todos.py</code>. Say: <strong>&quot;triage&quot;</strong>. Claude sorts each item into TODAY / LOOPS / LEDGER-candidate / ignore, and empties the inbox.</p>
+<h2>Friday — 15 minutes</h2>
+<p>Say: <strong>&quot;weekly review&quot;</strong>. Claude walks LOOPS.md (close, kill, or promote anything stale), checks TODAY completion honestly, appends any new decisions to LEDGER.md, and drafts Monday&#x27;s TODAY.md.</p>
+<h2>Rules</h2>
+<p class="numbered"><strong>No new content files.</strong> Four files + inbox are the operating surface. Scripts and raw import archives exist only to pull Apple Notes into the surface.</p>
+<p class="numbered"><strong>No app until earned.</strong> The web-app build (spec archived in LEDGER) unlocks after 90 consecutive days of this ritual AND the 2026-07-08 TODAY list fully done. Building it becomes the reward for shipping, not the substitute.</p>
+<p class="numbered"><strong>The ledger is append-only.</strong> Decisions get revised by new dated entries, never by editing history.</p>
+<p class="numbered"><strong>When the system feels inadequate, that&#x27;s a feeling, not a requirement.</strong> Log it in LOOPS. It will pass, or it will earn the build.</p></section></main>
+</body>
+</html>
